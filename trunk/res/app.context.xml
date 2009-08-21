@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-lazy-init="true">
+
+	<context:property-placeholder location="classpath*:jdbc.properties"/>
+	
+	<!-- 使用annotation 自动注册bean,保证@Required,@Autowired的属性被注入 -->
+	<context:component-scan base-package="cn.touki.web" />
+	
+	<!-- 数据源配置,使用应用内的DBCP数据库连接池 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- Connection Info -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- Connection Pooling DBCP -->
+		<property name="initialSize" value="${dbcp.initialSize}" />
+		<property name="maxIdle" value="${dbcp.maxIdle}" />   		
+    	<property name="maxActive" value="${dbcp.maxActive}" />
+    	<property name="maxWait" value="1000" />
+		<property name="validationQuery" value="${jdbc.testSql}"/>
+		<property name="poolPreparedStatements" value="true" />	
+		<property name="defaultAutoCommit" value="false" />		
+	</bean>
+		
+	<!-- Hibernate 配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="namingStrategy">
+			<bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${jdbc.showsql}</prop>
+				<prop key="hibernate.format_sql">${jdbc.formate_sql}</prop>
+				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</prop>				
+				<prop key="hibernate.cache.provider_configuration_file_resource_path">${hibernate.ehcache}</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>				
+				<prop key="hibernate.hibernate.cache.use_second_level_cache">true</prop>				
+				<prop key="hibernate.connection.autoReconnect">true</prop>				
+				<prop key="hibernate.connection.autoReconnectForPools">true</prop>
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.jdbc.batch_size">25</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.default_batch_fetch_size">16</prop>								
+			</props>
+		</property>
+		<property name="packagesToScan" value="cn.touki.web.entity.*" />
+	</bean>
+
+	<!-- 事务管理器配置,单数据源事务 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+</beans>
