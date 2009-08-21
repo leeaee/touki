@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: konlink-ewweb.tld,v 1.2 2006/04/25 05:22:22 biliang Exp $ -->
+
+<taglib version="2.0"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" >
+    <display-name>HTML Tag Library</display-name>
+	<tlib-version>1.0</tlib-version>
+    <short-name>web</short-name>
+
+    <tag>
+        <name>exception</name>
+        <tag-class>cn.touki.www.web.taglib.WebExceptionTag</tag-class>
+
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>exception</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Throwable</type>
+        </attribute>
+
+        <attribute>
+            <name>debug</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>message</name>
+        <tag-class>cn.touki.web.taglib.WebMessageTag</tag-class>
+
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>message</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>cn.touki.i18n.I18NMessage</type>
+        </attribute>
+    </tag>
+
+</taglib>
