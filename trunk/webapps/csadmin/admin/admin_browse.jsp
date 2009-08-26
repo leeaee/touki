@@ -15,7 +15,7 @@
 			<td><nobr>
 				<input type="button" id="search" value="<fmt:message key="act.search.parameter" />" class="bttn ${f:style(page.filted)}" onclick="toggleSearch(this.id)" />		
 				<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'adminDoBrowse')" />			
-				<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'adminPrepareUpdate')" disabled="disabled" />
+				<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'adminPreUpdate')" disabled="disabled" />
 				<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'adminDoDelete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
 			</nobr></td>
 		</tr>
