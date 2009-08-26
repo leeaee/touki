@@ -23,7 +23,7 @@ import cn.touki.web.view.Button;
  */
 public class WebMessageTag extends TagSupport {
 
-	private static final long serialVersionUID = 8103775209068020707L;
+	private static final long serialVersionUID = 1L;
 	//Properties
     private I18NMessage message;
 

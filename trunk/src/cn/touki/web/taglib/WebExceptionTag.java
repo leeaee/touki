@@ -17,7 +17,7 @@ import cn.touki.web.view.Button;
 
 public class WebExceptionTag extends TagSupport {
 
-	private static final long serialVersionUID = -4537148599133639950L;
+	private static final long serialVersionUID = 1L;
 	//Properties
     private Throwable exception;
     private boolean debug;
