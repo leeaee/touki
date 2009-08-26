@@ -210,6 +210,7 @@ jQuery.fn.extend({
 	slideLeft: function() {
 		this.each(function() {
 			$(this).hide(75);  // for chorme don't support animate hide perfertly.
+//			$(this).animate({width: 'hide'}, 'fast');  
 		});  
 	},  
 	
