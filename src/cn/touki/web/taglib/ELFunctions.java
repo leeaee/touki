@@ -1,5 +1,10 @@
 package cn.touki.web.taglib;
 
+/**
+ * EL function for taglib <f:/>
+ *
+ * @author Liyi
+ */
 import java.util.Locale;
 
 import cn.touki.i18n.I18NDictionary;
