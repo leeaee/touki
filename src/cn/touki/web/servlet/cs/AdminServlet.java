@@ -71,7 +71,7 @@ public class AdminServlet extends AbstractServlet {
 	/**
 	 * 管理员创建
 	 */
-    public void onAdminPrepareCreate(HttpServletRequest req, HttpServletResponse res) 
+    public void onAdminPreCreate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException {
 
         req.getRequestDispatcher("/admin/admin_create.jsp").forward(req, res);
@@ -95,7 +95,7 @@ public class AdminServlet extends AbstractServlet {
 	/**
 	 * 管理员修改
 	 */
-    public void onAdminPrepareUpdate(HttpServletRequest req, HttpServletResponse res) 
+    public void onAdminPreUpdate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException, WebException {
     	
     	Long id = getRequestId(req);
@@ -105,7 +105,7 @@ public class AdminServlet extends AbstractServlet {
         req.getRequestDispatcher("/admin/admin_update.jsp").forward(req, res);
     }
     
-    public void onAdminPrepareUpdateSelf(HttpServletRequest req, HttpServletResponse res)
+    public void onAdminPreUpdateSelf(HttpServletRequest req, HttpServletResponse res)
 		    throws IOException, ServletException, WebException {
 		
 		Admin admin = (Admin) req.getSession().getAttribute(Constants.LOGIN_USER);
