@@ -13,7 +13,7 @@
 		<table border="0" class="login">
 			<tr>
 				<td width="55"><label class="caption"><fmt:message key="term.username" /></label></td>
-				<td class="left"><input type="text" id="username" name="username" class="text" maxlength="63" size="30" value="admin" /></td>
+				<td class="left"><input type="text" id="username" name="username" class="text" style="font-family:tahoma, arial;" maxlength="63" size="30" value="admin" /></td>
 			</tr>
 			<tr>
 				<td><label class="caption"><fmt:message key="term.password" /></label></td>

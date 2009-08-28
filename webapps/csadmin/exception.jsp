@@ -8,7 +8,7 @@
 	isErrorPage="true"
 %>
 
-<%@ taglib prefix="ewweb" uri="/WEB-INF/tld/web.tld" %>
+<%@ taglib prefix="web" uri="/WEB-INF/tld/web.tld" %>
 
 <%@ include file="/inc/header.simple.inc.jsp" %>
 
@@ -26,7 +26,7 @@
     <tr>
 
 		<td width="100%" valign="top" align="center">
-        <ewweb:exception exception="<%=exception%>" debug="true" />
+        <web:exception exception="<%=exception%>" debug="true" />
         </td>
     </tr>
 </table>

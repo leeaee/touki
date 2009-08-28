@@ -434,8 +434,7 @@ public abstract class AbstractServlet extends HttpServlet {
      * @param msg     需要显示的国际化消息
      * @param buttons 在消息框中显示的按钮列表，节点为Button实体。
      */
-    protected void handleMessage(HttpServletRequest req, HttpServletResponse res, I18NMessage msg,
-                                 List<Button> buttons)
+    protected void handleMessage(HttpServletRequest req, HttpServletResponse res, I18NMessage msg, List<Button> buttons)
             throws IOException, ServletException {
 
         req.setAttribute(Constants.MSG_BUTTON, buttons);
