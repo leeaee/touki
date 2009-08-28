@@ -96,8 +96,6 @@ initDataTable = function(method, text) {
 		});
 	}
 	
-	// initiation data table height
-	
 	// initiation data table
 	if ($('TABLE.data').length > 0) {
 		

@@ -44,18 +44,35 @@
 
 				south: {
 					paneSelector: '#footer',
-					size: 30
+					size: 35
 				},
 
 				west: {
-					resizable: true,
-					size: 220
+					paneSelector: '#sider',
+					size: 250
 				},
 
 				center: {
 					paneSelector: '#container'
 				}
 			});
+
+			$('sider').layout({
+				
+				north: {
+					paneSelector: '#addressbar',
+					size: 38
+				},
+
+				center: {
+					paneSelector: '#left-center'
+				}
+			});
+
+			$('#side-accordion').accordion({
+				
+				fillSpace: true
+			});			
 			
 		});
 
@@ -67,37 +84,31 @@
 
 <div id="header">
 
-<div id="banner">
-	${curUser.adminId} <span style="color: #333333">&bull;</span> <a href="./login?method=logout"><fmt:message key="term.user.logout" /></a>
-</div>
-
-<div id="navmenu">
-
-<ul id="nav"> 
-	<li class="navitem">
-		<a href="./admin.do"><span><fmt:message key="entity.admin" /></span></a>
-		<div class="subnav">
-			<ul class="menu">
-				<li><a href="./admin.do?method=adminPreCreate"><fmt:message key="term.admin.create" /></a></li>
-				<li><a href="/weekly_address/"><fmt:message key="term.admin.create" /></a></li>
-				<li><a href="/slideshows/">Slideshows</a></li>
-				<li><a href="/briefing_room/PressBriefings/">Press Briefings</a></li>
-				<li><a href="/briefing_room/OfficialStatements/">Official Statements</a></li>
-			</ul>
-			<ul class="menu"><li><a href="/briefing_room/PressReleases/">Presidentia</a></li>
-				<li><a href="/briefing_room/PresidentialActions/">Presidential Actions</a></li>
-				<li><a href="/briefing_room/nominations_and_appointments/">Nominations &amp; Appointments</a></li>
-			</ul>
-		</div> 
-    </li> 
-
-    <li class="navitem"> 
-		<a href="/contact/"><span>Contact Us</span></a> 
-    </li> 
-</ul>
+	<div id="banner">
+		${curUser.adminId} <span style="color: #333333">&bull;</span> <a href="./login?method=logout"><fmt:message key="term.user.logout" /></a>
+	</div>
+	
+	<ul id="nav"> 
+		<li class="navitem">
+			<a href="./admin.do"><span><fmt:message key="entity.admin" /></span></a>
+			<div class="subnav">
+				<ul class="menu">
+					<li><a href="./admin.do?method=adminPreCreate"><fmt:message key="term.admin.create" /></a></li>
+					<li><a href="/weekly_address/"><fmt:message key="term.admin.create" /></a></li>
+					<li><a href="/slideshows/">Slideshows</a></li>
+					<li><a href="/briefing_room/PressBriefings/">Press Briefings</a></li>
+					<li><a href="/briefing_room/OfficialStatements/">Official Statements</a></li>
+				</ul>
+				<ul class="menu"><li><a href="/briefing_room/PressReleases/">Presidentia</a></li>
+					<li><a href="/briefing_room/PresidentialActions/">Presidential Actions</a></li>
+					<li><a href="/briefing_room/nominations_and_appointments/">Nominations &amp; Appointments</a></li>
+				</ul>
+			</div> 
+	    </li> 
+	
+	    <li class="navitem"> 
+			<a href="/contact/"><span>Contact Us</span></a> 
+	    </li> 
+	</ul>
 
 </div>
-
-</div>
-
-<div id="container">
