@@ -3,7 +3,7 @@
 <%@ include file="/inc/header.inc.jsp" %>
 <%@ include file="/inc/sider.inc.jsp" %>
 
-<div id="main-content">
+<div id="container">
 <form id="listForm" name="adminListForm" action="./admin.do" method="post">
 
 	<input type="hidden" name="method" value="" />

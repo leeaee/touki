@@ -2,6 +2,7 @@
 <%@ include file="/inc/header.inc.jsp" %>
 <%@ include file="/inc/sider.inc.jsp" %>
 
+<div id="container">
 <form id="adminCreateForm" name="adminCreateForm" action="./admin.do" method="post">
 
 <input type="hidden" name="method" value="adminDoCreate" />
@@ -60,5 +61,6 @@
 </table>
 
 </form>
+</div>
 
 <%@ include file="/inc/footer.inc.jsp" %>
