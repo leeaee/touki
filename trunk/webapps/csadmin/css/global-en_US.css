@@ -367,8 +367,6 @@ INPUT.bttn, INPUT[type="button"], INPUT[type="submit"], INPUT[type="reset"], BUT
 /* Lable
 ------------------------------------------*/
 LABEL.caption {
-	font-family: Segoe UI, tahoma, arial, sans-serif;
-	font-size: 12px;
 	position: relative;
 	font-weight: bold;
 	height: 25px;
@@ -626,9 +624,11 @@ TABLE.datanav TD {
 
 /*** login table ***/
 TABLE.login {
+	font-family: Segoe UI, tahoma, arial, sans-serif;
+	font-size: 12px;	
 	width: 320px; 
 	height: 120px;
-	margin: 15px 40px;
+	margin: 18px 40px;
 }
 	
 TABLE.login TD {

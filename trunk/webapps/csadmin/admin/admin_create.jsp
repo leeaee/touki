@@ -8,12 +8,14 @@
 
 <input type="hidden" name="method" value="adminDoCreate" />
 
-<table width="100%" height="28" cellpadding="0" cellspacing="0" border="0" class="btnbar">
+<table width="100%" class="btnbar">
 	<tr>
 		<td width="100%"></td>
-		<td><input type="submit" value="<fmt:message key="act.save" />" class="bttn" /></td>
-		<td><input type="reset" value="<fmt:message key="act.reset" />" class="bttn" /></td>
-		<td><input type="button" value="<fmt:message key="act.back" />" class="bttn" onclick="location.href = './admin.do'" /></td>
+		<td><nobr>
+			<input type="submit" value="<fmt:message key="act.save" />" class="bttn" />
+			<input type="reset" value="<fmt:message key="act.reset" />" class="bttn" />
+			<input type="button" value="<fmt:message key="act.back" />" class="bttn" onclick="location.href = './admin.do'" />
+		</nobr></td>
 	</tr>
 </table>
 
@@ -61,15 +63,5 @@
 
 </form>
 </div>
-
-<script type="text/javascript">
-
-	$(function() {
-        $('#adminCreateForm').ajaxForm(function(msg) { 
-            alert("Thank you for your comment!" + msg); 
-        });		
-	});	
-
-</script>
 
 <%@ include file="/inc/footer.inc.jsp" %>

@@ -11,7 +11,7 @@
 
     <tag>
         <name>exception</name>
-        <tag-class>cn.touki.www.web.taglib.WebExceptionTag</tag-class>
+        <tag-class>cn.touki.web.taglib.WebExceptionTag</tag-class>
 
         <body-content>empty</body-content>
 
