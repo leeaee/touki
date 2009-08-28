@@ -24,7 +24,7 @@ body {
 	color: #003399; 
 	font-family: tahoma, arial, verdana, sans-serif;
 	font-size: 11px;
-	background: url(../img/web/sider-bg.png) repeat-y #f8fbfd; /* img width must same as frame padding-left for the fade */
+	/*background: url(../img/web/sider-bg.png) repeat-y #f8fbfd; /* img width must same as frame padding-left for the fade */
 }
 
 /* Layout div elements
@@ -216,7 +216,8 @@ body > #wrap {
 #side-content {
 	font-size: 11px;	
 	line-height: 1.3;
-	margin: 0 10px;
+	margin: 0 0 0 10px;
+	height: 100%;
 }
 
 /*--- maincont ---*/
@@ -532,6 +533,19 @@ TABLE.btnbar {
 }
 
 TABLE.btnbar TD {
+    color: #2e6e9e;
+    padding: 0 7px;
+}
+
+/*** addrss table ***/
+TABLE.addressbar {
+	height: 38px;
+	line-height: 35px;
+	vertical-align: middle;
+    background-color: #E7F5FF;
+}
+
+TABLE.addressbar TD {
     color: #2e6e9e;
     padding: 0 7px;
 }

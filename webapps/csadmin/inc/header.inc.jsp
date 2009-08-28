@@ -149,10 +149,6 @@
     </li> 
 </ul>
 
-<div id="press">
-	You are Here: <a href="#">Home</a> &raquo; <a href="#">Admin Manager</a> &raquo; Add Administrator
-</div> 
-	
 </div>
 
 <div id="container" class="clearfix">

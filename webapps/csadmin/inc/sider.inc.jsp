@@ -1,7 +1,16 @@
 <div id="side">
 <div id="side-content"> 
 	
-	<div id="side-accordion">
+	<table width="100%" class="addressbar">
+		<tr>
+			<td width="100%"></td>
+			<td><nobr><b>
+				<fmt:message key="term.admin.create" />
+			<b></nobr></td>
+		</tr>
+	</table>	
+	
+	<div id="side-accordion" style="padding-top: 5px; height: 100%;">
 		<h3><a href="#"><fmt:message key="term.admin.create" /></a></h3>
 		<div>
 			<p>
@@ -28,7 +37,9 @@
 <script type="text/javascript">
 
 	$(function() {
-		$('#side-accordion').accordion();
+		$('#side-accordion').accordion({
+			fillSpace: true
+		});
 	});
 	
 </script>
