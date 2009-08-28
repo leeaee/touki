@@ -56,28 +56,23 @@ initElements = function() {
 
 initAccordion = function() {
 	
-	var userAgent = navigator.userAgent.toLowerCase();
-	jQuery.browser.msie7 = jQuery.browser.msie && /msie 7\.0/i.test(userAgent) && !/msie 8\.0/i.test(userAgent);
-	
-	if (jQuery.browser.msie7) {
-
-		$('#side-content').css('padding-top', '10px');
-			
 		$('.navitem').each(function() {
 			
 			$(this).hover(
+			
 				function () {
-					$('#side-accordion > .ui-accordion-header').css('z-index', '-1'); 
-					$('#side-accordion > .ui-accordion-content').css('z-index', '-1');
+					$('#sider').css('z-index', '-1'); 
+					$('#container').css('z-index', '-1');
 				},
+				
 		    	function () { 
-					$('#side-accordion > .ui-accordion-header').css('z-index', 'auto'); 
-					$('#side-accordion > .ui-accordion-content').css('z-index', 'auto'); 
+					$('#sider').css('z-index', 'auto'); 
+					$('#container').css('z-index', 'auto'); 
 			    }	
 			);
+			
 		});
-	}	
-	
+
 }
 
 initDataTable = function(method, text) {
