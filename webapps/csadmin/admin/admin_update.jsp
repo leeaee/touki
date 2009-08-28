@@ -2,8 +2,6 @@
 <%@ include file="/inc/header.inc.jsp" %>
 <%@ include file="/inc/sider.inc.jsp" %>
 
-
-<div id="result"></div>
 <div id="main-content">
 <form id="adminUpdateForm" name="adminUpdateForm" action="./admin.do" method="post">
 
