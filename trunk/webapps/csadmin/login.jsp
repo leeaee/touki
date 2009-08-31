@@ -2,10 +2,10 @@
 
 <div id="container">
 <div class="ui-overlay"><div class="ui-widget-overlay"></div>
-	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:200px; margin:-108px -208px;"></div>
+	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:200px; margin:-128px -208px;"></div>
 </div>
 
-<div id="center-div" class="ui-widget ui-widget-content ui-corner-all" style="width:398px; height:198px; margin:-100px -200px;">
+<div id="center-div" class="ui-widget ui-widget-content ui-corner-all" style="width:398px; height:198px; margin:-120px -200px;">
 	<div class="ui-widget-header ui-corner-all">
 		<span id="login-title" class="ui-dialog-title"><fmt:message key="term.userlogin" /></span>
 	</div>
