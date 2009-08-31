@@ -20,63 +20,93 @@
 	    }
 	    
 		$(document).ready( function() {
-			 
-			$("body").layout({
-				
-				defaults: {
-					fxName: 'slide',
-					fxSpeed: 'slow',
-					spacing_open: 10,
-					spacing_closed: 10,
-					closable: false,
-					resizable: false
-				},
 
-				north: {
-					paneSelector: '#header',
-					size: 108
-				},
+			var defaultLayout, bodyNorth, bodySouth, bodyWest, bodyCenter, bodyEast, siderNorth, siderCenter;
 
-				east: {
-					closable: true,
-					size: 200
-				},  
+			defaultLayout = {
+				fxName: 'slide',
+				fxSpeed: 'slow',
+				spacing_open: 10,
+				spacing_closed: 10,
+				closable: false,
+				resizable: false
+			};
 
-				south: {
+			bodyNorth = {
+				paneSelector: '#header',
+				size: 108
+			};
+
+			if ($('#footer').length > 0) {	
+				bodySouth = {
 					paneSelector: '#footer',
 					size: 35
-				},
+				};
+			} else {
+				bodySouth = false;
+			}
 
-				west: {
-					paneSelector: '#sider',
-					size: 250
-				},
+			bodyWest = {
+				paneSelector: '#sider',
+				resizable: true,
+				size: 250			
+			}; 
 
-				center: {
-					paneSelector: '#container'
-				}
-			});
+			bodyEast = {
+				paneSelector: '#east',
+				closable: true,
+				size: 200
+			};
 
-			$('sider').layout({
-				
-				north: {
+			bodyCenter = {
+				paneSelector: '#container'
+			};
+
+			if ($('#addressbar').length > 0) {
+				siderNorth = {
 					paneSelector: '#addressbar',
 					size: 38
-				},
+				};
+			} else {
+				siderNorth = false;
+			}
 
-				center: {
+			if ($('#left-center').length > 0) {
+				siderCenter = {
 					paneSelector: '#left-center'
-				}
-			});
+				};
+			} else {
+				siderCenter = false;
+			}		
 
-			$('#side-accordion').accordion({
-				
-				fillSpace: true
-			});			
+			var bodyOptions = {
+				defaults: defaultLayout,
+				north: bodyNorth,
+				east: bodyEast,  
+				south: bodySouth,
+				west: bodyWest, 
+				center: bodyCenter
+			};
+
+			var siderOptions = {
+				north: siderNorth,
+				center: siderCenter
+			};
 			
-		});
+			$("body").layout(bodyOptions);
 
-	    
+			if ($('sider').length > 0) {
+				$('sider').layout(siderOptions);
+			}
+			
+			if ($('#side-accordion').length > 0) {
+				
+				$('#side-accordion').accordion({
+					fillSpace: true
+				});	
+			}
+		});
+			    
     </script>
 </head>
 
