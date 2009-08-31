@@ -12,52 +12,41 @@ Copyright:
 @import url("jquery-ui-1.7.1.css");
 
 
-
 /* Global
 ----------------------------------------*/
 html, body {
 	vertical-align: top;
 	text-align: left;
 	height: 100%;
-	color: #003399;
+	color: #003399; 
 	font-family: tahoma, arial, sans-serif;
 	font-size: 12px;
 }
 
-/* Layout div elements
+
+/* Layout Div elements
 ----------------------------------------*/
-#header {
-	background: url(../img/web/header-bg.gif) repeat-x top left;
-	width: 100%;
-	height: 108px;
+.ui-layout-pane-center { /* center panes */ 
+	overflow: auto;
 }
 
-#container {
-	font-size: 12px;
-	line-height: 1.3;
-	width: 100%;
-	padding-right: 10px;
+.ui-layout-pane-east { /* east panes */ 
+	overflow: auto;
 }
 
-#sider {
-	width: 250px;
-	height: 100%;
-	font-size: 12px;	
-	line-height: 1.3;
-	padding-left: 10px;	
-}
-
-#footer {
-	width: 100%;
-	background: #efefef;
+.ui-layout-toggler {
+	background: transparent url(../img/web/toggle.png) center no-repeat;
+	border-bottom: 1px solid #aaaaaa;
 	border-top: 1px solid #aaaaaa;
-	height: 34px;	
+}
+
+.ui-layout-toggler-closed { 
+	border-right: 1px solid #aaaaaa;
 }
 
 
-/* Divs
-----------------------------------------*/
-#center-div {
+/*--- Login divs ---*/
+#center-div { /* for login */
 	top: 50%; 
 	left: 50%; 
 	position: absolute;
@@ -72,15 +61,21 @@ html, body {
 	font-size: 14px
 }
 
-/*--- head-content ---*/
+
+/*--- Header divs ---*/
+#header {
+	font-family: Microsoft YaHei, tahoma, arial, sans-serif;	
+	background: url(../img/web/header-bg.gif) repeat-x top left;
+	width: 100%;
+	height: 108px;
+}
+
 #banner {
-	font-family: Microsoft YaHei, tahoma, arial, sans-serif;		
 	font-weight: bold;
-	padding: 15px 25px 0 0;
+	padding: 20px 25px 0 0;
 	text-align: right; 
 }
 
-/*--- nav ---*/
 #nav {
 	height: 33px; 
 	margin: 0; 
@@ -165,41 +160,94 @@ html, body {
 	display: block;
 }
 
-/*--- press ---*/
-#press {
-	top: 108px;
-	vertical-align: middle;
-	font-size: 12px;
-	height: 45px;
-	background-image: url(../img/web/press-bg.png);
-	line-height: 50px;
-	padding-left: 13px;	
-}
 
-#press a {
-	cursor: pointer;
-	font-weight: bold;
-	color: #333333;
-	font-size: 1em;
-}
-
-#press a:link, #press a:visited {
-	text-decoration: underline;
-}
-
-#press a:hover {
-	text-decoration: none;
-}
-
-#press a:active {
-	text-decoration: underline; 
-}
-
-/*--- search ---*/
-#searchbar {
-	padding: 0;
-	margin-left: 5px;
+/*--- Sider divs ---*/
+#sider {
+	width: 200px;
+	font-size: 12px;	
+	line-height: 1.3;
+	padding: 0 0 2px 0px;
 	height: 100%;
+	padding-left: 10px;
+}
+
+#accordion {
+}
+
+
+/*--- Container divs ---*/
+#container {
+	font-size: 12px;
+	line-height: 1.3;
+	width: 100%;
+	padding-right: 10px;
+}
+
+#upper {
+	font-family: Microsoft YaHei, tahoma, arial, sans-serif;	
+}
+
+#upper-left {
+	font-size: 14px;
+	height: 38px;
+	line-height: 38px;
+	vertical-align: middle;
+    background-color: #E7F5FF;
+    color: #2e6e9e;
+    padding: 0 20px;
+}
+
+#upper-main {
+}
+	
+#mainer {
+    background-color: #f4f8fe;
+    border: 1px solid #4b88b5;
+}
+
+#search {
+    background-color: #f4f8fe;
+    border: 1px solid #c1dad7;
+}
+
+#downer {
+}
+
+
+/*--- footer ---*/
+
+#footer {
+	width: 100%;
+	background: url(../img/web/footer.gif) repeat-x top left;
+	height: 40px;	
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+#footer *{
+	color: #555555;
+	text-decoration:none;
+}
+
+#footer ul {	
+	font-size: 11px;
+	padding-left: 20px;
+	float: left;	
+}
+
+#footer ul li {
+	display: inline;	
+	padding-right: 15px;
+	
+}
+
+#copyright {
+	padding-right: 20px;
+	clear: none;
+	float: right;
+	color: #427ea8;
+	font-size: 11px;
+	font-weight: bold;
 }
 
 
@@ -353,30 +401,19 @@ LABEL.caption {
 ----------------------------------------*/
 TABLE {
 	font-family: tahoma, verdana, Arial, sans-serif;
-	font-size: 12px;	
-}
-
-/*** main table ***/
-TABLE.main {
-	width: 100%;
-	height: 100%;
-	margin: 5px 0;
-}
-
-TABLE.main TD {
-	vertical-align: top;	
+	font-size: 12px;
+	width: 100%;	
 }
 
 /*** data table ***/
 TABLE.data {
 	table-layout: fixed;
-    border-top: 1px solid #6f95af;
     width: 100%;
 }
 
 TABLE.data TH {
 	font-family: Microsoft YaHei, tahoma, arial, sans-serif;
-    background-color: #427191;
+    background-color: #639dc7;
     color: #FFFFFF;
     border-left: 1px solid #6f95af;
     border-bottom: 1px solid #c1dad7;
@@ -426,11 +463,12 @@ TABLE.data TH.sort-desc {
     background-repeat: no-repeat;
 }
 
-TABLE.data TH.right {
-    border-right: none;
-}
 TABLE.data TH.left {
     border-left: none;
+}
+
+TABLE.data TH.right {
+    border-right: none;
 }
 
 TABLE.data TR.odd {
@@ -471,20 +509,19 @@ TABLE.data TD {
     border-bottom: 1px solid #c1dad7;
 }
 
-TABLE.data TD.right {
-    border-right: none;
-}
 TABLE.data TD.left {
-    border-left: none;
+	border-left: none;
+}
+
+TABLE.data TD.right {
+	border-right: none;
 }
 
 /*** datanav table ***/
 TABLE.datanav {
 	font-family: Microsoft YaHei, tahoma, arial, sans-serif;	
-    background-color: #f4f8fe;
     color: #2e6e9e;
-    height: 100%;
-    border: 1px solid #c1dad7;
+    width: 100%;
 }
 
 TABLE.datanav TH {
@@ -516,22 +553,12 @@ TABLE.btnbar TD {
     padding: 0 7px;
 }
 
-/*** addrss-bar ***/
-#addressbar {
-	height: 38px;
-	line-height: 38px;
-	vertical-align: middle;
-    background-color: #E7F5FF;
-    color: #2e6e9e;
-    padding: 0 7px;    
-}
 
 /*** form table ***/
 TABLE.form {
     background-color: #f2faff;
-    border-top: 1 solid #999999;
     width: 100%;
-    margin: 5px 0;
+	border-bottom: 1px solid #c1dad7;
 }
 
 TABLE.form TD {
@@ -605,7 +632,7 @@ TABLE.login {
 	font-size: 14px;	
 	width: 320px; 
 	height: 120px;
-	margin: 25px 40px;
+	margin: 18px 40px;
 }
 	
 TABLE.login TD {
@@ -648,22 +675,8 @@ A:active {
 	outline: none; 
 }
 
-
-DIV.bttns {
-    text-align: right;
-    padding: 8px;
-}
-
 DIV.label {
 	font-family: Microsoft YaHei, tahoma, arial, sans-serif;	
-    padding: 5px;
-}
-
-DIV.padding {
-    padding: 5px;
-}
-
-DIV.label {
     padding: 5px;
 }
 

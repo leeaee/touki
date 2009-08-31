@@ -583,7 +583,7 @@
 
     <entry key="term.egadmin.title">eWork&amp;trade; | 即时电子工作系统信息中心</entry>
 
-    <entry key="term.searchform">搜  索</entry>
+    <entry key="term.searchform">搜索参数</entry>
 
     <entry key="term.create">创建新{0}</entry>
     <entry key="term.update">修改{0} &lt;b&gt;{1}&lt;/b&gt; 详细信息</entry>
