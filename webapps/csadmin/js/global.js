@@ -1,9 +1,11 @@
 
+
 $(document).ready(function() {
 	
-	initElements();
+	initLayout();
 	initAccordion();
-
+	initElements();
+	
 });
 
 
@@ -12,7 +14,7 @@ $(document).ready(function() {
  */
  
 submitForm = function(obj, methodName) {
-    obj.method.value = methodName
+    obj.method.value = methodName;
     obj.submit();
 };
 
@@ -21,9 +23,160 @@ confirmSubmit = function(obj, methodName, mes){
         obj.method.value = methodName;
         obj.submit();
     }
-}
+};
  
- 
+
+/**
+ *  Initi methods for web appllcation. 
+ */
+
+initLayout = function() {
+	
+	var defaultLayout, bodyNorth, bodySouth, bodyWest, bodyCenter, bodyEast, containerNorth, containerSouth, containerEast, containerCenter, upperWest, upperCenter;
+	
+	/*-- init body options --*/
+	if ($('#container > center-div').length > 0 && $('#container > loginForm').length > 0) {
+		defaultLayout = {
+				fxName: 'slide',
+				fxSpeed: 'slow',
+				spacing_open: 10,
+				spacing_closed: 10,
+				closable: false,
+				resizable: false
+			};
+	} else {
+		defaultLayout = {
+				fxName: 'slide',
+				fxSpeed: 'slow',
+				spacing_open: 0,
+				spacing_closed: 0,
+				closable: false,
+				resizable: false
+			};
+	}
+
+	bodyNorth = {
+		paneSelector: '#header',
+		size: 108
+	};
+
+	bodySouth = {
+		paneSelector: '#footer',
+		size: 40
+	};
+
+	if ($('#sider').length > 0) {
+		bodyWest = {
+			paneSelector: '#sider',
+			onresize: function() { $('#accordion').accordion('resize'); },
+			onopen:	function () { $("#accordion").accordion('resize'); },
+			size: 200			
+		}; 
+	} else {
+		bodyWest = false;
+	}
+
+	bodyEast = false;
+
+	bodyCenter = {
+		paneSelector: '#container'
+	};
+
+	$("body").layout(bodyOptions);	
+	
+	/*-- init container options --*/	
+	if ($('#upper').length > 0) {
+		containerNorth = {
+			paneSelector: '#upper',
+			size: 38
+		};
+	} else {
+		containerNorth = false;
+	}
+	
+	if ($('#downer').length > 0) {
+		containerSouth = {
+			paneSelector: '#downer',
+			size: 38
+		};
+	} else {
+		containerSouth = false;
+	}
+	
+	if ($('#search').length > 0) {
+		containerEast = {
+			paneSelector: '#search',
+			closable: true,
+			spacing_open: 5,
+			spacing_close: 5,
+			togglerLength_open: 150,
+			togglerLength_closed: 150,
+			size: 173
+		};
+	} else {
+		containerEast = false;
+	}
+	
+	if ($('#mainer').length > 0) {
+		containerCenter = {
+			paneSelector: '#mainer'
+		};
+	} else {
+		containerCenter = false;
+	}	
+
+	var containerOptions = {
+		defaults: {
+			spacing_open: 5,
+			spacing_closed: 5,
+			closable: false,
+			resizable: false
+		},
+		north: containerNorth,
+		south: containerSouth,
+		east: containerEast,  		
+		west: false, 
+		center: containerCenter
+	};
+
+	$("container").layout(containerOptions);		
+	
+	/*-- init upper div options --*/	
+	if ($('#upper-left').length > 0) {
+		upperWest = {
+			paneSelector: '#upper-left',
+			size: 220
+		};
+	} else {
+		upperWest = false;
+	}
+	
+	if ($('#upper-main').length > 0) {
+		upperCenter = {
+			paneSelector: '#upper-main'
+		};
+	} else {
+		upperCenter = false;
+	}	
+	
+	var upperOptions = {
+			defaults: {
+				spacing_open: 5,
+				spacing_closed: 5,
+				closable: false,
+				resizable: false
+			},
+			north: false,
+			south: false,
+			east: false,  		
+			west: upperWest, 
+			center: upperCenter
+		};
+
+	$("upper").layout(upperOptions);		
+	
+};	
+
 initElements = function() {
 	
 	/*-- init nav --*/
@@ -36,10 +189,27 @@ initElements = function() {
 		beforeWidth = beforeWidth + navItem.width();
 	}
 	
+	$('.navitem').each(function() {
+		
+		$(this).hover(
+		
+			function () {
+				$('#sider').css('z-index', '-1'); 
+				$('#container').css('z-index', '-1');
+			},
+			
+	    	function () { 
+				$('#sider').css('z-index', 'auto'); 
+				$('#container').css('z-index', 'auto'); 
+		    }	
+		);
+		
+	});	
+	
 	/*-- init button --*/
 	$(':input.bttn, :input.sbttn, :input.mbttn,:input.navbttn, a.button').each(function() {
 		
-		$(this).onfocus = function() { this.blur() };
+		$(this).onfocus = function() { this.blur(); };
     	
     	if($(this).attr('class') == 'sbttn' || $(this).attr('class') == 'mbttn') {
     		$(this).attr('disabled', 'disabled');
@@ -56,24 +226,10 @@ initElements = function() {
 
 initAccordion = function() {
 	
-		$('.navitem').each(function() {
-			
-			$(this).hover(
-			
-				function () {
-					$('#sider').css('z-index', '-1'); 
-					$('#container').css('z-index', '-1');
-				},
-				
-		    	function () { 
-					$('#sider').css('z-index', 'auto'); 
-					$('#container').css('z-index', 'auto'); 
-			    }	
-			);
-			
-		});
-
-}
+	$('#accordion').accordion({
+		fillSpace: true
+	});	
+};
 
 initDataTable = function(method, text) {
 	
@@ -81,7 +237,7 @@ initDataTable = function(method, text) {
 	if ($('#dialog').length > 0) {
 		
 		var buttons = {};
-		buttons[text] = function() { $(this).dialog("close");};
+		buttons[text] = function() { $(this).dialog("close"); };
 		
 		$('#dialog').dialog({
 			autoOpen: false, resizable: false,
@@ -123,7 +279,9 @@ initDataTable = function(method, text) {
 			row.find('td:first').click(function() { fix_checked_style(row, checkbox); });
 			
 			row.dblclick(function() {
-				$('#dialog').dialog('open');					
+				
+				$('#dialog').text('');
+				$('#dialog').dialog('open');
 				$("#dialog").load(url, 'method=' + method + '&chk_' + para + '=' + para);
 			});		
 			
@@ -178,48 +336,5 @@ update_button_status = function() {
 	}	
 
 };
-
-toggleSearch = function(id) {
-	
-	$('#' + id).toggleClass('ui-state-active');
-	
-	if($.browser.safari) {
-		$('#searchbar').slideToggleHorizontal();
-	} else {
-		$('#searchbar').animate({width: 'toggle'}, 'fast'); 
-	}
-}
-
-
-/**
- *  Self defined jQuery (effect, method, event, .etc)
- */
-jQuery.fn.extend({
-	  
-	slideRight: function() {    
-		this.each(function() {
-			$(this).animate({width: 'show'}, 'fast');    
-		});  
-	},  
-	
-	slideLeft: function() {
-		this.each(function() {
-			$(this).hide(75);  // for chorme don't support animate hide perfertly.
-//			$(this).animate({width: 'hide'}, 'fast');  
-		});  
-	},  
-	
-	slideToggleHorizontal: function() { 
-		this.each(function() {      
-			var el = $(this);      
-			if (el.css('display') == 'none') {       
-				 el.slideRight();      
-			} else {        
-				el.slideLeft();
-			}    
-		});  
-	}
-
-});
 
 

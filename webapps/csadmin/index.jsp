@@ -2,7 +2,7 @@
 <%@ include file="/inc/header.inc.jsp" %>
 <%@ include file="/inc/sider.inc.jsp" %>
 
-<div id="main-content">
+<div id="container">
 </div>	 
 
 <%@ include file="/inc/footer.inc.jsp" %>

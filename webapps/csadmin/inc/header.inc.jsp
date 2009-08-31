@@ -18,95 +18,6 @@
 	    function getbasedir() {
 	        return "<%=request.getContextPath()%>";
 	    }
-	    
-		$(document).ready( function() {
-
-			var defaultLayout, bodyNorth, bodySouth, bodyWest, bodyCenter, bodyEast, siderNorth, siderCenter;
-
-			defaultLayout = {
-				fxName: 'slide',
-				fxSpeed: 'slow',
-				spacing_open: 10,
-				spacing_closed: 10,
-				closable: false,
-				resizable: false
-			};
-
-			bodyNorth = {
-				paneSelector: '#header',
-				size: 108
-			};
-
-			if ($('#footer').length > 0) {	
-				bodySouth = {
-					paneSelector: '#footer',
-					size: 35
-				};
-			} else {
-				bodySouth = false;
-			}
-
-			bodyWest = {
-				paneSelector: '#sider',
-				resizable: true,
-				size: 250			
-			}; 
-
-			bodyEast = {
-				paneSelector: '#east',
-				closable: true,
-				size: 200
-			};
-
-			bodyCenter = {
-				paneSelector: '#container'
-			};
-
-			if ($('#addressbar').length > 0) {
-				siderNorth = {
-					paneSelector: '#addressbar',
-					size: 38
-				};
-			} else {
-				siderNorth = false;
-			}
-
-			if ($('#left-center').length > 0) {
-				siderCenter = {
-					paneSelector: '#left-center'
-				};
-			} else {
-				siderCenter = false;
-			}		
-
-			var bodyOptions = {
-				defaults: defaultLayout,
-				north: bodyNorth,
-				east: bodyEast,  
-				south: bodySouth,
-				west: bodyWest, 
-				center: bodyCenter
-			};
-
-			var siderOptions = {
-				north: siderNorth,
-				center: siderCenter
-			};
-			
-			$("body").layout(bodyOptions);
-
-			if ($('sider').length > 0) {
-				$('sider').layout(siderOptions);
-			}
-			
-			if ($('#side-accordion').length > 0) {
-				
-				$('#side-accordion').accordion({
-					fillSpace: true
-				});	
-			}
-		});
-			    
     </script>
 </head>
 
@@ -119,6 +30,7 @@
 	</div>
 	
 	<ul id="nav"> 
+	
 		<li class="navitem">
 			<a href="./admin.do"><span><fmt:message key="entity.admin" /></span></a>
 			<div class="subnav">
@@ -134,11 +46,12 @@
 					<li><a href="/briefing_room/nominations_and_appointments/">Nominations &amp; Appointments</a></li>
 				</ul>
 			</div> 
-	    </li> 
+	    </li>    
 	
 	    <li class="navitem"> 
 			<a href="/contact/"><span>Contact Us</span></a> 
-	    </li> 
+	    </li>
+	     
 	</ul>
 
 </div>
