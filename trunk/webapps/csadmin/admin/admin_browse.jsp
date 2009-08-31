@@ -21,10 +21,10 @@
 		</tr>
 	</table>
 	
-	<table class="main"><tr>
+	<table class="main" style="border: 1px solid #6f95af;"><tr>
 		<td width="100%">
 		<display:table name="${page.result}" uid="admin" class="data" sort="page" requestURI="./admin.do">
-			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}">
+			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left" >
 				<input type="checkbox" id="chk_${admin_rowNum}" name="chk_${admin_rowNum}" value="${admin.id}" class="ckbox" />
 			</display:column>
 			<display:column titleKey="prop.admin.id" property="adminId" sortable="true" sortProperty="adminId" />
