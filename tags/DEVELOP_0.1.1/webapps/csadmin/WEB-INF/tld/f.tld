@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+  
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"  
+    version="2.0">
+       
+    <description>A tag library exercising EL functions handlers.</description>   
+    <tlib-version>1.0</tlib-version>   
+    <short-name>ELTagLibrary</short-name>   
+    <uri>http://www.touki.cn/taglib/el</uri>   
+      
+    <function>   
+        <description>Get I18n State Text Form state index.</description>   
+        <name>state</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String getStateText(java.lang.Integer, java.util.Locale)</function-signature>   
+    </function>
+      
+    <function>   
+        <description>Get time Form time long format.</description>   
+        <name>time</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String long2DateTimeString(java.lang.Long)</function-signature>   
+    </function>
+      
+    <function>   
+        <description>Get time Form time long format.</description>   
+        <name>date</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String long2DateString(java.lang.Long)</function-signature>   
+    </function>  
+    
+    <function>   
+        <description>trasform the local to string.</description>   
+        <name>l2s</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String Local2String(java.util.Locale)</function-signature>   
+    </function>
+    
+    <function>   
+        <description>Return the search bar display style.</description>   
+        <name>display</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String searchBarDisplay(java.lang.Boolean)</function-signature>   
+    </function>
+        
+    <function>   
+        <description>Return the search button style.</description>   
+        <name>style</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String searchBttnStyle(java.lang.Boolean)</function-signature>   
+    </function>    
+     
+</taglib>
