@@ -427,7 +427,10 @@ TABLE.data TH.sort-desc {
 }
 
 TABLE.data TH.right {
-    border-right: 1px solid #6f95af;
+    border-right: none;
+}
+TABLE.data TH.left {
+    border-left: none;
 }
 
 TABLE.data TR.odd {
@@ -469,7 +472,10 @@ TABLE.data TD {
 }
 
 TABLE.data TD.right {
-    border-right: 1px solid #c1dad7;
+    border-right: none;
+}
+TABLE.data TD.left {
+    border-left: none;
 }
 
 /*** datanav table ***/
@@ -599,7 +605,7 @@ TABLE.login {
 	font-size: 14px;	
 	width: 320px; 
 	height: 120px;
-	margin: 18px 40px;
+	margin: 25px 40px;
 }
 	
 TABLE.login TD {

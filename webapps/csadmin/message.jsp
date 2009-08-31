@@ -11,22 +11,19 @@
 
 <%@ include file="inc/header.simple.inc.jsp" %>
 
-<table id="btnTable" width="100%" height="30" cellpadding="0" cellspacing="0" border="0" class="btnbar">
-	<tr>
-		<td width="7"><IMG SRC="imgs/padding.gif" WIDTH="7" HEIGHT="7" BORDER="0" ALT=""></td>
+<div id="container">
 
-		<td width="100%"></td>
+<div class="ui-overlay"><div class="ui-widget-overlay"></div>
+	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:220px; margin:-158px -208px;"></div>
+</div>
 
-		<td width="7"><IMG SRC="imgs/padding.gif" WIDTH="7" HEIGHT="7" BORDER="0" ALT=""></td>
-	</tr>
-</table>
+<div id="center-div" class="ui-widget ui-widget-content ui-corner-all" style="width:398px; height:218px; margin:-150px -200px;">
+	<div class="ui-widget-header ui-corner-all">
+		<span id="login-title" class="ui-dialog-title"><fmt:message key="term.userlogin" /></span>
+	</div>
+<web:message message="<%=(I18NMessage)(request.getAttribute(Constants.MESSAGE)) %>" />
+</div>
 
-<table id="mainTable" bgColor="#FFFFFF" Style="width: 100%; height: 400px; border-top: 1 solid #999999; ">
-    <tr>
-		<td width="100%" valign="top" align="center">
-            <web:message message="<%=(I18NMessage)(request.getAttribute(Constants.MESSAGE)) %>" />
-        </td>
-    </tr>
-</table>
+</div>
 
 <%@ include file="/inc/footer.inc.jsp" %>

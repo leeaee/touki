@@ -50,7 +50,7 @@ public class WebMessageTag extends TagSupport {
         String messageStr = I18NDictionary.translate(message, userLocale);
 
         try {
-            out.println("<table width=\"400\" cellpadding=\"5\" cellspacing=\"0\" class=\"msgbox\">\n");
+            out.println("<table class=\"msgbox\">\n");
 
             //Table title
             out.println("    <tr>\n" +
