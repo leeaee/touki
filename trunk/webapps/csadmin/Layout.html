@@ -5,24 +5,6 @@
 	<title>Insert title here</title>
 	<link rel="stylesheet" type="text/css" href="./css/global-zh_CN.css" media="all" />
 	
-	<style type="text/css"> 
- 
-	body {
-		font-family: Arial, sans-serif;
-		font-size: 0.85em;
-	}
-	p {
-		margin: 1em 0;
-	}
- 
-	.ui-layout-pane-west {
-		/* OVERRIDE 'default styles' */
-		padding: 0 !important;
-		overflow: hidden !important;
-	}
- 
-	</style>	
-		
 	<script type="text/javascript" src="./js/jquery/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-ui-1.7.1.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-layout.min.js"></script>
@@ -31,42 +13,59 @@
 	<script type="text/javascript"> 
  
 	$(document).ready( function() {
- 
-		$("body").layout({
-			
-			defaults: {
-				fxName: 'slide',
-				fxSpeed: 'slow',
-				spacing_open: 10,
-				spacing_closed: 10,
-				closable: false,
-				resizable: false
-			},
 
-			north: {
-				paneSelector: '#header',
-				size: 108
-			},
+		var defaultLayout, northLayout, southLayout, westLayout, centerLayout, eastLayout;
 
-			east: {
-				closable: true,
-				size: 200
-			},  
+		defaultLayout = {
+			fxName: 'slide',
+			fxSpeed: 'slow',
+			spacing_open: 10,
+			spacing_closed: 10,
+			closable: false,
+			resizable: false
+		};
 
-			south: {
+		northLayout = {
+			paneSelector: '#header',
+			size: 75
+		};
+
+		if ($('#footer').length > 0) {	
+			southLayout = {
 				paneSelector: '#footer',
 				size: 30
-			},
+			};
+		} else {
+			southLayout = false;
+		}
 
-			west: {
-				resizable: true,
-				size: 220
-			}, 
+		westLayout = {
+			paneSelector: '#west',
+			resizable: true,
+			size: 220			
+		}; 
 
-			center: {
-				paneSelector: '#center',
-			}
-		})
+		eastLayout = {
+			paneSelector: '#east',
+			closable: true,
+			size: 200
+		};
+
+		centerLayout = {
+			paneSelector: '#center',
+		};
+
+		var options = {
+
+			defaults: defaultLayout,
+			north: northLayout,
+			east: eastLayout,  
+			south: southLayout,
+			west: westLayout, 
+			center: centerLayout
+		};
+		
+		$("body").layout(options);
 		
 	});
  
@@ -74,50 +73,17 @@
 	
 </head>
 <body>
+<div id="west">West Pane</div>
 
-<div class="ui-layout-west"> 
-	<div id="accordion" class="basic"> 
+<div id="east">East Pane</div> 
  
-		<a href="#">Section 1</a> 
-		<div> 
-			<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p> 
-		</div> 
+<div id="center">Center Pane</div> 
  
-		<a href="#">Section 2</a> 
-		<div> 
-			<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p> 
-		</div> 
+<div id="header"> header Pane</div> 
  
-		<a href="#">Section 3</a> 
-		<div> 
-			<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p> 
-			<ul> 
-				<li>List item one</li> 
-				<li>List item two</li> 
-				<li>List item three</li> 
-			</ul> 
-		</div> 
+<div id="footer">Footer Pane</div> 
  
-		<a href="#">Section 4</a> 
-		<div> 
-			<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p> 
-		</div> 
- 
-	</div> 
-</div> 
- 
-<div id="center"> Center Pane 
- 
-	<p><b>NOTE</b>: The Accordion widget in UI v1.7.1 NOW has a 'resize' method.
-		If you were previously using the patched version, 
-		you should now upgrade to jQuery 1.3.2 and UI 1.7.1.</p> 
-</div> 
- 
-<div id="header"></div> 
- 
-<div id="footer"></div> 
- 
-<div class="ui-layout-east"> East Pane </div>
+
 
 </body>
 </html>
