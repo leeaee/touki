@@ -1,8 +1,4 @@
 <div id="sider">
-
-	<div id="addressbar">
-		<fmt:message key="term.admin.create" />
-	</div>
 	
 	<div id="left-center">
 		<div id="side-accordion">

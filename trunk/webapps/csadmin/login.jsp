@@ -1,5 +1,6 @@
 <%@ include file="inc/header.simple.inc.jsp" %>
 
+<div id="container">
 <div class="ui-overlay"><div class="ui-widget-overlay"></div>
 	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:200px; margin:-108px -208px;"></div>
 </div>
@@ -27,6 +28,7 @@
 			</tr>                
 		</table>
 	</form>
+</div>
 </div>
 
 <%@ include file="inc/footer.inc.jsp" %> 
