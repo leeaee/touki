@@ -1,10 +1,9 @@
 
-
 $(document).ready(function() {
 	
-	initLayout();
-	initAccordion();
 	initElements();
+	initAccordion();
+	initLayout();
 	
 });
 
@@ -32,24 +31,26 @@ confirmSubmit = function(obj, methodName, mes){
 
 initLayout = function() {
 	
-	var defaultLayout, bodyNorth, bodySouth, bodyWest, bodyCenter, bodyEast, containerNorth, containerSouth, containerEast, containerCenter, upperWest, upperCenter;
+	var bodyDefault, bodyNorth, bodySouth, bodyWest, bodyCenter;
+	var containerDefault, containerNorth, containerSouth, containerEast, containerCenter;
+	var upperDefault, upperWest, upperCenter;
 	
 	/*-- init body options --*/
-	if ($('#container > center-div').length > 0 && $('#container > loginForm').length > 0) {
-		defaultLayout = {
-				fxName: 'slide',
-				fxSpeed: 'slow',
-				spacing_open: 10,
-				spacing_closed: 10,
-				closable: false,
-				resizable: false
-			};
-	} else {
-		defaultLayout = {
+	if ($('#container > #center-div').length > 0) {
+		bodyDefault = {
 				fxName: 'slide',
 				fxSpeed: 'slow',
 				spacing_open: 0,
 				spacing_closed: 0,
+				closable: false,
+				resizable: false
+			};
+	} else {
+		bodyDefault = {
+				fxName: 'slide',
+				fxSpeed: 'slow',
+				spacing_open: 10,
+				spacing_closed: 10,
 				closable: false,
 				resizable: false
 			};
@@ -65,7 +66,7 @@ initLayout = function() {
 		size: 40
 	};
 
-	if ($('#sider').length > 0) {
+	if ($('#sider').length > 0 && $('#accordion').length > 0) {
 		bodyWest = {
 			paneSelector: '#sider',
 			onresize: function() { $('#accordion').accordion('resize'); },
@@ -76,104 +77,132 @@ initLayout = function() {
 		bodyWest = false;
 	}
 
-	bodyEast = false;
-
 	bodyCenter = {
 		paneSelector: '#container'
 	};
+	
+	var bodyOptions = {
+		defaults: bodyDefault,
+		north: bodyNorth,
+		south: bodySouth,
+		east: false,  		
+		west: bodyWest, 
+		center: bodyCenter
+	};	
 
 	$("body").layout(bodyOptions);	
 	
-	/*-- init container options --*/	
-	if ($('#upper').length > 0) {
-		containerNorth = {
-			paneSelector: '#upper',
-			size: 38
-		};
-	} else {
-		containerNorth = false;
-	}
-	
-	if ($('#downer').length > 0) {
-		containerSouth = {
-			paneSelector: '#downer',
-			size: 38
-		};
-	} else {
-		containerSouth = false;
-	}
-	
-	if ($('#search').length > 0) {
-		containerEast = {
-			paneSelector: '#search',
-			closable: true,
-			spacing_open: 5,
-			spacing_close: 5,
-			togglerLength_open: 150,
-			togglerLength_closed: 150,
-			size: 173
-		};
-	} else {
-		containerEast = false;
-	}
-	
-	if ($('#mainer').length > 0) {
-		containerCenter = {
-			paneSelector: '#mainer'
-		};
-	} else {
-		containerCenter = false;
-	}	
-
-	var containerOptions = {
-		defaults: {
+	/*-- init container options --*/
+	if ($('#container').length > 0) {
+		
+		containerDefault = {
+			fxName: 'slide',
+			fxSpeed: 'slow',		
 			spacing_open: 5,
 			spacing_closed: 5,
 			closable: false,
 			resizable: false
-		},
-		north: containerNorth,
-		south: containerSouth,
-		east: containerEast,  		
-		west: false, 
-		center: containerCenter
-	};
-
-	$("container").layout(containerOptions);		
-	
-	/*-- init upper div options --*/	
-	if ($('#upper-left').length > 0) {
-		upperWest = {
-			paneSelector: '#upper-left',
-			size: 220
 		};
-	} else {
-		upperWest = false;
+			
+		if ($('#upper').length > 0) {
+			containerNorth = {
+				paneSelector: '#upper',
+				size: 38
+			};
+		} else {
+			containerNorth = false;
+		}
+		
+		if ($('#downer').length > 0) {
+			containerSouth = {
+				paneSelector: '#downer',
+				size: 38
+			};
+		} else {
+			containerSouth = false;
+		}
+		
+		if ($('#search').length > 0) {
+			containerEast = {
+				paneSelector: '#search',
+				closable: true,
+				spacing_open: 5,
+				spacing_close: 5,
+				togglerLength_open: 150,
+				togglerLength_closed: 150,
+				size: 173
+			};
+		} else {
+			containerEast = false;
+		}
+		
+		if ($('#mainer').length > 0) {
+			containerCenter = {
+				paneSelector: '#mainer'
+			};
+		} else {
+			containerCenter = false;
+		}	
+	
+		var containerOptions = {
+			defaults: containerDefault,
+			north: containerNorth,
+			south: containerSouth,
+			east: containerEast,  		
+			west: false, 
+			center: containerCenter
+		};
+		
+		if (containerCenter != false) {
+			$("#container").layout(containerOptions);
+		}
 	}
 	
-	if ($('#upper-main').length > 0) {
-		upperCenter = {
-			paneSelector: '#upper-main'
+	/*-- init upper div options --*/
+	if ($('#upper').length > 0) {
+		
+		upperDefault = {
+			spacing_open: 5,
+			spacing_closed: 5,
+			closable: false,
+			resizable: false	
 		};
-	} else {
-		upperCenter = false;
-	}	
-	
-	var upperOptions = {
-			defaults: {
-				spacing_open: 5,
-				spacing_closed: 5,
-				closable: false,
-				resizable: false
-			},
-			north: false,
-			south: false,
-			east: false,  		
-			west: upperWest, 
-			center: upperCenter
-		};
+		
+		if ($('#upper-left').length > 0) {
+			upperWest = {
+				paneSelector: '#upper-left',
+				size: 220
+			};
+		} else {
+			upperWest = false;
+		}
+		
+		if ($('#upper-main').length > 0) {
+			upperCenter = {
+				paneSelector: '#upper-main'
+			};
+		} else {
+			upperCenter = false;
+		}	
+		
+		var upperOptions = {
+				defaults: upperDefault,
+				north: false,
+				south: false,
+				east: false,  		
+				west: upperWest, 
+				center: upperCenter
+			};
+		
+		if (upperCenter != false) {
+			$("#upper").layout(upperOptions);
+		}
+	}			
 
-	$("upper").layout(upperOptions);		
+	/*-- resized accordion --*/
+	if ($("#accordion").length > 0) {
+		$("#accordion").accordion('resize');
+	}		
 	
 };	
 
@@ -226,9 +255,12 @@ initElements = function() {
 
 initAccordion = function() {
 	
-	$('#accordion').accordion({
-		fillSpace: true
-	});	
+	if ($('#accordion').length > 0) {
+		
+		$('#accordion').accordion({
+			fillSpace: true
+		});	
+	}
 };
 
 initDataTable = function(method, text) {
