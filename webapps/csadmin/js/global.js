@@ -1,8 +1,8 @@
 
 $(document).ready(function() {
 	
-	initElements();
 	initAccordion();
+	initElements();	
 	initLayout();
 	
 });

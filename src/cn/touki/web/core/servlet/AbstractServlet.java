@@ -521,6 +521,10 @@ public abstract class AbstractServlet extends HttpServlet {
         return RequestUtils.getRequestIds(req);
     }
     
+    protected static List<Long> getCheckedIds(HttpServletRequest req) throws WebException {
+    	return RequestUtils.getCheckedIds(req);
+    }
+    
     /**
      * 返回请求中的 id 值，若 id 不存在，则返回第一个以 chk_ 开头的属性的值.
      *

@@ -292,7 +292,6 @@ public class HibernateDao<T, PK extends Serializable> extends SimpleHibernateDao
 	 */
 	public Page<T> findPage(final Page<T> page, final List<PropertyFilter> filters) {
 		Criterion[] criterions = buildPropertyFilterCriterions(filters);
-		page.setFilted(!filters.isEmpty());		
 		return findPage(page, criterions);
 	}
 
