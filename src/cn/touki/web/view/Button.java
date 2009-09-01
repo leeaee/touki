@@ -28,7 +28,12 @@ public class Button implements Serializable {
     public static final I18NMessage LABEL_OK = new I18NMessage("act.ok");
 
     /**
-     * 按钮标签"取消"，对应action.cancel.
+     * 按钮标签"取消"，对应act.next.
+     */
+    public static final I18NMessage LABEL_NEXT = new I18NMessage("act.next");
+    
+    /**
+     * 按钮标签"继续"，对应action.continue.
      */
     public static final I18NMessage LABEL_CANCEL = new I18NMessage("act.cancel");
 
