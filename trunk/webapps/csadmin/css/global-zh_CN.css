@@ -26,10 +26,6 @@ html, body {
 
 /* Layout Div elements
 ----------------------------------------*/
-.ui-layout-pane-center { /* center panes */ 
-	overflow: auto;
-}
-
 .ui-layout-pane-east { /* east panes */ 
 	overflow: auto;
 }
@@ -46,7 +42,7 @@ html, body {
 
 
 /*--- Login divs ---*/
-#center-div { /* for login */
+#center-div {
 	top: 50%; 
 	left: 50%; 
 	position: absolute;
@@ -201,8 +197,9 @@ html, body {
 }
 	
 #mainer {
+	overflow: auto;
     background-color: #f4f8fe;
-    border: 1px solid #4b88b5;
+    border: 1px solid #6f95af;
 }
 
 #search {
@@ -215,7 +212,6 @@ html, body {
 
 
 /*--- footer ---*/
-
 #footer {
 	width: 100%;
 	background: url(../img/web/footer.gif) repeat-x top left;
@@ -413,7 +409,7 @@ TABLE.data {
 
 TABLE.data TH {
 	font-family: Microsoft YaHei, tahoma, arial, sans-serif;
-    background-color: #639dc7;
+    background-color: #427191;
     color: #FFFFFF;
     border-left: 1px solid #6f95af;
     border-bottom: 1px solid #c1dad7;
@@ -626,13 +622,14 @@ TABLE.detail TD.keyf {
     background-color: #e7f5ff;
 }
 
+
 /*** login table ***/
 TABLE.login {
 	font-family: Microsoft YaHei, tahoma, arial, sans-serif;
 	font-size: 14px;	
 	width: 320px; 
 	height: 120px;
-	margin: 18px 40px;
+	margin: 25px 40px;
 }
 	
 TABLE.login TD {
