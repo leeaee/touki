@@ -206,13 +206,11 @@ initElements = function() {
 	
 	/*-- init nav --*/
 	var beforeWidth = 0;
-	var navLen = $('.navitem').length;
 	
-	for (var i = 0; i < navLen; i ++) {
-		var navItem = $('.navitem').eq(i);
-		$('.subnav').eq(i).css('left', beforeWidth);
-		beforeWidth = beforeWidth + navItem.width();
-	}
+	$('.navitem').each(function() {
+		$(this > '.subnav').css('left', beforeWidth);
+		beforeWidth = beforeWidth + $(this).width();
+	});	
 	
 	$('.navitem').each(function() {
 		
@@ -251,9 +249,11 @@ initElements = function() {
 
 initAccordion = function() {
 	
-	if ($('#accordion').length > 0) {
+	var sideAccordion = $('#accordion');
+	
+	if (sideAccordion.length > 0) {
 		
-		$('#accordion').accordion({
+		sideAccordion.accordion({
 			fillSpace: true
 		});	
 	}
