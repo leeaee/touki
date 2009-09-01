@@ -38,22 +38,18 @@ initLayout = function() {
 	/*-- init body options --*/
 	if ($('#container > #center-div').length > 0) {
 		bodyDefault = {
-				fxName: 'slide',
-				fxSpeed: 'slow',
-				spacing_open: 0,
-				spacing_closed: 0,
-				closable: false,
-				resizable: false
-			};
+			spacing_open: 0,
+			spacing_closed: 0,
+			closable: false,
+			resizable: false
+		};
 	} else {
 		bodyDefault = {
-				fxName: 'slide',
-				fxSpeed: 'slow',
-				spacing_open: 10,
-				spacing_closed: 10,
-				closable: false,
-				resizable: false
-			};
+			spacing_open: 10,
+			spacing_closed: 10,
+			closable: false,
+			resizable: false
+		};
 	}
 
 	bodyNorth = {
@@ -90,7 +86,7 @@ initLayout = function() {
 		center: bodyCenter
 	};	
 
-	$("body").layout(bodyOptions);	
+	$('body').layout(bodyOptions);	
 	
 	/*-- init container options --*/
 	if ($('#container').length > 0) {

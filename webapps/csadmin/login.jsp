@@ -1,6 +1,6 @@
 <%@ include file="inc/header.simple.inc.jsp" %>
 
-<div id="container">
+<div id="container" style="padding: 0; margin: 0;">
 
 <div class="ui-overlay"><div class="ui-widget-overlay"></div>
 	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:220px; margin:-158px -208px;"></div>
@@ -12,7 +12,7 @@
 	</div>
 	<form id="loginForm" name="loginForm" action="./login" method="post">
 	<input type="hidden" name="method" value="login" />        
-		<table border="0" class="login">
+		<table class="login">
 			<tr>
 				<td width="55"><label class="caption"><fmt:message key="term.username" /></label></td>
 				<td class="left"><input type="text" id="username" name="username" class="text" style="font-family:tahoma, arial;" maxlength="63" size="30" value="admin" /></td>

@@ -19,9 +19,5 @@
 <body>
 
 <div id="header">
-
-<div id="navmenu">
 	<ul id="nav"></ul>
-</div>
-
 </div>
