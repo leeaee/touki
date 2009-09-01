@@ -150,7 +150,7 @@ initLayout = function() {
 		};
 		
 		if (containerCenter != false) {
-			$("#container").layout(containerOptions);
+			$('#container').layout(containerOptions);
 		}
 	}
 	
@@ -191,13 +191,13 @@ initLayout = function() {
 			};
 		
 		if (upperCenter != false) {
-			$("#upper").layout(upperOptions);
+			$('#upper').layout(upperOptions);
 		}
 	}			
 
 	/*-- resized accordion --*/
-	if ($("#accordion").length > 0) {
-		$("#accordion").accordion('resize');
+	if ($('#accordion').length > 0) {
+		$('#accordion').accordion('resize');
 	}		
 	
 };	
@@ -265,7 +265,7 @@ initDataTable = function(method, text) {
 	if ($('#dialog').length > 0) {
 		
 		var buttons = {};
-		buttons[text] = function() { $(this).dialog("close"); };
+		buttons[text] = function() { $(this).dialog('close'); };
 		
 		$('#dialog').dialog({
 			autoOpen: false, resizable: false,
