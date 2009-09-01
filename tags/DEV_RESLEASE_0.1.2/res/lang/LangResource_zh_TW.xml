@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>eWork 7.0 Web Server 繁體中文語言资源</comment>
+    
+    <entry key="exception.null.pointer">網路正忙，請稍後再試！(NP) ({0})</entry>
+    <entry key="exception.runtime">網路正忙，請稍後再試！(RT) ({0})</entry>
+    <entry key="exception.blank">{0}</entry>
+    <entry key="exception.entity.missing">{0} &lt;b&gt;{1}&lt;/b&gt; 不存在！</entry>
+    <entry key="exception.entity.exist">{0} &lt;b&gt;{1}&lt;/b&gt; 已經存在！</entry>
+    <entry key="exception.entity.paused">{0} &lt;b&gt;{1}&lt;/b&gt; 已被暫停！</entry>
+    <entry key="exception.login.failed">登入失敗！</entry>
+    <entry key="exception.login.failed.reason">登入失敗！ {0}</entry>
+    <entry key="exception.password.unmatch">您兩次輸入的密碼不匹配！</entry>
+    <entry key="entity.user">用戶</entry>
+
+    <entry key="menu.user">用戶服務</entry>
+    <entry key="menu.bizinfo">商務資訊</entry>
+    <entry key="menu.community">EWORK社區</entry>
+    <entry key="menu.download">免費下載</entry>
+    <entry key="menu.product">產品介紹</entry>
+    <entry key="menu.coop">合作加盟</entry>
+
+    <entry key="term.public.title">eWork&amp;trade; | 即時電子工作系統</entry>
+    <entry key="term.faq">常見問題</entry>
+    <entry key="term.contact">聯繫我們</entry>
+    <entry key="term.about">關於我們</entry>
+    <entry key="term.favor">加入收藏</entry>
+    <entry key="term.terms">使用條款</entry>
+    <entry key="term.jobopp">工作機會</entry>
+    <entry key="term.copyright">&amp;copy;1994-2005 廣聯集團 版權所有</entry>
+
+</properties>
