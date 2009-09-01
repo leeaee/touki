@@ -10,8 +10,8 @@
 	<meta http-equiv="cache-control" content="no-cache, must-revalidate" />   
 	<meta http-equiv="expires" content="0" />
 	<link rel="stylesheet" type="text/css" href="./css/global-${f:l2s(userLocale)}.css" media="all" />	
-	<script type="text/javascript" src="./js/jquery/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript" src="./js/jquery/jquery-ui-1.7.1.custom.min.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-layout.min.js"></script>	
 	<script type="text/javascript" src="./js/global.js"></script>
 </head>

@@ -9,7 +9,7 @@ Copyright:
 /* Imports
 ----------------------------------------*/
 @import url("reset.css");
-@import url("jquery-ui-1.7.1.css");
+@import url("jquery-ui.css");
 
 
 /* Global
@@ -199,7 +199,10 @@ html, body {
 #mainer {
 	overflow: auto;
     background-color: #f4f8fe;
-    border: 1px solid #6f95af;
+    border-left: 1px solid #a6c9e2 ;
+    border-right: 1px solid #a6c9e2;
+    border-top: 1px solid #c1dad7;
+    border-bottom: 1px solid #c1dad7;
 }
 
 #search {
