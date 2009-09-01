@@ -73,11 +73,6 @@ public class Page<T> {
 	protected boolean autoCount = true;	
 	
 	/**
-	 * 是否有过滤条件
-	 */
-	protected boolean filted;		
-
-	/**
 	 * 对象结果
 	 */
 	protected List<T> result = Collections.emptyList();
@@ -267,20 +262,9 @@ public class Page<T> {
 		this.autoCount = autoCount;
 	}
 
+	
 	// 查询结果函数
 
-	
-	/**
-	 * 是否有查询参数.
-	 */
-	public boolean isFilted() {
-		return filted;
-	}
-
-	public void setFilted(boolean filted) {
-		this.filted = filted;
-	}	
-	
 	/**
 	 * 取得页内的记录列表.
 	 */

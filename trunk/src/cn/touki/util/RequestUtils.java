@@ -56,6 +56,29 @@ public class RequestUtils {
 
         return ids;
     }
+    
+    /**
+     * 从请求的 Request 中解析 id 和 chk_xxx 的值，并构架一个链表返回. <p/>若 id 的值存在，则返回只有一个节点的链表，值为该 id 的值，否则链表为所有以 'chk_' 开头的属性的值.
+     * 
+     * @return List<Long>
+     */
+    public static List<Long> getCheckedIds(HttpServletRequest req) throws WebException {
+    	
+    	List<Long> ids = getRequestCheckedIds(req);
+    	
+    	if (ids.size() == 0) {
+    		Long id = Long.valueOf(req.getParameter("id"));
+    		if (id != null) {
+    			ids.add(id);
+    		}
+    	}
+    	
+    	if (ids.size() == 0) {
+    		throw new WebException("exception.id");
+    	}
+    	
+    	return ids;
+    }
 
     /**
      * 获得正确的参数值.通过表单提交的参数值不进行转码，通过分页标签url提交的参数进行转码（须保证url上的参数值是经过UTF-8编码过）.分页
@@ -156,6 +179,33 @@ public class RequestUtils {
         }
 
         return ids;
+    }
+    
+    /**
+     * 返回 request 中所有以 '{@code chk_}' 开头的属性值.
+     * 
+     * @param req HttpServletRequest
+     * @return 字符串链表
+     */
+    public static List<Long> getRequestCheckedIds(HttpServletRequest req) {
+    	
+    	List<Long> ids = new ArrayList<Long>();
+    	
+    	Enumeration<?> names = req.getParameterNames();
+    	while (names.hasMoreElements()) {
+    		String name = (String) names.nextElement();
+    		if (name.startsWith("chk_")) {
+    			if (req.getMethod().equalsIgnoreCase("GET")||req.getParameter(name).indexOf("%")>-1) {
+    				ids.add(Long.valueOf(urlDecode(req.getParameter(name))));
+    				continue;
+    			}
+    			if(req.getMethod().equalsIgnoreCase("POST")){
+    				ids.add(Long.valueOf(req.getParameter(name)));
+    			}
+    		}
+    	}
+    	
+    	return ids;
     }
 
     /**

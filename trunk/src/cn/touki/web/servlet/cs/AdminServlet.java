@@ -153,11 +153,11 @@ public class AdminServlet extends AbstractServlet {
     public void onAdminDoDelete(HttpServletRequest req, HttpServletResponse res) 
 	    	throws IOException, ServletException, WebException {
 	    	
-        List<String> ids = getRequestIds(req);
+        List<Long> ids = getCheckedIds(req);
         int deleted = 0;
 
-        for (String id : ids) {
-            adminService.deleteAdmin(Long.valueOf(id));
+        for (Long id : ids) {
+            adminService.deleteAdmin(id);
             deleted ++;
         }
 
