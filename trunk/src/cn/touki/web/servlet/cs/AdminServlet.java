@@ -1,6 +1,7 @@
 package cn.touki.web.servlet.cs;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -86,10 +87,14 @@ public class AdminServlet extends AbstractServlet {
         adminService.createAdmin(admin);
 
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", admin.getAdminId()));
-        Button button = new Button(Button.LABEL_OK, "");
-        button.setAction("location.href = './admin.do'");
+        
+        List<Button> buttons = new ArrayList<Button>();
+        Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './admin.do?method=adminPreCreate'");
+        buttons.add(bttnNext);        
+        Button bttnBack = new Button(Button.LABEL_BACK, "location.href = './admin.do'");
+        buttons.add(bttnBack);        
 
-        handleMessage(req, res, message, button);
+        handleMessage(req, res, message, buttons);
     }
     
 	/**
@@ -157,8 +162,7 @@ public class AdminServlet extends AbstractServlet {
         }
 
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.delete", deleted));
-        Button button = new Button(Button.LABEL_OK, "");
-        button.setAction("location.href = './admin.do'");
+        Button button = new Button(Button.LABEL_OK, "location.href = './admin.do'");
 
         handleMessage(req, res, message, button);
 	}	    
