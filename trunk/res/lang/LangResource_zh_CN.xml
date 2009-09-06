@@ -15,6 +15,7 @@
     <entry key="exception.entity.missing">{0} &lt;b&gt;{1}&lt;/b&gt; 不存在！</entry>
     <entry key="exception.entity.exist">{0} &lt;b&gt;{1}&lt;/b&gt; 已经存在！</entry>
     <entry key="exception.entity.paused">{0} &lt;b&gt;{1}&lt;/b&gt; 没有登陆权限,请与管理员联系！</entry>
+	<entry key="exception.entity.defaultdelete">无法删除默认{0} &lt;b&gt;{1}&lt;/b&gt;！</entry>
     <entry key="exception.invalid.property">您输入的{0} &lt;b&gt;{1}&lt;/b&gt; 不正确！</entry>
     <entry key="exception.id">请输入正确的 ID，或者在列表中选定操作对象后再试！</entry>
     <entry key="exception.login.failed">登录失败！</entry>
@@ -101,6 +102,7 @@
 
     <!-- 实体名称 -->
     <entry key="entity.admin">管理员用户</entry>
+    <entry key="entity.role">角色</entry>
     <entry key="entity.user">用户</entry>
     <entry key="entity.user.old">eLink 2005 / eWork 6.x 用户</entry>
     <entry key="entity.user_account">用户个人帐户</entry>
@@ -277,7 +279,8 @@
     <entry key="option.lu.operation.overwrite">覆盖</entry>
 
     <!-- 实体属性 -->
-    <entry key="prop.admin.id">用户名</entry>
+    <entry key="prop.adminId">用户名</entry>
+    <entry key="prop.adminRole">角色</entry>
     <entry key="prop.truename">真实姓名</entry>
     <entry key="prop.age">年龄</entry>
     <entry key="prop.agerange">年龄段</entry>

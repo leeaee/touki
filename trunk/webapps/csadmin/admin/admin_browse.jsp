@@ -28,12 +28,13 @@
 			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">
 				<input type="checkbox" id="chk_${admin_rowNum}" name="chk_${admin_rowNum}" value="${admin.id}" class="ckbox" />
 			</display:column>
-			<display:column titleKey="prop.admin.id" property="adminId" sortable="true" sortProperty="adminId" />
+			<display:column titleKey="prop.adminId" property="adminId" sortable="true" sortProperty="adminId" />
 			<display:column titleKey="prop.truename" property="trueName" sortable="true" sortProperty="trueName" />
 			<display:column titleKey="prop.phone" property="phone" sortable="true" sortProperty="phone" />
 			<display:column titleKey="prop.mobile" property="mobile" sortable="true" sortProperty="mobile" />
 			<display:column titleKey="prop.email" property="email" sortable="true" sortProperty="email" />
 			<display:column titleKey="prop.state" sortable="true" sortProperty="state">${f:state(admin.state, userLocale)}</display:column>
+			<display:column titleKey="prop.adminRole" property="roleNames" sortable="true" sortProperty="roleNames" />
 			<display:column titleKey="prop.lastlogintime" property="lastLogin" sortable="true" sortProperty="lastLogin" decorator="dateDecorator" class="right" headerClass="right" />
 		</display:table>
 	</div>

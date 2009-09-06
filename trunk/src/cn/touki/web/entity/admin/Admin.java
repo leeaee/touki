@@ -1,23 +1,35 @@
 package cn.touki.web.entity.admin;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
+import cn.touki.web.core.utils.ReflectionUtils;
 import cn.touki.web.entity.common.Common;
 import cn.touki.web.entity.common.Stateful;
 
 @Entity
-@Table(name="admin")
+@Table(name="cs_admin")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Admin extends Common implements Stateful, Serializable {
 	
-	private static final long serialVersionUID = -3312361139361161036L;
+	private static final long serialVersionUID = 1L;
 	public static final String KEY = "entity.admin";
 	
 	/* -- Bean Properties -- */
@@ -29,6 +41,9 @@ public class Admin extends Common implements Stateful, Serializable {
 	private String email;
 	private Integer state;
 	private Long lastLogin;
+	private Long lastModify;
+	
+	private Set<Role> roles = new LinkedHashSet<Role>(); //有序的关联对象集合.	
 	
 	//Constructor
 	public Admin() {
@@ -105,5 +120,50 @@ public class Admin extends Common implements Stateful, Serializable {
 	public void setState(Integer state) {
 		this.state = state;
 	}
+
+	@Column(name="last_modify")
+	public Long getLastModify() {
+		return lastModify;
+	}
+
+	public void setLastModify(Long lastModify) {
+		this.lastModify = lastModify;
+	}
+	
+	//多对多定义
+	@ManyToMany
+	//中间表定义,表名采用默认命名规则
+	@JoinTable(name = "cs_admin_x_role", joinColumns = { @JoinColumn(name = "admin_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
+	//Fecth策略定义
+	@Fetch(FetchMode.SUBSELECT)
+	//集合按id排序.
+	@OrderBy("id")
+	//集合中对象id的缓存.
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	//非持久化属性.
+	@Transient
+	public String getRoleNames() {
+		return ReflectionUtils.fetchElementPropertyToString(roles, "roleName", ", ");
+	}
+
+	//非持久化属性.
+	@Transient
+	@SuppressWarnings("unchecked")
+	public List<Long> getRoleIds() {
+		return ReflectionUtils.fetchElementPropertyToList(roles, "id");
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}	
 
 }
