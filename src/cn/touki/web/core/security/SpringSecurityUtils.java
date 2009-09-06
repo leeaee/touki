@@ -1,9 +1,3 @@
-/**
- * Copyright (c) 2005-2009 springside.org.cn
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * 
- */
 package cn.touki.web.core.security;
 
 import org.springframework.security.Authentication;
@@ -18,7 +12,7 @@ import org.springframework.security.userdetails.User;
 public class SpringSecurityUtils {
 
 	/**
-	 * 取得当前用户的登录名,如果当前用户未登录则返回null.
+	 * 取得当前用户的登录名,如果当前用户未登录则返回 null.
 	 */
 	public static String getCurrentUserName() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
