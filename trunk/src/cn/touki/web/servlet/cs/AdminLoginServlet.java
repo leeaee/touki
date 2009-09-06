@@ -37,7 +37,7 @@ public class AdminLoginServlet extends AbstractServlet {
     public void onDefault(HttpServletRequest req, HttpServletResponse res)
             throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
         
-        onLogin(req, res);
+    	req.getRequestDispatcher("/login.jsp").forward(req, res);
     }
 
     /**

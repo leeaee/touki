@@ -2,6 +2,8 @@
 	java.util.List,
 	java.util.Enumeration,
 	java.util.Locale,
+	org.springframework.security.ui.webapp.AuthenticationProcessingFilter,
+	org.springframework.security.AuthenticationException,
 	org.displaytag.tags.el.ELSetPropertyTag,
 	cn.touki.web.core.servlet.Constants,
 	cn.touki.i18n.I18NDictionary,
@@ -13,6 +15,7 @@
 <%@ taglib prefix="f" uri="/WEB-INF/tld/f.tld" %>
 <%@ taglib prefix="fmt" uri="/WEB-INF/tld/taglibs-i18n.tld" %>
 <%@ taglib prefix="html" uri="/WEB-INF/tld/html.tld" %>
+<%@ taglib prefix="sec" uri="/WEB-INF/tld/security.tld" %>
 <fmt:bundle baseName="cn.touki.i18n.resource.LangResource" localeRef="<%=Constants.USER_LOCALE_KEY%>" scope="session" />
 <%
 	final String htmlHeaderCheck = "<input type=\"checkbox\" id=\"check-all\" class=\"ckbox\" name=\"check-all\" />";

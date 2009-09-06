@@ -29,7 +29,7 @@
 			<td class="f" colspan="4"></td>
 		</tr>
 	    <tr>
-	        <td class="keyf"><fmt:message key="prop.admin.id" /></td>
+	        <td class="keyf"><fmt:message key="prop.adminId" /></td>
 	        <td class="v"><input type="text" name="adminId" size="30" maxlength="63" class="text" /></td>
 	        <td class="df"><fmt:message key="prop.truename" /></td>
 	        <td class="v"><input type="text" name="trueName" size="30" maxlength="63" class="text" /></td>

@@ -26,7 +26,7 @@
 <div id="header">
 
 	<div id="banner">
-		${curUser.adminId} <span style="color: #333333">&bull;</span> <a href="./login?method=logout"><fmt:message key="term.user.logout" /></a>
+		${curUser.adminId} <span style="color: #333333">&bull;</span> <a href="./j_spring_security_logout"><fmt:message key="term.user.logout" /></a>
 	</div>
 	
 	<ul id="nav"> 

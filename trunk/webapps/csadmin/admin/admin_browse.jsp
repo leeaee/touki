@@ -45,7 +45,7 @@
 				<th><fmt:message key="term.searchform" /></th>
 			</tr>			
 			<tr><td>
-				<div class="label"><fmt:message key="prop.admin.id"/></div>
+				<div class="label"><fmt:message key="prop.adminId"/></div>
 				<input type="text" name="filter_LIKE_adminId" size="28" maxlength="127" class="para" value="${param['filter_LIKE_adminId']}" />
 			</td></tr>
 			<tr><td>

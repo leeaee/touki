@@ -12,9 +12,9 @@ insert into cs_authority (id, name, display_name) values (3, 'a_view_role', '查
 insert into cs_authority (id, name, display_name) values (4, 'a_modify_role', '管理角色');
 
 
-insert into cs_resource (id, resource_type, value, position) values(1, 'url', '/security/user!save*', 1.0);
-insert into cs_resource (id, resource_type, value, position) values(2, 'url', '/security/user!delete*', 2.0);
-insert into cs_resource (id, resource_type, value, position) values(3, 'url', '/security/user*', 3.0);
+insert into cs_resource (id, resource_type, value, position) values(1, 'url', '/admin.do?method=adminPreCreate*', 1.0);
+insert into cs_resource (id, resource_type, value, position) values(2, 'url', '/admin.do?method=adminDoDelete*', 2.0);
+insert into cs_resource (id, resource_type, value, position) values(3, 'url', '/admin.do*', 3.0);
 insert into cs_resource (id, resource_type, value, position) values(4, 'url', '/security/role!save*', 4.0);
 insert into cs_resource (id, resource_type, value, position) values(5, 'url', '/security/role!delete*', 5.0);
 insert into cs_resource (id, resource_type, value, position) values(6, 'url', '/security/role*', 6.0);
