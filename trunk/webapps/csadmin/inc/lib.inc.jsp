@@ -6,6 +6,7 @@
 	org.springframework.security.AuthenticationException,
 	org.displaytag.tags.el.ELSetPropertyTag,
 	cn.touki.web.core.servlet.Constants,
+	cn.touki.web.core.security.SpringSecurityUtils,
 	cn.touki.i18n.I18NDictionary,
 	cn.touki.util.StringUtils,cn.touki.web.taglib.displaytag.DateDecorator,
 	cn.touki.web.entity.common.Stateful,
@@ -27,13 +28,13 @@
     }
     
     Locale userLocale = (Locale) session.getAttribute(Constants.USER_LOCALE_KEY);
-    Admin curUser = (Admin) session.getAttribute(Constants.LOGIN_USER);
+    String adminName = SpringSecurityUtils.getCurrentUserName();
     DateDecorator dateDecorator = new DateDecorator();
 	
 	// Set for JSTL
 	pageContext.setAttribute("htmlHeaderCheck", htmlHeaderCheck);
 	pageContext.setAttribute("baseUri", baseUri);
 	pageContext.setAttribute("userLocale", userLocale);
-	pageContext.setAttribute("curUser", curUser);
+	pageContext.setAttribute("adminName", adminName);
 	pageContext.setAttribute("dateDecorator", dateDecorator);
 %>
