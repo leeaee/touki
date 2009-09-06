@@ -13,6 +13,7 @@ import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.entity.admin.Admin;
 import cn.touki.web.exception.EntityAlreadyExistException;
+import cn.touki.web.exception.EntityDefaultDeleteException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.EntityPausedException;
 import cn.touki.web.exception.LoginException;
@@ -69,6 +70,7 @@ public class AdminService {
 		admin.setLastLogin(System.currentTimeMillis());
 		adminDao.save(admin);
 		
+		logger.debug("Login admin: {}.",  adminId);
 		return admin;
     }
 	
@@ -92,12 +94,12 @@ public class AdminService {
     	adminDao.merge(admin);
     }
     
-	public void deleteAdmin(Long id) throws EntityNotFoundException {
+	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityDefaultDeleteException {
 		
 		Admin admin = getAdmin(id);
 		
 		if (admin.getId() == 1 || admin.getAdminId().equalsIgnoreCase("admin")) {
-						
+			throw new EntityDefaultDeleteException(Admin.KEY, "admin");		
 		}
 		
 		adminDao.delete(id);

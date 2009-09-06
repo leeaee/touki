@@ -5,7 +5,7 @@
 		<td class="f" colspan="2"></td>
 	</tr>
     <tr>
-        <td class="keyf"><fmt:message key="prop.admin.id"/></td>
+        <td class="keyf"><fmt:message key="prop.adminId"/></td>
         <td class="v">${admin.adminId}</td>
     </tr>
     <tr>
@@ -27,6 +27,10 @@
     <tr>
         <td class="keyf"><fmt:message key="prop.state"/></td>
         <td class="v">${f:state(admin.state, userLocale)}</td>
+    </tr>
+    <tr>
+        <td class="keyf"><fmt:message key="prop.adminRole"/></td>
+        <td class="v">${admin.roleNames}</td>
     </tr>
     <tr>
         <td class="keyf"><fmt:message key="prop.lastlogintime"/></td>

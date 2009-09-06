@@ -1,19 +1,40 @@
-insert into admin (
-	id
-	,admin_id
-	,password
-	,true_name
-	,state
-	,last_login
-	,create_time
-	,last_modify
-) VALUES (
-	0 -- id
-	,'admin' -- admin_id
-	,'96e79218965eb72c92a549dd5a330112' -- password
-	,'administrator' -- true_name
-	,0 -- state
-	,111111111111 -- last_login
-	,111111111111 -- create_time
-	,111111111111 -- last_modify
-)
+insert into cs_admin (id, admin_id, password, true_name) values (1, 'admin', '96e79218965eb72c92a549dd5a330112', 'leeaee');
+insert into cs_admin (id, admin_id, password, true_name) values (2, 'advis', '96e79218965eb72c92a549dd5a330112', 'roger');
+
+
+insert into cs_role (id, role_name) values (1, 'administrator');
+insert into cs_role (id, role_name) values (2, 'advisor');
+
+
+insert into cs_authority (id, name, display_name) values (1, 'a_view_admin', '查看用户');
+insert into cs_authority (id, name, display_name) values (2, 'a_modify_admin', '管理用户');
+insert into cs_authority (id, name, display_name) values (3, 'a_view_role', '查看角色');
+insert into cs_authority (id, name, display_name) values (4, 'a_modify_role', '管理角色');
+
+
+insert into cs_resource (id, resource_type, value, position) values(1, 'url', '/security/user!save*', 1.0);
+insert into cs_resource (id, resource_type, value, position) values(2, 'url', '/security/user!delete*', 2.0);
+insert into cs_resource (id, resource_type, value, position) values(3, 'url', '/security/user*', 3.0);
+insert into cs_resource (id, resource_type, value, position) values(4, 'url', '/security/role!save*', 4.0);
+insert into cs_resource (id, resource_type, value, position) values(5, 'url', '/security/role!delete*', 5.0);
+insert into cs_resource (id, resource_type, value, position) values(6, 'url', '/security/role*', 6.0);
+
+
+insert into cs_admin_x_role values(1, 1);
+insert into cs_admin_x_role values(1, 2);
+
+
+insert into cs_role_x_authority values(1, 1);
+insert into cs_role_x_authority values(1, 2);
+insert into cs_role_x_authority values(1, 3);
+insert into cs_role_x_authority values(1, 4);
+insert into cs_role_x_authority values(2, 1);
+insert into cs_role_x_authority values(2, 3);
+
+
+insert into cs_resource_x_authority values(2, 1);
+insert into cs_resource_x_authority values(2, 2);
+insert into cs_resource_x_authority values(1, 3);
+insert into cs_resource_x_authority values(4, 4);
+insert into cs_resource_x_authority values(4, 5);
+insert into cs_resource_x_authority values(3, 6);

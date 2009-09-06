@@ -14,6 +14,7 @@
     <entry key="exception.entity.missing">{0} &lt;b&gt;{1}&lt;/b&gt; was not found! </entry>
     <entry key="exception.entity.exist">{0} &lt;b&gt;{1}&lt;/b&gt; has already existed! </entry>
     <entry key="exception.entity.paused">{0} &lt;b&gt;{1}&lt;/b&gt; has been paused! </entry>
+	<entry key="exception.entity.defaultdelete">The default {0} &lt;b&gt;{1}&lt;/b&gt; is not allowed to be deleted!</entry>    
     <entry key="exception.invalid.property">The {0} &lt;b&gt;{1}&lt;/b&gt; you input is invalid! </entry>
     <entry key="exception.id">You haven't provided a correct ID, or selected any entries in the listing table! </entry>
     <entry key="exception.login.failed">Login failed! </entry>
@@ -86,6 +87,7 @@
     
 
     <entry key="entity.admin">Administrator</entry>
+    <entry key="entity.role">Role</entry>    
     <entry key="entity.user">User</entry>
     <entry key="entity.user.old">User of eLink 2005 / eWork 6.x</entry>
     <entry key="entity.user_account">User Account</entry>
@@ -254,7 +256,8 @@
 
     <entry key="config.conn.type">Connection Type</entry>
 
-    <entry key="prop.admin.id">administrator ID</entry>
+    <entry key="prop.adminId">Identification</entry>
+    <entry key="prop.adminRole">Role</entry>    
     <entry key="prop.truename">name</entry>
     <entry key="prop.age">age</entry>
     <entry key="prop.agerange">age range</entry>

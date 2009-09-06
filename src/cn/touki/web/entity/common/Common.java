@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.SequenceGenerator;
 
 @MappedSuperclass
 public class Common implements Serializable {
@@ -20,11 +19,9 @@ public class Common implements Serializable {
 	
 	private Long createTime;
 	
-	private Long lastModify;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "SEQ_GEN", sequenceName = "s_sim_admin")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}
@@ -48,15 +45,6 @@ public class Common implements Serializable {
 
 	public void setCreateTime(Long createTime) {
 		this.createTime = createTime;
-	}
-
-	@Column(name="last_modify")
-	public Long getLastModify() {
-		return lastModify;
-	}
-
-	public void setLastModify(Long lastModify) {
-		this.lastModify = lastModify;
 	}
 	
 }
