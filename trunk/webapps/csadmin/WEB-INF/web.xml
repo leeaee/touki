@@ -57,15 +57,13 @@
 	
 	<!-- Privilege -->
 	<filter>
-		<filter-name>UserPrivilegeFilter</filter-name>
-		<filter-class>cn.touki.web.filter.UserPrivilegeFilter</filter-class>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	
 	<filter-mapping>
-		<filter-name>UserPrivilegeFilter</filter-name>
-		<url-pattern>*.do</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>				
 		
 	<!--Spring ApplicationContext 载入 -->
