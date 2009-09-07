@@ -7,7 +7,6 @@ import org.springframework.security.userdetails.User;
 /**
  * SpringSecurity的工具类.
  * 
- * @author Liyi
  */
 public class SpringSecurityUtils {
 

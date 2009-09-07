@@ -38,11 +38,11 @@ public interface Constants {
 
     public static final String EXPANDED_NODES = "session-attr-expanded-nodes";
 
-    public static final String PAGE_EXCEPTION = "/WEB-INF/content/exception.jsp";
+    public static final String PAGE_EXCEPTION = "/WEB-INF/jsp/exception.jsp";
 
-    public static final String PAGE_MESSAGE = "/WEB-INF/content/message.jsp";
+    public static final String PAGE_MESSAGE = "/WEB-INF/jsp/message.jsp";
 
-    public static final String PAGE_LOGIN = "/login.jsp";
+    public static final String PAGE_LOGIN = "/WEB-INF/jsp/login.jsp";
 
     public static final String PAGE_INDEX = "/";
 

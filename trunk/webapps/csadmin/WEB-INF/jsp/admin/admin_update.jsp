@@ -21,7 +21,7 @@
 				<td><nobr>
 					<input type="submit" value="<fmt:message key="act.save" />" class="bttn" />
 					<input type="reset" value="<fmt:message key="act.reset" />" class="bttn" />
-					<input type="button" value="<fmt:message key="act.back" />" class="bttn" onclick="location.href = './admin.do'" />
+					<input type="button" value="<fmt:message key="act.back" />" class="bttn" onclick="location.href = './admin'" />
 				</nobr></td>
 			</tr>
 		</table></div>
