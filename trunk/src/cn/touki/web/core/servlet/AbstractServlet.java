@@ -111,7 +111,7 @@ public abstract class AbstractServlet extends HttpServlet {
 
     protected static final String DEFAULT_CHARSET = "UTF-8";
     
-    protected static final String PAGE_ROOT_PATH = "/WEB-INF/page";
+    protected static final String PAGE_ROOT_PATH = "/WEB-INF/jsp";
 
     private static final String DEFAULT_I18N_RES = "/i18nres/";
     
