@@ -53,7 +53,7 @@ public class AdminServlet extends AbstractServlet {
 		page = adminService.searchAdmin(page, filters);
     	
     	req.setAttribute("page", page);
-    	req.getRequestDispatcher("/admin/admin_browse.jsp").forward(req, res);
+    	req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_browse.jsp").forward(req, res);
 	}
     
 	/**
@@ -66,7 +66,7 @@ public class AdminServlet extends AbstractServlet {
     	Admin admin = adminService.getAdmin(id);
 	
     	req.setAttribute("admin", admin);
-    	req.getRequestDispatcher("/admin/admin_detail.inc.jsp").forward(req, res);
+    	req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_detail.inc.jsp").forward(req, res);
 	}	
 	
 	/**
@@ -75,7 +75,7 @@ public class AdminServlet extends AbstractServlet {
     public void onAdminPreCreate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException {
 
-        req.getRequestDispatcher("/admin/admin_create.jsp").forward(req, res);
+        req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_create.jsp").forward(req, res);
     }	
     
     public void onAdminDoCreate(HttpServletRequest req, HttpServletResponse res) 
@@ -107,7 +107,7 @@ public class AdminServlet extends AbstractServlet {
     	Admin admin = adminService.getAdmin(id);	
     	
     	req.setAttribute("admin", admin);
-        req.getRequestDispatcher("/admin/admin_update.jsp").forward(req, res);
+        req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_update.jsp").forward(req, res);
     }
     
     public void onAdminPreUpdateSelf(HttpServletRequest req, HttpServletResponse res)
@@ -116,7 +116,7 @@ public class AdminServlet extends AbstractServlet {
 		Admin admin = (Admin) req.getSession().getAttribute(Constants.LOGIN_USER);
 		
 		req.setAttribute("admin", admin);
-		req.getRequestDispatcher("/admin/admin_update.jsp").forward(req, res);
+		req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_update.jsp").forward(req, res);
 	}    
     
     public void onAdminDoUpdate(HttpServletRequest req, HttpServletResponse res) 

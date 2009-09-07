@@ -10,7 +10,7 @@
 
 <%@ taglib prefix="web" uri="/WEB-INF/tld/web.tld" %>
 
-<%@ include file="/inc/header.simple.inc.jsp" %>
+<%@ include file="inc/header.simple.inc.jsp" %>
 
 <table id="btnTable" width="100%" height="28" cellpadding="0" cellspacing="0" border="0" class="btnbar">
 	<tr>
@@ -31,4 +31,4 @@
     </tr>
 </table>
 
-<%@ include file="/inc/footer.inc.jsp" %>
+<%@ include file="inc/footer.inc.jsp" %>

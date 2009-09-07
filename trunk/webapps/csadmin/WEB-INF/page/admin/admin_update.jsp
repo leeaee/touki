@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="/inc/header.inc.jsp" %>
-<%@ include file="/inc/sider.inc.jsp" %>
+<%@ include file="../inc/header.inc.jsp" %>
+<%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
 <form id="adminUpdateForm" name="adminUpdateForm" action="./admin.do" method="post">
@@ -72,4 +72,4 @@
 </form>
 </div>
 
-<%@ include file="/inc/footer.inc.jsp" %>
+<%@ include file="../inc/footer.inc.jsp" %>
