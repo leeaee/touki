@@ -3,7 +3,7 @@
 <%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
-<form id="adminUpdateForm" name="adminUpdateForm" action="./admin.do" method="post">
+<form id="adminUpdateForm" name="adminUpdateForm" action="./admin" method="post">
 
 	<input type="hidden" name="validator" value="adminValidator" />
 
