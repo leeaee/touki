@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.annotation.Secured;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,8 +16,6 @@ import cn.touki.web.entity.admin.Admin;
 import cn.touki.web.exception.EntityAlreadyExistException;
 import cn.touki.web.exception.EntityDefaultDeleteException;
 import cn.touki.web.exception.EntityNotFoundException;
-import cn.touki.web.exception.EntityPausedException;
-import cn.touki.web.exception.LoginException;
 import cn.touki.web.service.dao.AdminDao;
 
 @Service("AdminService")
@@ -34,7 +33,7 @@ public class AdminService {
 	}	
 	
 	@Transactional(readOnly = true)
-	public Admin getAdmin(Long id) throws EntityNotFoundException {
+	public Admin getAdmin(Long id) {
 		
 		Admin admin = adminDao.get(id);
 		
@@ -55,17 +54,9 @@ public class AdminService {
 		return admin; 
 	}
 	
-	public Admin login(String adminId, String password) throws LoginException, EntityNotFoundException, EntityPausedException {
+	public Admin login(String adminId) {
         
-		Admin admin = getAdmin(adminId);
-		
-		if (!password.equals(admin.getPassword())) {
-		    throw new LoginException(LoginException.REASON_INVALID_PWD);
-		}
-		
-		if (admin.getState() != Admin.NORMAL && admin.getState() != Admin.WARNING) {
-			throw new EntityPausedException(Admin.KEY, adminId);
-		}
+		Admin admin = adminDao.getAdminById(adminId);
 		
 		admin.setLastLogin(System.currentTimeMillis());
 		adminDao.save(admin);
@@ -74,6 +65,7 @@ public class AdminService {
 		return admin;
     }
 	
+	@Secured({"a_manage_admin"})
     public void createAdmin(Admin admin) throws EntityAlreadyExistException {
     	
 		Admin obj = adminDao.getAdminById(admin.getAdminId());
@@ -88,12 +80,14 @@ public class AdminService {
         adminDao.save(admin);
     }
     
+	@Secured({"a_manage_admin"})	
     public void updateAdmin(Admin admin) {
     	
     	admin.setLastModify(System.currentTimeMillis());
     	adminDao.merge(admin);
     }
     
+	@Secured({"a_manage_admin"})	
 	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityDefaultDeleteException {
 		
 		Admin admin = getAdmin(id);

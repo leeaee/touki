@@ -6,7 +6,9 @@
 	default-autowire="byType" default-lazy-init="true">
 
 	<description>使用SpringSecurity的安全配置文件</description>
-
+	
+	<s:global-method-security secured-annotations="enabled" />
+	
 	<!-- http安全配置 -->
 	<s:http auto-config="true" access-decision-manager-ref="accessDecisionManager">
 		<s:form-login login-page="/login" default-target-url="/index"
@@ -50,4 +52,5 @@
 			</list>
 		</property>
 	</bean>
+	
 </beans>

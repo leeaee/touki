@@ -16,6 +16,7 @@ import cn.touki.web.entity.admin.Resource;
  */
 @Transactional(readOnly = true)
 public class ResourceDetailsServiceImpl implements ResourceDetailsService {
+	
 	@Autowired
 	private SecurityManager securityManager;
 

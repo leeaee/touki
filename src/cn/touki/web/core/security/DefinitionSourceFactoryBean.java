@@ -23,7 +23,6 @@ import org.springframework.security.util.UrlMatcher;
  * @see org.springframework.security.intercept.web.DefaultFilterInvocationDefinitionSource
  * @see ResourceDetailsService
  * 
- * @author calvin
  */
 public class DefinitionSourceFactoryBean implements FactoryBean {
 
