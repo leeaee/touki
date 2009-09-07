@@ -21,7 +21,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import cn.touki.web.core.utils.ReflectionUtils;
-import cn.touki.web.entity.common.Common;
+import cn.touki.web.entity.common.Identity;
 
 /**
  * @author Liyi
@@ -30,13 +30,14 @@ import cn.touki.web.entity.common.Common;
 @Entity
 @Table(name="cs_role")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Role extends Common implements Serializable {
+public class Role extends Identity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	public static final String KEY = "entity.role";
 	
 	/* -- Bean Properties -- */
 	private String roleName;
+	private String description;
 	private Set<Authority> authorities = new LinkedHashSet<Authority>();
 	
 	//Constructor
@@ -51,6 +52,14 @@ public class Role extends Common implements Serializable {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@ManyToMany

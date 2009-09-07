@@ -21,13 +21,13 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import cn.touki.web.core.utils.ReflectionUtils;
-import cn.touki.web.entity.common.Common;
+import cn.touki.web.entity.common.Identity;
 import cn.touki.web.entity.common.Stateful;
 
 @Entity
 @Table(name="cs_admin")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Admin extends Common implements Stateful, Serializable {
+public class Admin extends Identity implements Stateful, Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	public static final String KEY = "entity.admin";
@@ -40,8 +40,10 @@ public class Admin extends Common implements Stateful, Serializable {
 	private String mobile;
 	private String email;
 	private Integer state;
+	private String description;
 	private Long lastLogin;
 	private Long lastModify;
+	private Long createTime;
 	
 	private Set<Role> roles = new LinkedHashSet<Role>(); //有序的关联对象集合.	
 	
@@ -120,6 +122,14 @@ public class Admin extends Common implements Stateful, Serializable {
 	public void setState(Integer state) {
 		this.state = state;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}	
 
 	@Column(name="last_modify")
 	public Long getLastModify() {
@@ -129,6 +139,15 @@ public class Admin extends Common implements Stateful, Serializable {
 	public void setLastModify(Long lastModify) {
 		this.lastModify = lastModify;
 	}
+
+	@Column(name="create_time")
+	public Long getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}	
 	
 	//多对多定义
 	@ManyToMany

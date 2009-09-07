@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import cn.touki.web.entity.common.Common;
+import cn.touki.web.entity.common.Identity;
 
 /**
  * @author Liyi
@@ -19,7 +19,7 @@ import cn.touki.web.entity.common.Common;
 @Entity
 @Table(name="cs_authority")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Authority extends Common implements Serializable {
+public class Authority extends Identity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	public static final String KEY = "entity.authority";

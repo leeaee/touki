@@ -27,7 +27,6 @@ CREATE TABLE cs_role (
 	id bigint AUTO_INCREMENT NOT NULL,
 	role_name varchar(63),
 	description varchar(255) DEFAULT NULL,
-	create_time bigint(20) DEFAULT '111111111111',
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB ROW_FORMAT = DEFAULT CHARSET=utf8;
 
@@ -39,8 +38,6 @@ CREATE TABLE cs_authority (
 	id bigint AUTO_INCREMENT NOT NULL,
 	name varchar(63) NOT NULL,
 	display_name varchar(63) NOT NULL,
-	description varchar(255) DEFAULT NULL,
-	create_time bigint(20) DEFAULT '111111111111',
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB ROW_FORMAT = DEFAULT CHARSET=utf8;
 
@@ -54,7 +51,6 @@ CREATE TABLE cs_resource (
 	value varchar(63) NOT NULL,
 	position float NOT NULL,
 	description varchar(255) DEFAULT NULL,
-	create_time bigint(20) DEFAULT '111111111111',
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB ROW_FORMAT = DEFAULT CHARSET=utf8;
 
