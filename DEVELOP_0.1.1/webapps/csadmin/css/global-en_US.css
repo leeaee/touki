@@ -1,0 +1,785 @@
+/*----------------------------------------
+Name: global.css
+Developed by: liyi
+Date Created:
+Last Updated:
+Copyright:
+----------------------------------------*/
+
+/* Imports
+----------------------------------------*/
+@import url("reset.css");
+@import url("jquery-ui-1.7.1.css");
+
+
+/* Global
+----------------------------------------*/
+html, body, #wrap {
+	vertical-align: top;
+	text-align: left;
+	height: 100%;
+}
+
+body {
+	color: #003399; 
+	font-family: tahoma, arial, verdana, sans-serif;
+	font-size: 11px;
+	/*background: url(../img/web/sider-bg.png) repeat-y #f8fbfd; /* img width must same as frame padding-left for the fade */
+}
+
+/* Layout div elements
+----------------------------------------*/
+body > #wrap {
+	height: auto; 
+	min-height: 100%;
+}
+
+#header {
+	background: url(../img/web/header-bg.gif) repeat-x top left;
+	width: 100%;
+	height: 108px;
+}
+
+#navmenu{
+	font-family: "Lucida Sans Unicode", tahoma, arial, verdana, sans-serif;
+	width: 100%;
+}
+
+#container {
+	width: 100%;
+	padding-bottom: 30px; /* must be same as the footer height */
+}
+
+#side {
+	float: left;
+	width: 220px;
+	height: 100%;
+}
+
+#main {
+	margin-left: 220px; /* must be same as sider width */
+	height: 100%;
+}
+
+#footer {
+	width: 100%;
+	background: #efefef;
+	border-top: 1px solid #aaaaaa;
+	height: 29px;	
+	margin-top: -30px; /* negative value of footer height */
+	position: relative;
+	clear: both;
+}
+
+/* Divs
+----------------------------------------*/
+#center-div {
+	top: 50%; 
+	left: 50%; 
+	position: absolute;
+	text-align: center;
+}
+
+#login-title {
+	font-family: Lucida Sans Unicode, tahoma, arial, verdana, sans-serif;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	font-size: 14px
+}
+
+/*--- head-content ---*/
+#head-content {
+	font-family: Lucida Sans Unicode, tahoma, arial, verdana, sans-serif;	
+	font-weight: bold;
+	padding: 15px 25px 0 0;
+	text-align: right; 
+}
+
+/*--- nav ---*/
+#nav {
+	height: 33px; 
+	margin: 0; 
+	padding-left: 0; 
+	top: 75px;
+	position: absolute; 
+	vertical-align: middle; 
+	background-image: url(../img/web/ui-nav_sprite_33x66.png);
+	background-position: 0 0;
+	width: 100%; 
+}
+
+#nav li {
+	float: left; 
+	list-style-type: none;
+}
+
+#nav li.navitem:hover {
+	height: 33px; 
+	background-image: url(../img/web/ui-nav_sprite_33x66.png);
+	background-position: 0 -33px;
+}
+
+#nav li a:link, #nav li a:visited, #nav li a:hover, #nav li a:active {
+	color: #ffffff;
+	text-decoration: none;	
+	display: block; 
+	height: 33px; 
+	line-height: 33px;
+	margin-top: 1px;
+	padding: 0 13px;
+	font-size: 13px; 	
+}
+
+#nav .subnav {
+	top: 33px; 
+	position: absolute; 
+	background: url(../img/web/ui-bg-nav_subnav_1x300.png) repeat-x bottom left; 
+	padding: 6px 0 10px 10px;
+	z-index: 99;
+}
+
+#nav .subnav .menu {
+	float: left;	
+	margin-right: 10px; 
+	padding: 0; 
+	width: 125px;
+}
+
+#nav .subnav .menu li {
+	float: none; 
+	background-image: none;
+}
+
+#nav .subnav .menu li a {
+	font-size: 11px; 
+	font-weight: normal; 
+	line-height: 1.3; 
+	color: #ffffff; 
+	padding: 5px 6px 4px 6px; 
+	height: 100%;
+	text-decoration: none; 		
+}
+
+#nav .subnav .menu li a:link, #nav .subnav .menu li a:visited {
+	background-color: transparent;		
+}
+
+#nav .subnav .menu li a:hover {
+	background-color: #1b3962;
+}
+
+#nav .subnav .menu li a:active {
+	background-color: transparent;	
+}
+
+#nav li .subnav {
+	display: none;
+}
+
+#nav li:hover .subnav {
+	display: block;
+}
+
+
+/*--- press ---*/
+#press {
+	top: 108px;
+	vertical-align: middle;
+	font-size: 12px;
+	color: #333333;	
+	height: 45px;
+	background-image: url(../img/web/press-bg.png);
+	line-height: 45px;
+	padding-left: 13px;	
+}
+
+#press a {
+	cursor: pointer;
+	color: #333333;
+	font-size: 10px;
+}
+
+#press a:link, #press a:visited {
+	text-decoration: underline;
+}
+
+#press a:hover {
+	text-decoration: none;
+}
+
+#press a:active {
+	text-decoration: underline; 
+}
+
+/*--- sidecont ---*/
+#side-content {
+	font-size: 11px;	
+	line-height: 1.3;
+	margin: 0 0 0 10px;
+	height: 100%;
+}
+
+/*--- maincont ---*/
+#main-content {
+	font-size: 11px;
+	line-height: 1.3;
+	margin: 10px;
+}
+
+/*--- search ---*/
+#searchbar {
+	padding: 0;
+	margin-left: 5px;
+	height: 100%;
+}
+
+
+/* Form
+------------------------------------------*/
+INPUT[type="text"], INPUT[type="password"], SELECT, TEXTAREA {
+	background-color: #fefefe;
+    border-left: 1px solid #999999;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;	
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	vertical-align: middle;
+}
+
+/*** INPUT ***/
+INPUT.text {
+    height: 19px;
+    line-height: 15px;
+    width: 199px;
+    padding: 4px 5px 0 5px;
+}
+
+INPUT.para {
+    height: 19px;
+    line-height: 15px;
+    width: 149px;
+    padding: 4px 5px 0 5px;
+}
+
+/*** SELECT  ***/
+SELECT {
+    height: 25px;
+    padding: 3px 2px;
+	position: relative;
+}
+
+SELECT.slct {
+	width: 211px;
+}
+
+SELECT.para {
+	width: 161px;
+}
+
+OPTION {
+	width: auto;
+	padding: 2px;
+}
+
+/*** TEXTAREA ***/
+TEXTAREA {
+	line-height: 1.5;	
+    padding: 4px;
+    width: 360px;
+    height: 80px;
+}
+
+/*** CHECKBOX ***/
+INPUT.ckbox {
+	padding-rigt: 3;
+	margin-rigth: 3;
+}
+
+/* Button
+------------------------------------------*/
+INPUT.bttn, INPUT[type="button"], INPUT[type="submit"], INPUT[type="reset"], BUTTON {
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	font-size: 11px;
+	outline: none; 
+	margin-right: 5px; 
+	padding: .4em 1.8em; 
+	text-decoration: none !important; 
+	cursor: pointer; 
+	/*position: relative;*/ 
+	text-align: center;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+INPUT.navbttn {
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	font-size: 12px;
+	outline: none;
+	margin-right: 5px;
+	padding: 2px 1em; 
+	text-decoration: none !important; 
+	cursor: pointer; 
+	text-align: center;
+	vertical-align: middle; 
+	zoom: 1;
+}
+
+INPUT[disabled] {
+	cursor: default;
+	color: gray;
+	opacity: .7;
+	-moz-opacity: .7;
+}
+
+.button {
+	outline: 0;
+	margin:0 5px -10px 0; 
+	padding: .4em 1em; 
+	text-decoration: none !important; 
+	cursor: pointer; 
+	position: relative; 
+	text-align: center; 
+	zoom: 1; 	
+}
+
+.button span.ui-icon { 
+	position: absolute; 
+	top: 50%; 
+	margin-top: -8px; 
+	left: 50%; 
+	margin-left: -8px;
+}
+
+.button-icon-solo { 
+	display: block; 
+	width: 8px; 
+	height: 16px; 
+	text-indent: -9999px; 
+}
+
+<!--[if IE 7]>
+INPUT.bttn, INPUT[type="button"], INPUT[type="submit"], INPUT[type="reset"], BUTTON, .button {
+	padding: 4px 10px 2px 10px;
+}
+<![endif]-->
+
+/* Lable
+------------------------------------------*/
+LABEL.caption {
+	position: relative;
+	font-weight: bold;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+	padding: 0 .5em;
+	white-space: nowrap;
+}
+
+/* Table
+----------------------------------------*/
+TABLE {
+	font-family: tahoma, verdana, Arial, sans-serif;
+	font-size: 11px;		
+}
+
+/*** main table ***/
+TABLE.main {
+	width: 100%;
+	height: 100%;
+	margin: 5px 0;
+}
+
+TABLE.main TD {
+	vertical-align: top;	
+}
+
+/*** data table ***/
+TABLE.data {
+	table-layout: fixed;
+    border-top: 1px solid #6f95af;
+    width: 100%;
+}
+
+TABLE.data TH {
+	font-family: Segoe UI, Lucida Grande, tahoma, arial, sans-serif;
+    background-color: #427191;
+    color: #FFFFFF;
+    border-left: 1px solid #6f95af;
+    border-bottom: 1px solid #c1dad7;
+    text-align: left;
+    font-weight: normal;
+    padding-left: 5px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+TABLE.data A:link, TABLE.data A:visited {
+    text-decoration: none;
+	color: #f1f1f1;
+	outline: none; 
+}
+TABLE.data A:hover {
+    text-decoration: underline;
+	outline: none; 
+    color: #ffffff;
+}
+TABLE.data A:active {
+    text-decoration: none;
+	color: #f1f1f1;
+	outline: none; 
+}
+
+TABLE.data TH.sortable {
+    font-weight: bold;
+    background-image: url( ../img/web/th_sort.png );
+    background-position: right center;
+    background-repeat: no-repeat;    
+}
+
+TABLE.data TH.sorted {
+    background-color: #427da8;
+}
+
+TABLE.data TH.sort-asc {
+    background-image: url( ../img/web/th_sort_asc.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+TABLE.data TH.sort-desc {
+    background-image: url( ../img/web/th_sort_desc.png );
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+TABLE.data TH.right {
+    border-right: 1px solid #6f95af;
+}
+
+TABLE.data TR.odd {
+    background-color: #f4f9ff;
+}
+
+TABLE.data TR.even {
+    background-color: #fafafa;    
+}
+
+TABLE.data TR.hover {
+    background-color: #d0ebff;
+}
+
+TABLE.data TR.fix {
+    background-color: #fef6d8;
+}
+
+TABLE.data TR.fix TD {
+    color: #000066;
+}
+
+TABLE.data TD {
+	overflow: hidden; 
+	white-space: nowrap;
+	text-overflow: ellipsis; 			/* for IE */ 
+	-o-text-overflow: ellipsis; 		/* for Opera */ 
+	-icab-text-overflow: ellipsis; 		/* for iCab */ 
+	-khtml-text-overflow: ellipsis; 	/* for Konqueror Safari */ 
+	-moz-text-overflow: ellipsis; 		/* for Firefox,mozilla */ 
+	-webkit-text-overflow: ellipsis; 	/* for Safari,Swift*/ 	
+    height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    color: #333333;
+    padding: 0 5px;
+    border-left: 1px solid #c1dad7;
+    border-bottom: 1px solid #c1dad7;
+}
+
+TABLE.data TD.right {
+    border-right: 1px solid #c1dad7;
+}
+
+/*** datanav table ***/
+TABLE.datanav {
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+    background-color: #f4f8fe;
+    color: #2e6e9e;
+    height: 100%;
+    border: 1px solid #c1dad7;
+}
+
+TABLE.datanav TH {
+    background-color: #dfeffc;
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+	border-bottom: 1px solid #c1dad7;
+}
+
+TABLE.datanav TD {
+    color: #2e6e9e;
+    padding: 0 5px;
+}
+
+/*** btn table ***/
+TABLE.btnbar {
+	height: 38px;
+	line-height: 35px;
+	vertical-align: middle;
+    background-color: #f4f8fe;
+}
+
+TABLE.btnbar TD {
+    color: #2e6e9e;
+    padding: 0 7px;
+}
+
+/*** addrss table ***/
+TABLE.addressbar {
+	height: 38px;
+	line-height: 35px;
+	vertical-align: middle;
+    background-color: #E7F5FF;
+}
+
+TABLE.addressbar TD {
+    color: #2e6e9e;
+    padding: 0 7px;
+}
+
+/*** form table ***/
+TABLE.form {
+    background-color: #f2faff;
+    border-top: 1 solid #999999;
+    width: 100%;
+    margin: 5px 0;    
+}
+
+TABLE.form TD {
+    padding: 7px 10px;
+    height: 30px;
+    line-height: 26px;
+    vertical-align: middle;
+}
+
+TABLE.form TD.f {
+	height: 20px;
+    text-align: right;
+    color: #003189;
+    background-color: #E7F5FF;
+}
+
+TABLE.form TD.s {
+	padding: 0;
+	height: 13px;
+    background-color: #E7F5FF;
+}
+
+TABLE.form TD.df {
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+    font-weight: bold;   	
+    text-align: right;
+    color: #003189;
+    background-color: #E7F5FF;
+}
+
+TABLE.form TD.keyf {
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	font-weight: bold;   	
+    text-align: right;
+    color: #CC0000;
+    background-color: #E7F5FF;
+}
+
+/*** detail table ***/
+TABLE.detail {
+    background-color: #F2FAFF;
+	width: 760px;
+}
+
+TABLE.detail TD {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+TABLE.detail TD.f {
+	height: 20px;
+	width: 30%;
+    text-align: right;
+    color: #003189;
+    background-color: #e7f5ff;
+}
+
+TABLE.detail TD.keyf {
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	font-weight: bold;	
+	width: 30%;	
+    text-align: right;
+    color: #003189;
+    background-color: #e7f5ff;
+}
+
+/*** datanav table ***/
+TABLE.datanav {
+    background-color: #f4f8fe;
+    color: #2e6e9e;
+    height: 100%;    
+}
+
+TABLE.datanav TD {
+    color: #2e6e9e;
+    padding: 0 5px;
+}
+
+/*** login table ***/
+TABLE.login {
+	font-family: Segoe UI, tahoma, arial, sans-serif;
+	font-size: 12px;	
+	width: 320px; 
+	height: 120px;
+	margin: 18px 40px;
+}
+	
+TABLE.login TD {
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+	text-align: right;
+	padding: 8px;
+}
+	
+TABLE.login TD.left {
+	text-align: left;
+}
+
+TABLE.login TD.bottom {
+	padding-right: 30px;
+}
+
+/*  A 
+--------------------------------------------*/
+A:link {
+    text-decoration: none;
+	color: #2e6e9e;
+	outline: none; 
+}
+A:visited {
+    text-decoration: none;
+	color: #2e6e9e;
+	outline: none; 
+}
+A:hover {
+    text-decoration: underline;
+	outline: none; 
+    color: #990000;
+}
+A:active {
+    text-decoration: underline;
+    color: #2e6e9e;
+	outline: none; 
+}
+
+	
+/* Hack css for IE-MAC
+----------------------------------------*/
+.clearfix: after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+
+
+DIV.bttns {
+    text-align: right;
+    padding: 8px;
+}
+
+DIV.label {
+    padding: 5px;
+}
+
+DIV.padding {
+    padding: 5px;
+}
+
+DIV.label {
+	font-family: Segoe UI, Lucida Grande, tahoma, arial, sans-serif;	
+    padding: 5px;
+}
+
+EM {
+    font-family: "Tahoma";
+    font-size: 11px;
+    font-style: normal;
+    color: #CC0000;
+}
+
+.tip {
+    margin: 3px;
+    font-family: "Tahoma";
+    font-size: 11px;
+    color: #444444;
+}
+
+.ttl {
+    font-weight: bold;
+    color: #333333;
+}
+
+.font-m {
+    font-family: "Tahoma";
+    font-size: 14px;
+}
+
+.wh {
+    color: #FFFFFF;
+}
+
+.blue {
+    color: #0000CC;
+}
+
+.green {
+    color: #00AA00;
+}
+
+.red {
+    color: #CC0000;
+}
+
+.orange {
+    color: #CC9900;
+}
+
+.black {
+    color: #000000;
+}
+
+.gray {
+    color: #CCCCCC;
+}
+
+.darkgray {
+    color: #999999;
+}
