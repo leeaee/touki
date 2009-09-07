@@ -89,9 +89,9 @@ public class AdminServlet extends AbstractServlet {
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", admin.getAdminId()));
         
         List<Button> buttons = new ArrayList<Button>();
-        Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './admin.do?method=adminPreCreate'");
+        Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './admin?method=adminPreCreate'");
         buttons.add(bttnNext);        
-        Button bttnBack = new Button(Button.LABEL_BACK, "location.href = './admin.do'");
+        Button bttnBack = new Button(Button.LABEL_BACK, "location.href = './admin'");
         buttons.add(bttnBack);        
 
         handleMessage(req, res, message, buttons);
@@ -142,7 +142,7 @@ public class AdminServlet extends AbstractServlet {
 
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.update", admin.getAdminId()));
         Button button = new Button(Button.LABEL_OK, "");
-        button.setAction("location.href = './admin.do'");
+        button.setAction("location.href = './admin'");
 
         handleMessage(req, res, message, button);
     }
@@ -162,7 +162,7 @@ public class AdminServlet extends AbstractServlet {
         }
 
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.delete", deleted));
-        Button button = new Button(Button.LABEL_OK, "location.href = './admin.do'");
+        Button button = new Button(Button.LABEL_OK, "location.href = './admin'");
 
         handleMessage(req, res, message, button);
 	}	    

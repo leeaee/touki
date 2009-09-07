@@ -90,7 +90,7 @@
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<display-name>loginServlet</display-name>
-		<servlet-class>cn.touki.web.servlet.cs.AdminLoginServlet</servlet-class>
+		<servlet-class>cn.touki.web.servlet.cs.LoginServlet</servlet-class>
 	</servlet>		
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
@@ -104,7 +104,7 @@
 	</servlet>		
 	<servlet-mapping>
 		<servlet-name>AdminServlet</servlet-name>
-		<url-pattern>/admin.do</url-pattern>
+		<url-pattern>/admin</url-pattern>
 	</servlet-mapping>
 		
 	<!-- web -->
