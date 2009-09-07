@@ -19,7 +19,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import cn.touki.web.core.utils.ReflectionUtils;
-import cn.touki.web.entity.common.Common;
+import cn.touki.web.entity.common.Identity;
 
 /**
  * @author Liyi
@@ -28,7 +28,7 @@ import cn.touki.web.entity.common.Common;
 @Entity
 @Table(name="cs_resource")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Resource extends Common implements Serializable {
+public class Resource extends Identity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	public static final String KEY = "entity.resource";
@@ -41,6 +41,7 @@ public class Resource extends Common implements Serializable {
 	private String resourceType;
 	private String value;
 	private double position;
+	private String description;
 	private Set<Authority> authorities = new LinkedHashSet<Authority>();
 	
 	//Constructor
@@ -73,6 +74,14 @@ public class Resource extends Common implements Serializable {
 		this.position = position;
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	/**
 	 * 可访问该资源的授权集合.
 	 */

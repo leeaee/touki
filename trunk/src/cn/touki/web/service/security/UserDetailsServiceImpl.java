@@ -38,7 +38,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			throw new UsernameNotFoundException("用户" + userName + " 不存在");
 
 		GrantedAuthority[] grantedAuths = obtainGrantedAuthorities(admin);
-
+		
 		// 无以下属性,暂时全部设为true.
 		boolean enabled = true;
 		boolean accountNonExpired = true;

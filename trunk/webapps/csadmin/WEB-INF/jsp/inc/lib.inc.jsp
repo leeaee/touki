@@ -28,13 +28,11 @@
     }
     
     Locale userLocale = (Locale) session.getAttribute(Constants.USER_LOCALE_KEY);
-    String adminName = SpringSecurityUtils.getCurrentUserName();
     DateDecorator dateDecorator = new DateDecorator();
 	
 	// Set for JSTL
 	pageContext.setAttribute("htmlHeaderCheck", htmlHeaderCheck);
 	pageContext.setAttribute("baseUri", baseUri);
 	pageContext.setAttribute("userLocale", userLocale);
-	pageContext.setAttribute("adminName", adminName);
 	pageContext.setAttribute("dateDecorator", dateDecorator);
 %>
