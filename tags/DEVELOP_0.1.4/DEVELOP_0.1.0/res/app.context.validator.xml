@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!--
+  - This is the definition of common validators in  webapp
+-->
+
+<beans>
+
+    <!-- Common Validator Utilities -->
+	
+    <bean id="sensitiveWords" class="cn.touki.util.SensitiveWords" singleton="true">
+        <property name="charset">
+            <value>UTF-8</value>
+        </property>
+        <property name="sourceFile">
+            <value>sensitive_words.txt</value>
+        </property>
+    </bean>	    
+    
+    <bean id="verifyCodeValidator" class="cn.touki.web.view.VerifyCodeValidator">
+        <property name="reqParamName">
+            <value>verifyCode</value>
+        </property>
+        <property name="sessionAttrName">
+            <value>jpeg-random-code</value>
+        </property>
+    </bean>
+
+	
+    <!-- Web Validators -->
+
+    <bean id="adminValidator" class="cn.touki.web.validation.AdminValidator">
+        <property name="beanClassName">
+            <value>cn.touki.web.entity.admin.Admin</value>
+        </property>
+        <property name="sensitiveWords">
+            <ref bean="sensitiveWords" />
+        </property>
+        <property name="paramsMaySensitive">
+            <value>adminId, adminName</value>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<!-- $Id: LangResource_zh_CN.xml,v 1.101 2006/07/25 09:17:19 liyi Exp $ -->
+
+<properties>
+    <comment>eWork 7.0 Web Server 简体中文语言资源</comment>
+
+    <!-- 异常消息 -->
+    <entry key="exception.null.pointer">网络正忙，请稍候再试！(NP) ({0})</entry>
+    <entry key="exception.runtime">网络正忙，请稍候再试！(RT) ({0})</entry>
+    <entry key="exception.sensiwords">网络正忙，请稍候再试！(SW) </entry>
+    <entry key="exception.network">网络正忙，请稍候再试！(IO) </entry>
+    <entry key="exception.blank">{0}</entry>
+    <entry key="exception.entity.missing">{0} &lt;b&gt;{1}&lt;/b&gt; 不存在！</entry>
+    <entry key="exception.entity.exist">{0} &lt;b&gt;{1}&lt;/b&gt; 已经存在！</entry>
+    <entry key="exception.entity.paused">{0} &lt;b&gt;{1}&lt;/b&gt; 没有登陆权限,请与管理员联系！</entry>
+    <entry key="exception.invalid.property">您输入的{0} &lt;b&gt;{1}&lt;/b&gt; 不正确！</entry>
+    <entry key="exception.id">请输入正确的 ID，或者在列表中选定操作对象后再试！</entry>
+    <entry key="exception.login.failed">登录失败！</entry>
+    <entry key="exception.login.failed.reason">登录失败！ {0}</entry>
+    <entry key="exception.password.unmatch">您两次输入的密码不匹配！</entry>
+    <entry key="exception.password.invalid">您输入的密码不正确！</entry>
+    <entry key="exception.urlnotfound">您访问的页面不存在，或者正在维护中，请您稍候再试！</entry>
+    <entry key="exception.invalid.strtoolong">您输入的 &lt;b&gt;{0}&lt;/b&gt; 太长，请不要超过 &lt;b&gt;{1}&lt;/b&gt; 个字节(byte)！</entry>
+    <entry key="exception.dept.deleteroot">无法删除根部门！</entry>
+    <entry key="exception.tree.rootmissing">虚拟服务器 &lt;b&gt;{0}&lt;/b&gt; 的根部门不存在！</entry>
+    <entry key="exception.group.rootdelete">无法删除虚拟服务器的默认管理员！</entry>
+    <entry key="exception.group.private">虚拟服务器 &lt;b&gt;{1}&lt;/b&gt; 不对外提供公开注册，请选择其他公开注册的虚拟服务器！</entry>
+    <entry key="exception.pos.nodef">默认职位不存在！</entry>
+    <entry key="exception.socket.offline">网络正忙，请稍候再试！(SO)</entry>
+    <entry key="exception.chinapay.build">银联密钥创建失败！</entry>
+    <entry key="exception.chinapay.failed">银联支付失败！</entry>
+    <entry key="exception.chinapay.verify.failed">银联验证失败！</entry>
+    <entry key="exception.payment.nopaymethod">请选择支付方式</entry>
+    <entry key="exception.biz_service.wrongtime">时间应大于当前时间。</entry>
+    <entry key="exception.biz_service.service">计时服务。</entry>
+    <entry key="exception.biz_service.exited">服务已存在，请选择其它服务。</entry>
+    <entry key="exception.biz.reg.userbonused">您已经参加过注册电子币的赠送活动！</entry>
+    <entry key="exception.biz.reg.mobilebonused">移动电话号码 &lt;b&gt;{0}&lt;/b&gt; 已经参加过注册电子币的赠送活动！</entry>
+    <entry key="exception.user.upgrade">非常抱歉，您的帐号 &lt;b&gt;{0}&lt;/b&gt; 暂时无法自动升级到 eLink 2006！我们已经记录下你您的帐号并在稍候为您升级，请您稍候再试，同时感谢您的配合！</entry>
+    <entry key="exception.user.fetchpwd.nullquestion">非常抱歉，由于您注册时未留下密码问题，系统无法核实您的身份，因此无法重新设置密码！</entry>
+    <entry key="exception.chinapay.diff">非常抱歉，您的充值金额&lt;b&gt;{0}&lt;/b&gt;与到账金额&lt;b&gt;{1}&lt;/b&gt;不吻合</entry>
+    <entry key="exception.chinapay.repay">请不要重复充值</entry>
+    <entry key="exception.chinapay.repay.forbidden">您已经充值成功，禁止重复充值！</entry>
+    <entry key="exception.fenix.region.joined">你已经加入社区了！</entry>
+    <entry key="exception.user.join.multiple">禁止加自己为好友！</entry>
+    <entry key="exception.login.deny">{0}没有登陆权限！</entry>
+	<entry key="exception.uers.createmass">用户{0}填写的信息有错误，请重新录入！</entry>
+	<entry key="exception.overflow">你填写的信息{0}内容超过最大长度！</entry>
+
+
+    <!-- 提示消息 -->
+    <entry key="msg.ok">{0}成功！</entry>
+    <entry key="msg.not.suport">不支持此项操作</entry>
+    <entry key="msg.failed">{0}失败！</entry>
+    <entry key="msg.update">{0} &lt;b&gt;{1}&lt;/b&gt; 信息修改</entry>
+    <entry key="msg.create">{0} &lt;b&gt;{1}&lt;/b&gt; 创建</entry>
+    <entry key="msg.delete">&lt;b&gt;{0}&lt;/b&gt; 个{1}删除</entry>
+    <entry key="msg.move">&lt;b&gt;{0}&lt;/b&gt; 个{1}移动</entry>
+    <entry key="msg.app">申请信息成功发送！我们在审核后，会在3日内将申请群组的登陆名和密码发送至您的邮箱，请查收！</entry>
+    <entry key="msg.success">发送成功，点确定返回</entry>
+    <entry key="msg.register">注册</entry>
+
+	<entry key="msg.lotto.unstart">用户反馈中奖活动还没有开始，请稍后再试</entry>
+	<entry key="msg.serial.actived">对不起，该 ELINK 充值卡卡号已经充值成功，不能重复充值！</entry>
+	<entry key="msg.lotto.askUnstart">用户反馈中奖活动还没有开始，是否继续充值?</entry>
+	<entry key="msg.lotto.askBind">你还没有在活动中绑定手机，是否现在绑定?（如果不绑定手机，将无法参与本次活动）</entry>
+	<entry key="msg.lotto.sundayAsk">今天是星期日，你将无法参与活动，是否现在继续充值?（活动时间是周一到周五）</entry>
+
+    <entry key="msg.admin.update">管理员用户 &lt;b&gt;{0}&lt;/b&gt; 信息修改</entry>
+    <entry key="msg.admin.create">管理员用户 &lt;b&gt;{0}&lt;/b&gt; 创建</entry>
+    <entry key="msg.admin.delete">&lt;b&gt;{0}&lt;/b&gt; 个管理员用户删除</entry>
+    <entry key="msg.meeting.update">网络会议 &lt;b&gt;{0}&lt;/b&gt; 信息修改</entry>
+    <entry key="msg.meeting.delete">&lt;b&gt;{0}&lt;/b&gt; 个网络会议资料删除</entry>
+    <entry key="msg.user.create">用户 &lt;b&gt;{0}&lt;/b&gt; 创建成功！您可以立即为该用户指定若干职位，也可以日后通过“组织结构树 - 用户 - 创建职位”来创建。</entry>
+    <entry key="msg.user.update">用户 &lt;b&gt;{0}&lt;/b&gt; 的详细信息修改</entry>
+    <entry key="msg.user.delete">&lt;b&gt;{0}&lt;/b&gt; 个用户删除</entry>
+    <entry key="msg.user.invite">好友邀请验证信息发送</entry>
+    <entry key="msg.dept.update">部门 &lt;b&gt;{0}&lt;/b&gt; 详细信息修改</entry>
+    <entry key="msg.dept.create">部门 &lt;b&gt;{0}&lt;/b&gt; 创建</entry>
+    <entry key="msg.pos.update">职位 &lt;b&gt;{0}&lt;/b&gt; 详细信息修改</entry>
+    <entry key="msg.pos.create">职位 &lt;b&gt;{0}&lt;/b&gt; 创建</entry>
+    <entry key="msg.pos.delete">&lt;b&gt;{0}&lt;/b&gt; 个职位删除</entry>
+    <entry key="msg.tree.reorder">调整树节点顺序</entry>
+    <entry key="msg.tree.delete">&lt;b&gt;{0}&lt;/b&gt; 个目录树节点删除</entry>
+    <entry key="msg.tree.createuserpos">已经成功的为用户 &lt;b&gt;{0}&lt;/b&gt; 在部门 &lt;b&gt;{1}&lt;/b&gt; 下创建了一个职位 &lt;b&gt;{2}&lt;/b&gt;！您可以继续为该用户添加其它职位，也可以返回该用户的职位列表。</entry>
+    <entry key="msg.tree.updateuserpos">用户职位 &lt;b&gt;{0}&lt;/b&gt; 信息修改</entry>
+    <entry key="msg.payment.delete">&lt;b&gt;{0}&lt;/b&gt; 个订单删除</entry>
+    <entry key="msg.upgrade.publish">版本已成功发布！</entry>
+    <entry key="msg.fenix.region.delete">社区&lt;b&gt;"{0}"&lt;/b&gt;删除</entry>
+    <entry key="msg.fenix.region.join">加入社区&lt;b&gt;"{0}"&lt;/b&gt;</entry>
+    <entry key="msg.fenix.region.secede">用户退出社区</entry>
+    <entry key="msg.upgrade.scanning">系统正在扫描文件，稍候点击“确定”按钮对上传的文件进行设置！</entry>
+
+    <entry key="msg.service.user.reg.bonus">您的移动电话已经成功确认，系统已经为您的帐户赠送 &lt;b&gt;{0} Kon&lt;/b&gt;！</entry>
+
+    <entry key="msg.user.fetchpwd">您的新密码为 &lt;b&gt;{0}&lt;/b&gt;，请牢记！您可以再登录后修改该密码！</entry>
+    <entry key="msg.noentry">没有您所需要的数据.</entry>
+    
+
+    <!-- 实体名称 -->
+    <entry key="entity.admin">管理员用户</entry>
+    <entry key="entity.user">用户</entry>
+    <entry key="entity.user.old">eLink 2005 / eWork 6.x 用户</entry>
+    <entry key="entity.user_account">用户个人帐户</entry>
+    <entry key="entity.user_detail">用户详细信息</entry>
+    <entry key="entity.user_photo">用户照片</entry>
+    <entry key="entity.user_position">用户职位</entry>
+    <entry key="entity.department">部门</entry>
+    <entry key="entity.ename">e 名</entry>
+    <entry key="entity.ework_server">eWork 服务器</entry>
+    <entry key="entity.es_cluster">ES 簇</entry>
+    <entry key="entity.cluster">服务器簇</entry>
+    <entry key="entity.top-ename">顶级 e 名</entry>
+    <entry key="entity.group">虚拟服务器</entry>
+    <entry key="entity.group_account">虚拟服务器帐户</entry>
+    <entry key="entity.group_category">虚拟服务器类别</entry>
+    <entry key="entity.position">职位</entry>
+    <entry key="entity.vip">VIP 用户</entry>
+    <entry key="entity.meeting">网络会议</entry>
+    <entry key="entity.meetingmember">网络会议成员</entry>
+    <entry key="entity.config">设置选项</entry>
+    <entry key="entity.consumption">消费记录</entry>
+    <entry key="entity.monthlybill">月结单</entry>
+    <entry key="entity.biz_service">计时服务</entry>
+    <entry key="entity.upgrade_file">升级文件</entry>
+    <entry key="entity.upgrade_version">升级版本</entry>
+    <entry key="entity.faq">FAQ</entry>
+    <entry key="entity.faq_category">FAQ分类</entry>
+    <entry key="entity.sms">短信</entry>
+    <entry key="entity.fenix.region">社区</entry>
+    <entry key="entity.fenix.urrelation">用户-社区关联</entry>
+    <entry key="entity.fenix.userinfo">社区用户信息</entry>
+	<entry key="entity.serial.num">序列号</entry>
+	<entry key="entity.payment">用户充值</entry>
+
+    <!-- 属性选项值-->
+    <entry key="option.na">不限定</entry>
+    <entry key="option.unlimited">无限</entry>
+    <entry key="option.select">请选择</entry>
+    <entry key="option.dontchange">不作更改</entry>
+
+    <entry key="option.gender.unknown">保密</entry>
+    <entry key="option.gender.male">男</entry>
+    <entry key="option.gender.female">女</entry>
+
+    <entry key="option.online.default">默认</entry>
+    <entry key="option.online.online">在线</entry>
+    <entry key="option.online.busy">忙碌</entry>
+    <entry key="option.online.away">离开</entry>
+    <entry key="option.online.hidden">离线</entry>
+    <entry key="option.online.offline">离线</entry>
+
+    <entry key="option.publicity.private">私有</entry>
+    <entry key="option.publicity.public">公开</entry>
+    <entry key="option.publicity.group.private">拒绝</entry>
+    <entry key="option.publicity.group.public">接受</entry>
+
+    <entry key="option.state.normal">正常</entry>
+    <entry key="option.state.paused">暂停</entry>
+    <entry key="option.state.warning">即将停止</entry>
+    <entry key="option.state.expired">过期</entry>
+    <entry key="option.state.open">待审核</entry>
+    <entry key="option.state.close">可开通</entry>
+    <entry key="option.state.na">未设置</entry>
+
+    <entry key="option.meeting.state.notstart">尚未开始</entry>
+    <entry key="option.meeting.state.porcess">正在进行</entry>
+    <entry key="option.meeting.state.end">已经结束</entry>
+
+
+    <entry key="option.archive.normal">默认标识</entry>
+    <entry key="option.archive.persistence">永久保留</entry>
+
+    <entry key="option.treenode.visible">显示</entry>
+    <entry key="option.treenode.searchable">可查询</entry>
+    <entry key="option.treenode.hidden">隐藏</entry>
+
+    <entry key="option.friend_mode.always">允许任何人添加好友</entry>
+    <entry key="option.friend_mode.verify">需通过验证后方可加为好友</entry>
+    <entry key="option.friend_mode.never">不可被加为好友</entry>
+
+    <entry key="option.edition.public.wan">公众互联网版</entry>
+    <entry key="option.edition.public.lan">公众局域网版</entry>
+    <entry key="option.edition.enterprise.wan">企业互联网版</entry>
+    <entry key="option.edition.enterprise.lan">企业局域网版</entry>
+
+    <entry key="option.user.root.name">系统管理员</entry>
+
+    <entry key="option.groupcate.na">未分类</entry>
+    <entry key="option.groupcate.ework">eWork</entry>
+    <entry key="option.groupcate.location">地域</entry>
+    <entry key="option.groupcate.enterprise">企业</entry>
+    <entry key="option.groupcate.service">服务</entry>
+    <entry key="option.groupcate.product">产品</entry>
+    <entry key="option.groupcate.interest">兴趣</entry>
+    <entry key="option.groupcate.emotion">感性</entry>
+	<entry key="option.groupcate.life">生活</entry>
+
+    <entry key="option.payment">订单</entry>
+
+    <entry key="option.payment.currency.rmb">人民币</entry>
+    <entry key="option.payment.currency.usd">美元</entry>
+    <entry key="option.payment.currency.hkd">港元</entry>
+    <entry key="option.payment.currency.eur">欧元</entry>
+    <entry key="option.payment.currency.jpy">日元</entry>
+
+    <entry key="option.payment.paymethod">付款方式</entry>
+    <entry key="option.payment.ordertime">订单时间</entry>
+    <entry key="option.payment.state">订单状态</entry>
+    <entry key="option.payment.any">不   限</entry>
+
+    <entry key="option.payment.paymethod.other">其它</entry>
+    <entry key="option.payment.paymethod.card">充值卡</entry>
+    <entry key="option.payment.paymethod.bank">银行汇款</entry>
+    <entry key="option.payment.paymethod.mobile">手机</entry>
+    <entry key="option.payment.paymethod.cmb">招行在线</entry>
+    <entry key="option.payment.paymethod.chinapay">银联在线</entry>
+
+    <entry key="option.payment.paymethod.other.des">其它</entry>
+    <entry key="option.payment.paymethod.card.des">使用 ELINK 卡 充值</entry>
+    <entry key="option.payment.paymethod.bank.des">银行汇款</entry>
+    <entry key="option.payment.paymethod.mobile.des">手机支付（即将开通）</entry>
+
+    <entry key="option.payment.paymethod.chinapay.des">银联电子支付</entry>
+
+    <entry key="option.payment.bank.select">请选择银行/银行卡</entry>
+    <entry key="option.payment.bank.cmb">招商银行在线支付（一卡通 / 一网通 / 信用卡）</entry>
+    <entry key="option.payment.bank.icbc">中国工商银行</entry>
+    <entry key="option.payment.bank.ccb">中国建设银行(全国) - 龙卡(信用卡/借记卡)</entry>
+    <entry key="option.payment.bank.abc">中国农业银行(全国) - 金穗卡(电子支付卡)</entry>
+    <entry key="option.payment.bank.cib">兴业银行(全国)</entry>
+    <entry key="option.payment.bank.ceb">中国光大银行(全国) - 阳光卡</entry>
+    <entry key="option.payment.bank.citicib">中信实业银行(全国) - 理财宝</entry>
+    <entry key="option.payment.bank.cmbc">民生银行(全国) - 民生卡</entry>
+    <entry key="option.payment.bank.hx">华夏银行(全国) - 华夏卡</entry>
+    <entry key="option.payment.bank.gdb">广东发展银行(全国) - 理财通/一户通卡/信用卡</entry>
+    <entry key="option.payment.bank.sdb">深圳发展银行(全国) - 发展卡</entry>
+    <entry key="option.payment.bank.bocsh">中国银行上海分行(上海地区) - 长城卡(信用卡/借记卡)</entry>
+    <entry key="option.payment.bank.commsh">交通银行上海分行(上海地区) - 太平洋卡(信用卡/借记卡)</entry>
+    <entry key="option.payment.bank.abcsh">中国农业银行上海分行(上海地区) - 金穗卡(信用卡/借记卡)</entry>
+    <entry key="option.payment.bank.ccsh">上海市农村信用合作社联合社 - 如意卡</entry>
+
+
+    <entry key="option.payment.state.order">尚未支付</entry>
+    <entry key="option.payment.state.pay">已支付</entry>
+    <entry key="option.payment.state.unmatch">到账金额不符</entry>
+    <entry key="option.payment.state.error">充值失败</entry>
+
+    <entry key="option.payment.state.order.des">定单尚未支付</entry>
+    <entry key="option.payment.state.pay.des">定单已支付成功</entry>
+    <entry key="option.payment.state.error.des">已支付金额与定单金额不符</entry>
+
+    <entry key="option.payment.accountId">被充值 e 名</entry>
+    <entry key="option.payment.amount">充值金额</entry>
+    <entry key="option.payment.detail">定单内容确认</entry>
+    <entry key="option.payment.product_service">产品 / 服务</entry>
+    <entry key="option.payment.payer">支付者</entry>
+    <entry key="option.payment.actual_amount">实际付款金额</entry>
+	<entry key="option.payment.lotto">用户反馈活动</entry>
+
+	<entry key="option.lotto.chargeWithgame">我要参加活动</entry>
+	<entry key="option.lotto.chargeWithoutgame">我只要充值</entry>
+
+    <entry key="option.biz.renewal.false">不续费</entry>
+    <entry key="option.biz.renewal.true">续费</entry>
+
+    <entry key="option.lu.component.client">客户端</entry>
+    <entry key="option.lu.component.es">eWork Socket Server</entry>
+    <entry key="option.lu.component.esweb">eWork Web server</entry>
+
+    <entry key="option.lu.operation.replace">替换</entry>
+    <entry key="option.lu.operation.remove">删除</entry>
+    <entry key="option.lu.operation.unzip">解压</entry>
+    <entry key="option.lu.operation.exec">运行</entry>
+    <entry key="option.lu.operation.overwrite">覆盖</entry>
+
+    <!-- 实体属性 -->
+    <entry key="prop.admin.id">用户名</entry>
+    <entry key="prop.truename">真实姓名</entry>
+    <entry key="prop.age">年龄</entry>
+    <entry key="prop.agerange">年龄段</entry>
+    <entry key="prop.password">密码</entry>
+    <entry key="prop.vericode">验证码</entry>
+    <entry key="prop.pwdcfm">密码确认</entry>
+    <entry key="prop.user.nickname">显示名称</entry>
+    <entry key="prop.username">用户名</entry>
+    <entry key="prop.user.passq">密码提示问题</entry>
+    <entry key="prop.user.passa">提示问题答案</entry>
+    <entry key="prop.gender">性别</entry>
+    <entry key="prop.birthday">出生日期</entry>
+    <entry key="prop.email">电子邮件</entry>
+    <entry key="prop.mobile">移动电话</entry>
+    <entry key="prop.fax">传真号码</entry>
+    <entry key="prop.phone">电话号码</entry>
+    <entry key="prop.phonepri">IP转接号码I</entry>
+    <entry key="prop.phonesec">IP转接号码II</entry>
+    <entry key="prop.friendmode">好友认证模式</entry>
+    <entry key="prop.publicity">公开到 eWork 中心</entry>
+    <entry key="prop.publicity.group">公众注册</entry>
+    <entry key="prop.icq"> ICQ 号码</entry>
+    <entry key="prop.qq">腾讯 QQ 号码</entry>
+    <entry key="prop.msn"> MSN Messenger</entry>
+    <entry key="prop.idcard">身份证件号码</entry>
+    <entry key="prop.location">地区</entry>
+    <entry key="prop.country">国家/地区</entry>
+    <entry key="prop.province">省份/州</entry>
+    <entry key="prop.region">城市</entry>
+    <entry key="prop.career ">职业</entry>
+    <entry key="prop.user.enterprise">工作单位</entry>
+    <entry key="prop.address">邮寄地址</entry>
+    <entry key="prop.postcode">邮政编码</entry>
+    <entry key="prop.hobby">兴趣爱好</entry>
+    <entry key="prop.description">简介</entry>
+    <entry key="prop.user.description">自我简介</entry>
+    <entry key="prop.state">状态</entry>
+    <entry key="prop.online">在线状态</entry>
+    <entry key="prop.id">编号</entry>
+    <entry key="prop.name">名称</entry>
+    <entry key="prop.privilege">权限</entry>
+    <entry key="prop.sortno">序号</entry>
+    <entry key="prop.createtime">创建时间</entry>
+    <entry key="prop.modifytime">最后更新时间</entry>
+    <entry key="prop.lastlogintime">最后登录时间</entry>
+    <entry key="prop.expiretime">过期时间</entry>
+    <entry key="prop.license_code">授权码</entry>
+    <entry key="prop.id_prefix"> eWork 号段</entry>
+    <entry key="prop.edition">类型</entry>
+    <entry key="prop.website">互联网址</entry>
+    <entry key="prop.visibility">可见性</entry>
+    <entry key="prop.parentdept">上级部门</entry>
+    <entry key="prop.user.career">职业</entry>
+    <entry key="prop.user.income">月收入</entry>
+    <entry key="prop.user.education">教育水平</entry>
+    <entry key="prop.user.ico">用户头像</entry>
+    <entry key="prop.version">最后版本</entry>
+    <entry key="prop.default">默认</entry>
+    <entry key="prop.max">最大{0}数</entry>
+    <entry key="prop.cur">当前{0}数</entry>
+    <entry key="prop.max_cluster">最大簇数</entry>
+    <entry key="prop.max_group">最大虚拟服务器数</entry>
+    <entry key="prop.max_user">最大用户数</entry>
+    <entry key="prop.cur_group">当前虚拟服务器数</entry>
+    <entry key="prop.cur_user">当前用户数</entry>
+    <entry key="prop.contactor">联系人</entry>
+    <entry key="prop.ip">IP</entry>
+    <entry key="prop.port">端口</entry>
+    <entry key="prop.cs_cluster_id">CS 簇 ID</entry>
+    <entry key="prop.uuid">UUID</entry>
+    <entry key="prop.category">类别</entry>
+    <entry key="prop.storage_capacity">存储容量</entry>
+    <entry key="prop.meetingid">会议编号</entry>
+    <entry key="prop.title">会议标题</entry>
+	<entry key="prop.meeting.topic">会议议题</entry>
+    <entry key="prop.starttime">开始时间</entry>
+    <entry key="prop.endtime">结束时间</entry>
+    <entry key="prop.creator">创建者</entry>
+    <entry key="prop.president">主持人</entry>
+    <entry key="prop.membercount">与会者总人数</entry>
+    <entry key="prop.archive">数据标识</entry>
+    <entry key="prop.meetingstate">会议状态</entry>
+    <entry key="prop.user.balance">用户余额</entry>
+    <entry key="prop.user.minbalance">用户最小余额</entry>
+    <entry key="prop.consum.peernumber">对端号码</entry>
+    <entry key="prop.consum.starttime">起始时间</entry>
+    <entry key="prop.consum.endtime">结束时间</entry>
+    <entry key="prop.consum.duration">持续时间</entry>
+    <entry key="prop.consum.amount">总计</entry>
+    <entry key="prop.consum.discount">折扣</entry>
+    <entry key="prop.consum.chargetype">支付类型</entry>
+    <entry key="prop.consum.description">备注</entry>
+    <entry key="prop.price.name">消费类型</entry>
+    <entry key="prop.payment.accountid">充值帐户</entry>
+    <entry key="prop.payment.sequence_no">订单编号</entry>
+    <entry key="prop.payment.ordertime">订单日期</entry>
+    <entry key="prop.payment.paytime">付款时间</entry>
+    <entry key="prop.payment.amount">充值金额</entry>
+    <entry key="prop.payment.currency">币种</entry>
+    <entry key="prop.payment.paymethod">支付类型</entry>
+    <entry key="prop.payment.state">状态</entry>
+    <entry key="prop.payment.description">备注</entry>
+    <entry key="prop.biz_service.state">用户状态</entry>
+    <entry key="prop.biz_service.opentime">开通时间</entry>
+    <entry key="prop.biz_service.starttime">启示时间</entry>
+    <entry key="prop.biz_service.endtime">过期时间</entry>
+    <entry key="prop.biz_service.renewal">续费</entry>
+    <entry key="prop.biz_service.name">服务名称</entry>
+    <entry key="prop.price.name">价格名称</entry>
+    <entry key="prop.price.unit">单位</entry>
+    <entry key="prop.price.price">价格(Kon)</entry>
+    <entry key="prop.component">产品模块</entry>
+    <entry key="prop.language">语言</entry>
+    <entry key="prop.upgrade.version">版本</entry>
+    <entry key="prop.path">路径</entry>
+    <entry key="prop.directory">文件夹</entry>
+    <entry key="prop.operation">操作</entry>
+    <entry key="prop.latestversion">当前最新版本</entry>
+    <entry key="prop.lowestversion">容许最低版本</entry>
+    <entry key="prop.file.length">文件大小</entry>
+    <entry key="prop.md5hash">MD5</entry>
+    <entry key="prop.faq.title">FAQ 标题</entry>
+    <entry key="prop.faq.content">FAQ 内容</entry>
+    <entry key="prop.faq.cate">FAQ 类别</entry>
+    <entry key="prop.faq_cate.desc">FAQ 类别描述</entry>
+    <entry key="prop.faq_cate.name">FAQ 类别名称</entry>
+    <entry key="prop.faq.filename">FAQ 文件名称</entry>
+    <entry key="prop.faq.filepath">文件保存路径</entry>
+    <entry key="prop.parentid">上级类型名称</entry>
+    <entry key="prop.smstype.name">短信类型</entry>
+    <entry key="prop.smstype.desc">短信类型描述</entry>
+    <entry key="prop.smstype.sortno">类型显示序列</entry>
+    <entry key="prop.sms.content">短信内容</entry>
+    <entry key="prop.sms.receiver">短信接受者</entry>
+    <entry key="prop.sms.hit">点击率</entry>
+    <entry key="prop.sms.zone">短信地带</entry>
+    <entry key="prop.sms.word.remain">剩余字数</entry>
+    <entry key="prop.groupid">群组名</entry>
+    <entry key="prop.user.reference">推荐人</entry>
+    <entry key="prop.number">个数</entry>
+    <entry key="prop.imgcfm">验证码</entry>
+    <entry key="prop.serial.description">备注</entry>
+    <entry key="prop.card.serial">卡号</entry>
+    <entry key="prop.card.price">面额</entry>
+    <entry key="prop.card.status">状态</entry>
+    <entry key="prop.card.active">激活</entry>
+    <entry key="prop.card.inactive">未激活</entry>
+    <entry key="prop.card.activeuser">激活用户</entry>
+    <entry key="prop.card.activetime">激活时间</entry>
+    <entry key="tip.reference">请正确填写推荐人e名，对方将获赠10kon</entry>
+    <entry key="prop.imgcfm">验证码</entry>
+    <entry key="prop.region.name">社区名</entry>
+    <entry key="prop.region.desc">社区描述</entry>
+    <entry key="prop.region.group">所属小组</entry>
+    <entry key="prop.region.prestige">等级指数</entry>
+    <entry key="prop.region.create.time">创建时间</entry>
+    <entry key="prop.region.topic.count">主题数</entry>
+    <entry key="prop.region.article.count">文章数</entry>
+    <entry key="prop.region.state">社区状态</entry>
+    <entry key="prop.lotto.number">参加活动手机号码</entry>
+    <entry key="prop.lotto.bouns">附加号码</entry>
+    <entry key="prop.starttime">开始时间</entry>
+    <entry key="prop.endtime">结束时间</entry>
+    <entry key="prop.lotto.amt">总金额</entry>
+    <entry key="prop.lotto.one">第一位</entry>
+    <entry key="prop.lotto.two">第二位</entry>
+    <entry key="prop.lotto.three">第三位</entry>
+    <entry key="prop.lotto.four">第四位</entry>
+    <entry key="prop.lotto.five">第五位</entry>
+    <entry key="prop.lotto.six">第六位</entry>
+    <entry key="prop.position">职位</entry>
+    
+
+    <!-- 操作、按钮、选项 -->
+    <entry key="act.login">登  录</entry>
+    <entry key="act.signup">注  册</entry>
+    <entry key="act.ok">确  定</entry>
+    <entry key="act.next">继　续</entry>
+    <entry key="act.cancel">取  消</entry>
+    <entry key="act.back">返  回</entry>
+    <entry key="act.reset">重  填</entry>
+    <entry key="act.submit">提  交</entry>
+    <entry key="act.create">创  建</entry>
+    <entry key="act.move">移  动</entry>
+    <entry key="act.edit">修  改</entry>
+    <entry key="act.createupdate">创建/更新</entry>
+    <entry key="act.delete">删  除</entry>
+    <entry key="act.search">搜  索</entry>
+    <entry key="act.search.parameter">搜索参数</entry>
+    <entry key="act.create.dept">创建部门</entry>
+    <entry key="act.create.user">创建用户</entry>
+
+    <entry key="act.create.mass">创建用户群</entry>
+    <entry key="act.create.batch">导入用户群</entry>
+
+	<entry key="act.pay.continue">继续充值</entry>
+	<entry key="act.pay.bindLotto">绑定活动手机</entry>
+
+
+    <entry key="act.reorder">调整顺序</entry>
+    <entry key="act.save">保  存</entry>
+    <entry key="act.user.pos">职位管理</entry>
+    <entry key="act.user.createpos">创建职位</entry>
+    <entry key="act.user.createposlater">以后再创建</entry>
+    <entry key="act.upgrade">升  级</entry>
+    <entry key="act.scan">扫  描</entry>
+    <entry key="act.setting">设  置</entry>
+    <entry key="act.publish">发  布</entry>
+    <entry key="act.tbop.info">信息</entry>
+    <entry key="act.tbop.add">添加</entry>
+    <entry key="act.addfrd">添加为好友</entry>
+    <entry key="act.backfrdsrch">返回好友搜索</entry>
+    <entry key="act.sendinvite">发送验证信息</entry>
+    <entry key="act.print">打  印</entry>
+    <entry key="act.repay">重新支付</entry>
+    <entry key="act.bank.cmb.enter">立即进入招商银行网上支付页面</entry>
+    <entry key="act.click">点击这里</entry>
+    <entry key="act.bizservice.open">开通计时服务</entry>
+    <entry key="act.createcate">创建分类</entry>
+    <entry key="act.csstag">样式标签</entry>
+    <entry key="act.preview">预  览</entry>
+    <entry key="act.mngrcate">类别管理</entry>
+    <entry key="act.send">发 送</entry>
+    <entry key="act.tbop.delete">删 除</entry>
+    <entry key="act.spec.send">发 送</entry>
+    <entry key="act.user.search">好友搜索</entry>
+    <entry key="act.fenix.search">社区搜索</entry>
+    <entry key="act.fenix.join">加入社区</entry>
+    <entry key="act.fenix.secede">注销社区</entry>
+    <entry key="act.fenix.full">暂停加入</entry>
+    <entry key="act.lotto.start">新一轮</entry>
+
+    <!-- 菜单项 -->
+    <entry key="menu.index">首 页</entry>
+    <entry key="menu.user">用户服务</entry>
+    <entry key="menu.bizinfo">商务资讯</entry>
+    <entry key="menu.community">即时论坛</entry>
+    <entry key="menu.download">免费下载</entry>
+    <entry key="menu.product">产品介绍</entry>
+    <entry key="menu.coop">合作加盟</entry>
+    <entry key="menu.feedback">用户反馈</entry>
+
+    <entry key="menu.server">eWork 服务器</entry>
+    <entry key="menu.group">虚拟服务器</entry>
+    <entry key="menu.org">组织结构</entry>
+    <entry key="menu.admin.user">eWork 用户</entry>
+    <entry key="menu.admin">管理员帐户</entry>
+    <entry key="menu.meeting">网络会议</entry>
+    <entry key="menu.cluster">服务器簇</entry>
+    <entry key="menu.upgrade">版本发布</entry>
+    <entry key="menu.faq">FAQ 管理</entry>
+    <entry key="menu.faq">FAQ 管理</entry>
+    <entry key="menu.sms">SMS 管理</entry>
+    <entry key="menu.serial">卡号 管理</entry>
+    <entry key="menu.stat">数据统计</entry>
+    <entry key="menu.lotto">LOTTO 管理</entry>
+
+
+    <entry key="menu.org.orgtree">组织结构树</entry>
+    <entry key="menu.org.users">用  户</entry>
+    <entry key="menu.org.positions">职  位</entry>
+    <entry key="menu.payment">用户充值</entry>
+    <entry key="menu.payment.create">订单创建成功！请到“缴费记录”查询到帐信息</entry>
+    <entry key="menu.time">时  间</entry>
+    <entry key="menu.payment.balance">帐户余额</entry>
+    <entry key="menu.payment.detail">定单/缴费记录查询</entry>
+    <entry key="menu.comsumption.detail">消费详单查询</entry>
+    <entry key="menu.monthlybill.detail">消费月结查询</entry>
+    <entry key="menu.biz_service.manage">计时服务管理</entry>
+
+    <entry key="menu.case.analyze">案例分析</entry>
+    <entry key="menu.case.susf">成功案例</entry>
+    <entry key="menu.download.elink">eLink客户端下载</entry>
+    <entry key="menu.version.new">版本信息</entry>
+    <entry key="menu.region.search">社区搜索</entry>
+    <entry key="menu.lotto.result">用户充值反馈活动结果</entry>
+
+
+	<entry key="menu.region.user">社区用户</entry>
+    <entry key="menu.region.detail">社区详细信息</entry>
+    <entry key="menu.region.list">社区列表</entry>
+
+
+
+    <!-- 页面框架 -->
+    <entry key="term.public.title">eWork&amp;trade; | 即时电子工作系统</entry>
+    <entry key="term.faq">常见问题</entry>
+    <entry key="term.contact">联系我们</entry>
+    <entry key="term.online">在线客服</entry>
+    <entry key="term.about">关于我们</entry>
+    <entry key="term.favor">加入收藏</entry>
+    <entry key="term.terms">使用条款</entry>
+    <entry key="term.jobopp">工作机会</entry>
+    <entry key="term.userlogin">用户登录</entry>
+    <entry key="term.usertype">用户类型</entry>
+    <entry key="term.username">用户名</entry>
+    <entry key="term.enamevip">e 名/VIP</entry>
+    <entry key="term.password">密  码</entry>
+    <entry key="term.verifycode">验证码</entry>
+    <entry key="term.fetchpwd">取回密码</entry>
+    <entry key="term.basic.feature">基本功能</entry>
+    <entry key="term.expand.feature">扩展功能</entry>
+
+    <entry key="term.egadmin.title">eWork&amp;trade; | 即时电子工作系统信息中心</entry>
+
+    <entry key="term.searchform">搜索参数</entry>
+
+    <entry key="term.create">创建新{0}</entry>
+    <entry key="term.update">修改{0} &lt;b&gt;{1}&lt;/b&gt; 详细信息</entry>
+
+    <entry key="term.user.service">{0}服务中心</entry>
+    <entry key="term.user.update">修改详细信息/密码</entry>
+    <entry key="term.user.logout">退出</entry>
+    <entry key="term.user.account">用户帐户</entry>
+    <entry key="term.user.search">用户搜索</entry>
+    <entry key="term.user.searchadd">好友查询/添加</entry>
+    <entry key="term.fenix.searchadd">社区查询/添加</entry>
+    <entry key="term.user.upgrade">eWork 6.x / eLink 2005 用户帐号升级</entry>
+
+    <entry key="term.user.friend.result">好友添加结果</entry>
+    <entry key="term.user.friend.invite">验证信息</entry>
+
+    <entry key="term.user.priphoneasmobile">设置为移动电话号码</entry>
+
+    <entry key="term.org.org">组织目录树</entry>
+    <entry key="term.org.user">用户管理</entry>
+    <entry key="term.org.position">职位管理</entry>
+
+    <entry key="term.userreg.basicinfo">用户基本信息</entry>
+    <entry key="term.userreg.contactinfo">用户联系信息</entry>
+    <entry key="term.detailinfo">详细信息</entry>
+    <entry key="term.userreg.imbind">与 eWork 绑定</entry>
+    <entry key="term.massreg.privateinfo">用户群个人信息</entry>
+    <entry key="term.massreg.comminfo">用户群公共信息</entry>
+    <entry key="term.mass.users">群用户</entry>
+    <entry key="term.batch.users">选择导入文件</entry>
+    <entry key="term.batchinp.file">导入文件</entry>
+    <entry key="term.masspos.create">用户创建职位</entry>
+
+
+    <entry key="term.es.info">eWork 服务器 &lt;b&gt;{0}&lt;/b&gt; 详细信息</entry>
+    <entry key="term.es.cluster">eWork 服务器 &lt;b&gt;{0}&lt;/b&gt; 簇信息</entry>
+    <entry key="term.es.create">创建新 eWork 服务器</entry>
+    <entry key="term.es.update">修改 eWork 服务器 &lt;b&gt;{0}&lt;/b&gt; 详细信息</entry>
+
+    <entry key="term.admin.create">创建新管理员用户</entry>
+    <entry key="term.admin.update">管理员用户 &lt;b&gt;{0}&lt;/b&gt; 详细信息</entry>
+    <entry key="term.dept.create">创建新部门</entry>
+    <entry key="term.dept.update">修改部门 &lt;b&gt;{0}&lt;/b&gt; 详细信息</entry>
+    <entry key="term.pos.create">创建新职位</entry>
+    <entry key="term.pos.update">修改职位 &lt;b&gt;{0}&lt;/b&gt; 详细信息</entry>
+    <entry key="term.userpos.create">为 &lt;b&gt;{0}&lt;/b&gt; 创建职位</entry>
+    <entry key="term.userpos.update">修改 &lt;b&gt;{0}&lt;/b&gt; 的职位</entry>
+    <entry key="term.treenode.move">移动树节点</entry>
+    <entry key="term.treenode.userpos">拟移动的用户职位节点</entry>
+    <entry key="term.treenode.dept">将以下树节点移动到</entry>
+    <entry key="term.treenode.position">将以下树节点的职位设定为</entry>
+
+    <entry key="term.pubuser.title">公众用户注册</entry>
+    <entry key="term.group.title">用户组注册</entry>
+    <entry key="term.group.reg">注册组名</entry>
+    <entry key="term.group.reg.ok">可以注册!</entry>
+
+    <entry key="term.faq.info">FAQ 内容信息</entry>
+    <entry key="term.typelistform">类别列表</entry>
+    <entry key="term.biz.type.reference">推荐人奖励</entry>
+
+    <entry key="term.biz.type.sms">短消息</entry>
+    <entry key="term.biz.type.ip2phone">IP电话</entry>
+    <entry key="term.biz.type.fax">传真</entry>
+    <entry key="term.biz.price.regbonus">注册红利</entry>
+    <entry key="term.biz.price.rate.rmb">term.biz.price.rate.rmb</entry>
+
+    <entry key="term.biz.unit.item">条</entry>
+    <entry key="term.biz.unit.minute">分钟</entry>
+    <entry key="term.biz.unit.time">时间</entry>
+    <entry key="term.biz.unit.rmb">元</entry>
+    <entry key="term.serial.create">创建卡号</entry>
+
+
+    <entry key="term.copyright">&amp;copy; 1994-2006 Konlink Group, Inc. All Rights Reserved.</entry>
+    <entry key="term.icp.license">ICP 证 川B2-20040081</entry>
+
+
+
+    <!-- 提示语 -->
+    <entry key="tip">提示：</entry>
+    <entry key="tip.help.vericode">为什么要填写验证码？</entry>
+    <entry key="tip.help.password">如何设置密码才能更安全？</entry>
+    <entry key="tip.help.pwdfetch">如果忘了密码怎么办？</entry>
+    <entry key="tip.help.iptrans">什么是 IP 转接号码？</entry>
+    <entry key="tip.help.otherim">填写其它即时通讯软件并与 eWork 绑定，有什么作用？</entry>
+
+    <entry key="tip.vericode">请填写您在图片中看到的文字</entry>
+    <entry key="tip.ename">可使用汉字、字母(a-z)、数字(0-9)、下划线(_)和连接线(-)</entry>
+    <entry key="tip.nickname">建议填写您的真实姓名，以便通过 eWork 进行有效的沟通</entry>
+    <entry key="tip.password">请填写 6-16 位字符</entry>
+    <entry key="tip.passwordupd">若不需要修改密码，请留空</entry>
+    <entry key="tip.pwdcfm">请重复填写以上密码</entry>
+    <entry key="tip.passq">您取回密码时的提示问题，&lt;b&gt;请务必填写，否则将无法取回密码&lt;/b&gt;</entry>
+    <entry key="tip.passa">以上问题的答案</entry>
+
+    <entry key="tip.birthday">yyyy-mm-dd 您可选择仅填写年份或者年份和月份</entry>
+    <entry key="tip.email">如 username@domain.ext</entry>
+    <entry key="tip.mobile">13xxxxxxxxx</entry>
+    <entry key="tip.phone">028-86530481-1010 或 +86-28-86530481-1011</entry>
+    <entry key="tip.phonepri">可以设置为移动电话，或者普通电话号码</entry>
+    <entry key="tip.from">从：</entry>
+    <entry key="tip.to">到：</entry>
+
+    <entry key="tip.realname">建议填写真实姓名</entry>
+    <entry key="tip.idcard">15位或18位的数字</entry>
+    <entry key="tip.hobby"></entry>
+    <entry key="tip.userdesc"></entry>
+
+    <entry key="tip.tree.busy">正在查询数据，请稍候……</entry>
+    <entry key="tip.tree.nosub">没有相关的下级部门或用户</entry>
+
+    <entry key="tip.time">(请输入查询年月，如“200509”)</entry>
+    <entry key="tip.payment.accountId">若为自己充值，请填写自己的 e 名，若为他人充值，请填写被充值人的 e 名</entry>
+    <entry key="tip.payment.amount">请填写充值金额，如：200.00。货币单位为</entry>
+    <entry key="tip.payment.bank">[查看银行卡详细说明]</entry>
+
+    <entry key="tip.reg.bonus.sms">您的用户名：{0} 验证码：{1}</entry>
+    <entry key="tip.double.click">双击显示详细信息</entry>
+
+    <!-- 提示段落 -->
+    <entry key="para.userreg.group">请选择您要注册的虚拟服务器：</entry>
+    <entry key="para.userreg.regnow">立即注册</entry>
+    <entry key="para.userreg.basic">以下标记 (&lt;EM&gt;*&lt;/EM&gt;) 的为必填项目，请尽量提供真实的信息，以便最大限度的发挥 eWork 的功能。</entry>
+    <entry key="para.userreg.contact">请填写以下基本联系方式，以便您和您的朋友能够更方便的通过 eWork 进行沟通。这些信息仅有经过您授权的好友方可查看。</entry>
+    <entry key="para.userreg.detail">以下用户详细信息仅有经过您授权的好友方可查看。</entry>
+
+    <entry key="para.user.friend.rejected">以下用户拒绝被任何人添加为好友！</entry>
+    <entry key="para.user.friend.added">以下用户已经被成功的添加为好友！</entry>
+    <entry key="para.user.friend.verify">以下用户需要您发送信息进行身份验证！</entry>
+
+    <entry key="para.user.welcome">欢迎您，{0}！</entry>
+    <entry key="para.paymethod.bank.tip">我们强烈建议您使用同行转帐！由于无法知道来源的帐户，所以请一定要在汇款金额上加减少量金额方便我们识别。如100.12元，详细汇款方法和手续费请向当地银行咨询. 银行汇款和邮局汇款至：中国银行高兴支行，成都广联网域技术有线公司，帐号: 42460968091001</entry>
+
+    <entry key="para.tree.reorder">若需更改本节点在树中的顺序，请在组织结构树中选定本节点的父部门，然后点击“调整顺序”按钮。</entry>
+    <entry key="para.tree.move">如需要修改本节点的所属部门，请在组织结构树中选定本节点，然后点击“移动”按钮。</entry>
+    <entry key="para.paymethod.CMB">&lt;a href="https://www.sz1.cmbchina.com/script/PaymentApply_all.htm" target="_blank"&gt;立即申请招商银行“网上支付卡”&lt;/a&gt;</entry>
+    <entry key="para.paymethod.chinapay">中国银联支付</entry>
+    <entry key="para.paymethod.chinapay.open">如果您使用的银行卡尚未开通网上支付功能，请持有效证件到各银行网点开通后方可使用 eWork支付平台提供的方便快捷的服务。</entry>
+    <entry key="para.paymethod.bank.tip">我们强烈建议您使用同行转帐！由于无法知道来源的帐户，所以请一定要在汇款金额上加减少量金额方便我们识别。如100.12元，详细汇款方法和手续费请向当地银行咨询。银行汇款和邮局汇款至：中国银行，帐号：42460968091001</entry>
+
+    <entry key="para.paymethod.chinapay.url">&lt;a href="./help/page.do?id=helpfee7" target="_blank"&gt;看已支持的银行卡&lt;/a&gt;</entry>
+    <entry key="para.paymethod.chinapay.des"><![CDATA[ <P>您可直接在网上开通电子支付功能，立即进行支付。 <A HREF="https://www.sz1.cmbchina.com/script/PaymentApply_all.htm"
+        target="_blank">[立即申请招商银行“网上支付卡”]</A> <P>请在上面选择您支付时要使用的银行以及对应的银行卡，然后点击&nbsp;<font color="green">确定</font>&nbsp;按钮，即可到对应银行机构的页面上进行支付。在您支付时，请核对您支付的金额与本页面定单中的支付金额，若和本页面提示的支付金额不符，请勿支付！
+    <P>请您务必记录下 <Font color="green">定单编号</Font> 和 <Font color="green">定单日期</Font> 并妥善保管，以备日后查验。]]>
+    </entry>
+    <entry key="para.payment.chinapay.des_1">您需要持您的有关证件，到银行各营业网点办理开通网上支付功能后，方可使用 eWork 支付平台的网上支付功能提供的方便快捷的充值支付服务。</entry>
+    <entry key="para.payment.chinapay.des_2">，查看目前 eWork 支付平台已经支持的银行和银行卡，及其使用帮助演示。</entry>
+    <entry key="para.payment.chinapay.des_3"><![CDATA[<p>请在上面选择您支付时要使用的银行以及对应的银行卡，然后点击&nbsp;<font color="green">确定</font>&nbsp;按钮，即可到对应银行机构的页面上进行支付。在您支付时，请核对您支付的金额与本页面定单中的支付金额，若和本页面提示的支付金额不符，请勿支付！</p>
+            <p>请您务必记录下 <font color="green">定单编号</font> 和 <font color="green">定单日期</font>并妥善保管，以备日后查验。</p>]]>
+    </entry>
+    <entry key="para.monthlybill.description"><![CDATA[1、此帐单便于您了解自己的话费支出情况，若有疑问，请拨打客户服务号码 028-86530481-1026。<br>
+                                  2、为保证帐单能及时到达您手中，请您在通信地址改变时及时登录 <A href="http://www.konlink.net">www.konlink.net</A> 或拨打 028-86530481-1026 进行更新。<br>
+                                  3、IP长途费的计费单元为分钟。<br>]]>
+    </entry>
+    <entry key="para.bizserivce.mgr1">请选择您所需要的计时服务。</entry>
+    <entry key="para.bizserivce.mgr2">批量开通您所需要的计时服务。</entry>
+    <entry key="para.bizserivce.edit">您可以修改您所开通的计时服务</entry>
+
+    <entry key="para.upgrade.upload.p1">1. 请将本版本需要更新的文件按照发布后的路径上传到 eWork Socket Server 的 {0} 文件夹下</entry>
+    <entry key="para.upgrade.upload.p2">2. 请将本版本的安装包放置到文件下载站点的 {0} 文件夹下</entry>
+    <entry key="para.upgrade.upload.p3">3. 点击“提交”按钮，系统将会扫描上传的文件，然后请到“配置”功能中对更新文件下载后的操作进行设置。</entry>
+    <entry key="para.upgrade.upload.p4">4. 在版本列表页面点击“发布”按钮将版本发布</entry>
+
+    <entry key="para.group.name">请正确填写企业名称，如：广联集团</entry>
+
+
+    <!-- Tag Text -->
+    <entry key="tag.navigator.listrange">共有 &lt;b&gt;{0}&lt;/b&gt; 条记录，当前显示第 &lt;b&gt;{1} - {2}&lt;/b&gt; 条</entry>
+    <entry key="tag.navigator.pages">第 &lt;b&gt;{0} / {1}&lt;/b&gt; 页</entry>
+    <entry key="tag.navigator.btn.first">第一页</entry>
+    <entry key="tag.navigator.btn.prev">上一页</entry>
+    <entry key="tag.navigator.btn.next">下一页</entry>
+    <entry key="tag.navigator.btn.last">最末页</entry>
+
+    <!-- Form Text-->
+    <entry key="form.search.month">查询月份</entry>
+    <entry key="form.region.search">查询字符串</entry>
+
+    <!--report Text -->
+    <entry key="report.description">备注</entry>
+    <entry key="report.account">客户名称：</entry>
+    <entry key="report.duration">查询周期：</entry>
+    <entry key="report.duration_content">{0} 至 {1}</entry>
+    <entry key="report.total_amount">费用合计</entry>
+    <entry key="report.print_time">打印日期：</entry>
+    <entry key="report.monthlybill.title">eWork客户月结账单</entry>
+    <entry key="report.monthlybill.biztype">费用项目</entry>
+    <entry key="report.monthlybill.pricevalue"><![CDATA[ 通信量&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单价&nbsp;&nbsp;&nbsp;&nbsp;小计
+                                                      <BR>
+                                                      (时长/条)&nbsp;(Kon)&nbsp;(Kon)]]>
+    </entry>
+    <entry key="report.monthlybill.total_dicount">优惠费用合计</entry>
+    <entry key="report.monthlybill.actual_amount">实收费用合计</entry>
+    <entry key="report.monthlybill.balance"><![CDATA[ &nbsp;截止{0}，您的帐户余额为 {1} Kon。]]></entry>
+
+    <!--Biz Text  -->
+    <entry key="biz.dotService">点服务cn</entry>
+    <entry key="biz.durService">计时服务cn</entry>
+    <entry key="biz.dot.sms">短消息</entry>
+    <entry key="biz.dot.mms">彩信</entry>
+    <entry key="biz.dur.phone">市话</entry>
+    <entry key="biz.dur.ip">IP 电话</entry>
+    <entry key="biz.dot.aa">dot服务测试1</entry>
+    <entry key="biz.dot.bb">dot服务测试2</entry>
+    <entry key="biz.dur.aa">dur服务测试1</entry>
+
+    <!--Group Text-->
+    <entry key="group.group_name">兴趣名称</entry>
+    <entry key="group.group_desc">兴趣介绍</entry>
+    <entry key="group.group_cata">兴趣类别</entry>
+    <entry key="group.group_max_cata">大类别</entry>
+    <entry key="group.group_min_cata">小类别</entry>
+    <entry key="group.group_enter_key">输入关键字</entry>
+    <entry key="group.group_key_tip">兴趣关键词请输入本兴趣小组的主题，以便在搜索时正确快速找到本兴趣小组。（最多设置5个）</entry>
+    <entry key="group.group_join_mode">加入方式</entry>
+    <entry key="group.group_join_1">谁都能加入到这个兴趣小组。（公开）</entry>
+    <entry key="group.group_join_2">管理员同意才可加入到此兴趣小组。（许可）</entry>
+    <entry key="group.group_join_3">只有被邀请的人才可加入到此兴趣小组。（保密）</entry>
+    <entry key="group.group_member_count">用户数：</entry>
+    <entry key="group.group_admin">管理员：</entry>
+    <entry key="group.group_creator">创建者：</entry>
+    <entry key="group.group_create_time">建立时间：</entry>
+    <entry key="group.group_description">介绍信息：</entry>
+
+    <entry key="group.leftbar.create">建立兴趣小组</entry>
+    <entry key="group.leftbar.browse">浏览兴趣小组</entry>
+    <entry key="group.leftbar.search">搜索兴趣小组</entry>
+    <entry key="group.leftbar.back">返回上一页</entry>
+
+    <entry key="group.join.memberscount">拥有组员：</entry>
+    <entry key="group.join.createby">，由</entry>
+    <entry key="group.join.createat">建立于：</entry>
+    <entry key="group.join.button"> 我要加入 </entry>
+    <entry key="group.join.passwd"> 该兴趣小组禁止用户加入，仅拥有访问密码的用户可以加入该兴趣小组。 </entry>
+
+    <entry key="group.button.search">搜 索</entry>
+    <entry key="group.tip.search">兴趣小组搜索： </entry>
+    <entry key="group.title.create">建立新的兴趣小组</entry>
+    <entry key="group.title.group_count">兴趣小组总数</entry>
+    <entry key="group.title.group_name">兴趣小组分类</entry>
+    <entry key="group.title.id">Id</entry>
+    <entry key="group.title.join">加入兴趣小组 {0}</entry>
+    <entry key="group.title.search">搜索兴趣小组</entry>
+    <entry key="group.title.sub_category">属于 {0} 的二级分类</entry>
+
+    <!--Board Text-->
+    <entry key="board.category">留言板分类</entry>
+    <entry key="board.visitor">来访者</entry>
+    <entry key="board.reply">快速回复</entry>
+    <entry key="board.replyContent">回复内容</entry>
+    <entry key="board.topic">留言主题</entry>
+    <entry key="board.publish">我要留言</entry>
+
+    <!--csadmin数据统计-->
+
+    <entry key="stat.type">统计方式</entry>
+    <entry key="stat.byyear">按年</entry>
+    <entry key="stat.bymonth">按月</entry>
+    <entry key="stat.byday">按日</entry>
+    <entry key="stat.timearea">统计时间段</entry>
+    <entry key="stat.year">年</entry>
+    <entry key="stat.month">月</entry>
+    <entry key="stat.day">日</entry>
+    <entry key="button.stat.newuser">注册统计</entry>
+    <entry key="button.stat.online">在线统计</entry>
+    <entry key="button.stat.service">业务统计</entry>
+    <entry key="stat.avgonline">平均在线</entry>
+    <entry key="stat.instantonline">即时在线</entry>
+    <entry key="stat.typeshort.sms">短信</entry>
+    <entry key="stat.typeshort.fax">传真</entry>
+    <entry key="stat.typeshort.phone">IP电话</entry>
+    <entry key="stat.allcount">总次数</entry>
+    <entry key="stat.alltime">总时长</entry>
+    <entry key="stat.avgtime">平均时长</entry>
+    <entry key="stat.totalmoney">总金额</entry>
+    <entry key="stat.group.current.number">当前运营工作组数目</entry>
+    <entry key="stat.charttype">显示方式</entry>
+    <entry key="stat.charttype.pie">饼图</entry>
+    <entry key="stat.charttype.bar">柱图</entry>
+    <entry key="stat.charttype.line">线图</entry>
+    <entry key="stat.group.maxnumber">请选择要统计的运营组数目</entry>
+    <entry key="button.stat.random">随 机</entry>
+    <entry key="tip.stat.noselected">请至少选择一个服务器进行统计</entry>
+    <entry key="tip.stat.overselected">选择服务器数目超过最大限制</entry>
+
+	<!--网络会议 -->
+	<entry key="meeting.add">添加附件</entry>
+	<entry key="meeting.accessory.admin">附件管理</entry>
+	<entry key="meeting.delete">删除附件</entry>
+	<entry key="meeting.limit">不能再添加附件,已达到上限！</entry>
+	<entry key="meeting.desc">附件注释</entry>
+	<entry key="meeting.accessory.detail">网络会议&lt;b&gt;{0}&lt;/b&gt;附件详细信息</entry>
+	<entry key="meeting.accessory.name">附件</entry>
+	<entry key="meeting.accessory.upload">附件 &lt;b&gt;{0}&lt;/b&gt; 上传</entry>
+	<entry key="meeting.action.upload">上传</entry>
+	<entry key="meeting.noselect">附件不能为空！</entry>
+	<entry key="meeting.upload.onetime">1次最多上传3个附件</entry>
+    <entry key="option.broadcast.audio">音频广播成员</entry>
+    <entry key="option.broadcast.video">音视频广播成员</entry>
+	<entry key="option.broadcast.no">非媒体广播成员</entry>
+	<entry key="option.broadcast.yesorno">是否媒体广播成员</entry>
+	<entry key="meeting.member.delete">会议成员 &lt;b&gt;{0}&lt;/b&gt; 删除</entry>
+    <entry key="meeting.isdelete">是否删除？</entry>
+    <entry key="meeting.button.addmember">添加成员</entry>
+    <entry key="meeting.num.current">当前附件数量：</entry>
+    <entry key="meeting.cannot.delete">会议正在进行，无法删除！</entry>
+    <entry key="meeting.delete.state.different">删除失败！请选择相同状态的会议进行删除！</entry>
+    <entry key="meeting.member.name">会议成员</entry>
+    <entry key="meeting.create.select">请选择与会人员!</entry>
+    <entry key="meeting.summary">会议议程摘要</entry>
+    <entry key="meeting.isaudit">是否支持旁听</entry>
+    <entry key="meeting.member.limit">会议人数</entry>
+
+    <entry key="term.meeting.create">创建网络会议</entry>
+    <entry key="meeting.notselect.member">当前没有参会人员！</entry>
+    <entry key="meeting.starttime.sample">如:(2006-05-01 14:30:00)</entry>
+    <entry key="meeting.endtime.sample">如:(2006-05-01 18:00:00)</entry>
+    <entry key="meeting.max.member">会议人数最多15人</entry>
+    <entry key="prop.yes">是</entry>
+    <entry key="prop.no">否</entry>
+    <entry key="meeting.new.sucess">创建新的网络会议&lt;b&gt;{0}&lt;/b&gt;</entry>
+	<entry key="meeting.cannot.update">请选择尚未开始的会议进行修改</entry>
+	<entry key="meeting.member.broadcast">会议成员 &lt;b&gt;{0}&lt;/b&gt; 广播属性修改</entry>
+	<entry key="meeting.member.speak.change">会议成员 &lt;b&gt;{0}&lt;/b&gt; 发言属性修改</entry>
+	<entry key="meeting.getfile.failed">获取会议附件列表失败</entry>
+    <entry key="meeting.create.abandon">放弃</entry>
+    <entry key="meeting.member.speak">能否发言</entry>
+    <entry key="meeting.accessory.limit">最多上传5个附件</entry>
+    <entry key="meeting.compere.change">主持人修改成功</entry>
+    <!--state -->
+    <entry key="state.fenix.region.join">允许加入</entry>
+    <entry key="state.fenix.region.forbidden">满员</entry>
+    <entry key="state.fenix.user.joined"><![CDATA[ <font class="green">已加入社区</font>]]></entry>
+    <entry key="state.fenix.user.seceded"><![CDATA[<font class="red">未加入社区</font>]]></entry>
+    
+    
+	 <!--script tip message -->
+    <entry key="script.user.del">您是否需要删除当前用户？</entry>
+    <entry key="script.dep.del">您是否需要删除所选部门？</entry>
+    <entry key="script.admin.del">您是否需要删除所选管理员？</entry>
+    <entry key="script.mobiles.exist">手机已存在！</entry>
+    <entry key="script.mobiles.number.error">手机号码错误！</entry>
+    <entry key="script.forum.del">退出社区将会删除您的社区好友，确定吗？</entry>
+
+    <!--自定义内容 -->
+	<entry key="para.paymethod.elinkcard.tip">使用 ELINK 卡充值,实际的充值金额将由你使用的 ELINK 卡的面值决定。</entry>
+
+</properties>
