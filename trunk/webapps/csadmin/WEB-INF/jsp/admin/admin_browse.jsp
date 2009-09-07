@@ -4,7 +4,7 @@
 <%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
-<form id="listForm" name="adminListForm" action="./admin.do" method="post">
+<form id="listForm" name="adminListForm" action="./admin" method="post">
 
 	<input type="hidden" name="method" value="" />
 	<input type="hidden" name="page.sortStyle" id="sortStyle" value="${param['page.sortStyle']}"/>
@@ -24,7 +24,7 @@
 	</div>
 	
 	<div id="mainer">
-		<display:table name="${page.result}" uid="admin" class="data" sort="page" requestURI="./admin.do">
+		<display:table name="${page.result}" uid="admin" class="data" sort="page" requestURI="./admin">
 			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">
 				<input type="checkbox" id="chk_${admin_rowNum}" name="chk_${admin_rowNum}" value="${admin.id}" class="ckbox" />
 			</display:column>

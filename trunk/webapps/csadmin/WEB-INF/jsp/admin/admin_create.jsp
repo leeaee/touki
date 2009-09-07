@@ -3,7 +3,7 @@
 <%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
-<form id="adminCreateForm" name="adminCreateForm" action="./admin.do" method="post">
+<form id="adminCreateForm" name="adminCreateForm" action="./admin" method="post">
 
 	<input type="hidden" name="validator" value="adminValidator" />
 	
@@ -17,7 +17,7 @@
 				<td><nobr>
 					<input type="submit" value="<fmt:message key="act.save" />" class="bttn" />
 					<input type="reset" value="<fmt:message key="act.reset" />" class="bttn" />
-					<input type="button" value="<fmt:message key="act.back" />" class="bttn" onclick="location.href = './admin.do'" />
+					<input type="button" value="<fmt:message key="act.back" />" class="bttn" onclick="location.href = './admin'" />
 				</nobr></td>
 			</tr>
 		</table></div>
