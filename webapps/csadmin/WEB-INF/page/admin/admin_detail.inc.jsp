@@ -1,4 +1,4 @@
-<%@ include file="/inc/lib.inc.jsp" %>
+<%@ include file="../inc/lib.inc.jsp" %>
 
 <table class="detail">
 	<tr>

@@ -1,7 +1,7 @@
 <%@ page language="java" buffer="64kb" pageEncoding="UTF-8" errorPage="/exception.jsp" %>
 <%@ taglib prefix="display" uri="/WEB-INF/tld/displaytag.tld" %>
-<%@ include file="/inc/header.inc.jsp" %>
-<%@ include file="/inc/sider.inc.jsp" %>
+<%@ include file="../inc/header.inc.jsp" %>
+<%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
 <form id="listForm" name="adminListForm" action="./admin.do" method="post">
@@ -34,7 +34,7 @@
 			<display:column titleKey="prop.mobile" property="mobile" sortable="true" sortProperty="mobile" />
 			<display:column titleKey="prop.email" property="email" sortable="true" sortProperty="email" />
 			<display:column titleKey="prop.state" sortable="true" sortProperty="state">${f:state(admin.state, userLocale)}</display:column>
-			<display:column titleKey="prop.adminRole" property="roleNames" sortable="true" sortProperty="roleNames" />
+			<display:column titleKey="prop.adminRole" property="roleNames" sortable="false" />
 			<display:column titleKey="prop.lastlogintime" property="lastLogin" sortable="true" sortProperty="lastLogin" decorator="dateDecorator" class="right" headerClass="right" />
 		</display:table>
 	</div>
@@ -88,4 +88,4 @@
 	
 </script>
 
-<%@ include file="/inc/footer.inc.jsp" %>
+<%@ include file="../inc/footer.inc.jsp" %>

@@ -20,6 +20,6 @@ public class IndexServlet extends AbstractServlet {
 	@Override
     public void onDefault(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
-        req.getRequestDispatcher("/index.jsp").forward(req, res);
+        req.getRequestDispatcher(PAGE_ROOT_PATH + "/index.jsp").forward(req, res);
     }
 }
