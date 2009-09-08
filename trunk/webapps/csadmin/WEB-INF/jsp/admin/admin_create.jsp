@@ -7,7 +7,7 @@
 
 	<input type="hidden" name="validator" value="adminValidator" />
 	
-	<input type="hidden" name="method" value="create" />
+	<input type="hidden" name="method" value="doCreate" />
 
 	<div id="upper">
 		<div id="upper-left"><fmt:message key="act.search" /></div>

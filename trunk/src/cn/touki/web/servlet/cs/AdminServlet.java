@@ -135,12 +135,6 @@ public class AdminServlet extends AbstractServlet {
         
         adminService.updateAdmin(admin);
 
-        // To check whether the updated admin is the currnet one.
-        Admin currentAdmin = (Admin) req.getSession().getAttribute(Constants.LOGIN_USER);
-        if (currentAdmin.getName().equals(admin.getName())) {
-            req.getSession().setAttribute(Constants.LOGIN_USER, admin);
-        }
-
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.update", admin.getName()));
         Button button = new Button(Button.LABEL_OK, "");
         button.setAction("location.href = './admin'");

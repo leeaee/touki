@@ -7,7 +7,7 @@
 
 	<input type="hidden" name="validator" value="adminValidator" />
 
-	<input type="hidden" name="method" value="update" />
+	<input type="hidden" name="method" value="doUpdate" />
 	<input type="hidden" name="id" value="${admin.id}" />
 	<input type="hidden" name="lastLogin" value="${admin.lastLogin}" />
 	<input type="hidden" name="createTime" value="${admin.createTime}" />

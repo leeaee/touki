@@ -8,7 +8,7 @@
 	<context:property-placeholder location="classpath*:jdbc.properties"/>
 	
 	<!-- 使用annotation 自动注册bean,保证@Required,@Autowired的属性被注入 -->
-	<context:component-scan base-package="cn.touki.web" />
+	<context:component-scan base-package="cn.touki.web.service" />
 	
 	<!-- 数据源配置,使用应用内的DBCP数据库连接池 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
