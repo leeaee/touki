@@ -16,10 +16,10 @@
 			<tr>
 				<td width="100%"></td>
 				<td><nobr>
-					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'adminDoBrowse')" />			
-					<input type="button" id="query" value="<fmt:message key="act.create" />" class="bttn" onclick="submitForm(this.form, 'adminPreCreate')" />			
-					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'adminPreUpdate')" disabled="disabled" />
-					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'adminDoDelete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
+					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'browse')" />			
+					<input type="button" id="query" value="<fmt:message key="act.create" />" class="bttn" onclick="submitForm(this.form, 'create')" />			
+					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'update')" disabled="disabled" />
+					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'delete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
 				</nobr></td>
 			</tr>
 		</table></div>
@@ -30,7 +30,7 @@
 			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">
 				<input type="checkbox" id="chk_${admin_rowNum}" name="chk_${admin_rowNum}" value="${admin.id}" class="ckbox" />
 			</display:column>
-			<display:column titleKey="prop.adminId" property="adminId" sortable="true" sortProperty="adminId" />
+			<display:column titleKey="prop.adminId" property="name" sortable="true" sortProperty="name" />
 			<display:column titleKey="prop.truename" property="trueName" sortable="true" sortProperty="trueName" />
 			<display:column titleKey="prop.phone" property="phone" sortable="true" sortProperty="phone" />
 			<display:column titleKey="prop.mobile" property="mobile" sortable="true" sortProperty="mobile" />
@@ -48,7 +48,7 @@
 			</tr>			
 			<tr><td>
 				<div class="label"><fmt:message key="prop.adminId"/></div>
-				<input type="text" name="filter_LIKE_adminId" size="28" maxlength="127" class="para" value="${param['filter_LIKE_adminId']}" />
+				<input type="text" name="filter_LIKE_name" size="28" maxlength="127" class="para" value="${param['filter_LIKE_name']}" />
 			</td></tr>
 			<tr><td>
 				<div class="label"><fmt:message key="prop.truename"/></div>
@@ -85,7 +85,7 @@
 <script type="text/javascript">
 
 	$(function() {
-		initDataTable('adminDoDetail', '<fmt:message key="act.ok" />');
+		initDataTable('detail', '<fmt:message key="act.ok" />');
 	});
 	
 </script>

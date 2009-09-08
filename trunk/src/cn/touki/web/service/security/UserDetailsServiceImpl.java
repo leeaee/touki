@@ -55,7 +55,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		}			
 
 		User userdetail = new User(
-				admin.getAdminId(), admin.getPassword(), enabled, accountNonExpired, credentialsNonExpired,
+				admin.getName(), admin.getPassword(), enabled, accountNonExpired, credentialsNonExpired,
 				accountNonLocked, grantedAuths);
 		
 		return userdetail;

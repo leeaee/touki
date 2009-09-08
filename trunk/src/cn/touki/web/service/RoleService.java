@@ -5,7 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.annotation.Secured;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +12,7 @@ import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.entity.admin.Role;
 import cn.touki.web.exception.EntityAlreadyExistException;
-import cn.touki.web.exception.EntityDefaultDeleteException;
+import cn.touki.web.exception.EntityCantDeleteException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.service.dao.RoleDao;
 
@@ -50,30 +49,27 @@ public class RoleService {
 			throw new EntityNotFoundException(Role.KEY, roleName);
 		}
 		
-		logger.debug("Get role by role name: {}.",  roleName);
+		logger.debug("Get role by name: {}.",  roleName);
 		return role; 
 	}	
 	
-	@Secured({"a_manage_role"})
     public void createRole(Role role) throws EntityAlreadyExistException {
     	
-		Role obj = roleDao.getRoleByName(role.getRoleName());
+		Role obj = roleDao.getRoleByName(role.getName());
 		
         if (obj != null) {
-            throw new EntityAlreadyExistException(Role.KEY, role.getRoleName());
+            throw new EntityAlreadyExistException(Role.KEY, role.getName());
         }
 
         roleDao.save(role);
     }
     
-	@Secured({"a_manage_role"})	
     public void updateRole(Role role) {
     	
     	roleDao.merge(role);
     }
     
-	@Secured({"a_manage_role"})	
-	public void deleteRole(Long id) throws EntityNotFoundException, EntityDefaultDeleteException {
+	public void deleteRole(Long id) throws EntityNotFoundException, EntityCantDeleteException {
 		
 		Role role = getRole(id);
 		roleDao.delete(role.getId());

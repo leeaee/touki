@@ -33,7 +33,7 @@ public class Admin extends Identity implements Stateful, Serializable {
 	public static final String KEY = "entity.admin";
 	
 	/* -- Bean Properties -- */
-	private String adminId;
+	private String name;
 	private String password;
 	private String trueName;
 	private String phone;
@@ -51,18 +51,17 @@ public class Admin extends Identity implements Stateful, Serializable {
 	public Admin() {
 	}
 
-	public Admin(String adminId) {
-    	this.adminId = adminId;
+	public Admin(String name) {
+    	this.name = name;
     }
 	
 	//Methods
-	@Column(name="admin_id")
-	public String getAdminId() {
-		return adminId;
+	public String getName() {
+		return name;
 	}
 
-	public void setAdminId(String adminId) {
-		this.adminId = adminId;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPassword() {
@@ -149,15 +148,10 @@ public class Admin extends Identity implements Stateful, Serializable {
 		this.createTime = createTime;
 	}	
 	
-	//多对多定义
 	@ManyToMany
-	//中间表定义,表名采用默认命名规则
 	@JoinTable(name = "cs_admin_x_role", joinColumns = { @JoinColumn(name = "admin_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
-	//Fecth策略定义
 	@Fetch(FetchMode.SUBSELECT)
-	//集合按id排序.
 	@OrderBy("id")
-	//集合中对象id的缓存.
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	public Set<Role> getRoles() {
 		return roles;
@@ -170,7 +164,7 @@ public class Admin extends Identity implements Stateful, Serializable {
 	//非持久化属性.
 	@Transient
 	public String getRoleNames() {
-		return ReflectionUtils.fetchElementPropertyToString(roles, "roleName", ", ");
+		return ReflectionUtils.fetchElementPropertyToString(roles, "name", ", ");
 	}
 
 	//非持久化属性.

@@ -15,7 +15,8 @@
     <entry key="exception.entity.missing">{0} &lt;b&gt;{1}&lt;/b&gt; 不存在！</entry>
     <entry key="exception.entity.exist">{0} &lt;b&gt;{1}&lt;/b&gt; 已经存在！</entry>
     <entry key="exception.entity.paused">{0} &lt;b&gt;{1}&lt;/b&gt; 没有登陆权限,请与管理员联系！</entry>
-	<entry key="exception.entity.defaultdelete">无法删除默认{0} &lt;b&gt;{1}&lt;/b&gt;！</entry>
+	<entry key="exception.entity.cantmodify">不能修改系统默认{0} &lt;b&gt;{1}&lt;/b&gt;！</entry>
+	<entry key="exception.entity.cantdelete">不能删除系统默认{0} &lt;b&gt;{1}&lt;/b&gt;！</entry>
     <entry key="exception.invalid.property">您输入的{0} &lt;b&gt;{1}&lt;/b&gt; 不正确！</entry>
     <entry key="exception.id">请输入正确的 ID，或者在列表中选定操作对象后再试！</entry>
     <entry key="exception.login.failed">登录失败！</entry>
