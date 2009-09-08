@@ -16,6 +16,7 @@ import cn.touki.web.exception.EntityAlreadyExistException;
 import cn.touki.web.exception.EntityCantDeleteException;
 import cn.touki.web.exception.EntityCantModifyException;
 import cn.touki.web.exception.EntityNotFoundException;
+import cn.touki.web.exception.IdEntityException;
 import cn.touki.web.service.dao.AdminDao;
 
 @Service("AdminService")
@@ -89,7 +90,7 @@ public class AdminService {
     	adminDao.merge(admin);
     }
     
-	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityCantDeleteException {
+	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityCantDeleteException, IdEntityException {
 		
 		Admin admin = getAdmin(id);
 		

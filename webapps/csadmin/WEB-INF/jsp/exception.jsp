@@ -18,7 +18,7 @@
     <tr>
 
 		<td width="100%" valign="top" align="center">
-        <web:exception exception="<%=exception%>" debug="true" />
+        <web:exception exception="<%=exception%>" debug="false" />
         </td>
     </tr>
 </table>
