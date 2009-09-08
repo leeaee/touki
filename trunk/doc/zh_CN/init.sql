@@ -18,9 +18,9 @@ insert into cs_resource (id, resource_type, value, position) values(2, 'url', '/
 insert into cs_resource (id, resource_type, value, position) values(3, 'url', '/admin?method=adminPreUpdate*', 3.0);
 insert into cs_resource (id, resource_type, value, position) values(4, 'url', '/admin?method=adminDoDelete*', 4.0);
 insert into cs_resource (id, resource_type, value, position) values(5, 'url', '/admin*', 5.0);
-insert into cs_resource (id, resource_type, value, position) values(6, 'url', '/admin/role?method=rolePreCreate*', 6.0);
-insert into cs_resource (id, resource_type, value, position) values(7, 'url', '/admin/role?method=roleDoDelete*', 7.0);
-insert into cs_resource (id, resource_type, value, position) values(8, 'url', '/admin/role*', 8.0);
+insert into cs_resource (id, resource_type, value, position) values(6, 'url', '/role?method=rolePreCreate*', 6.0);
+insert into cs_resource (id, resource_type, value, position) values(7, 'url', '/role?method=roleDoDelete*', 7.0);
+insert into cs_resource (id, resource_type, value, position) values(8, 'url', '/role*', 8.0);
 
 
 insert into cs_admin_x_role values(1, 1);

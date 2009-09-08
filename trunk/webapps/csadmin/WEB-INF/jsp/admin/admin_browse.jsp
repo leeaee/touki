@@ -1,14 +1,15 @@
-<%@ page language="java" buffer="64kb" pageEncoding="UTF-8" errorPage="/exception.jsp" %>
+<%@ page language="java" buffer="64kb" pageEncoding="UTF-8" errorPage="../exception.jsp" %>
 <%@ taglib prefix="display" uri="/WEB-INF/tld/displaytag.tld" %>
 <%@ include file="../inc/header.inc.jsp" %>
 <%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
-<form id="listForm" name="adminListForm" action="./admin" method="post">
+	
+<form id="listForm" name="adminListForm" action="./admin" method="get">
 
 	<input type="hidden" name="method" value="" />
-	<input type="hidden" name="page.sortStyle" id="sortStyle" value="${param['page.sortStyle']}"/>
-	
+	<input type="hidden" name="page.sortStyle" id="sortStyle" value="${param['page.sortStyle']}"/>	
+		
 	<div id="upper">
 		<div id="upper-left"><fmt:message key="act.search" /></div>
 		<div id="upper-main"><table width="100%" class="btnbar">
@@ -16,13 +17,14 @@
 				<td width="100%"></td>
 				<td><nobr>
 					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'adminDoBrowse')" />			
+					<input type="button" id="query" value="<fmt:message key="act.create" />" class="bttn" onclick="submitForm(this.form, 'adminPreCreate')" />			
 					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'adminPreUpdate')" disabled="disabled" />
 					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'adminDoDelete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
 				</nobr></td>
 			</tr>
 		</table></div>
 	</div>
-	
+
 	<div id="mainer">
 		<display:table name="${page.result}" uid="admin" class="data" sort="page" requestURI="./admin">
 			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">

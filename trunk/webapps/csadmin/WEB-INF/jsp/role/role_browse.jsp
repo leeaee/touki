@@ -1,0 +1,65 @@
+<%@ page language="java" buffer="64kb" pageEncoding="UTF-8" errorPage="../exception.jsp" %>
+<%@ taglib prefix="display" uri="/WEB-INF/tld/displaytag.tld" %>
+<%@ include file="../inc/header.inc.jsp" %>
+<%@ include file="../inc/sider.inc.jsp" %>
+
+<div id="container">
+<form id="listForm" name="roleListForm" action="./role" method="post">
+
+	<input type="hidden" name="method" value="" />
+	<input type="hidden" name="page.sortStyle" id="sortStyle" value="${param['page.sortStyle']}"/>
+	
+	<div id="upper">
+		<div id="upper-left"></div>
+		<div id="upper-main"><table width="100%" class="btnbar">
+			<tr>
+				<td width="100%"></td>
+				<td><nobr>
+					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'adminDoBrowse')" />			
+					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'rolePreUpdate')" disabled="disabled" />
+					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'roleDoDelete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
+				</nobr></td>
+			</tr>
+		</table></div>
+	</div>
+	
+	<div id="mainer">
+		<display:table name="${page.result}" uid="role" class="data" sort="page" requestURI="./admin">
+			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">
+				<input type="checkbox" id="chk_${role_rowNum}" name="chk_${role_rowNum}" value="${role.id}" class="ckbox" />
+			</display:column>
+			<display:column titleKey="prop.adminId" property="roleName" sortable="true" sortProperty="roleName" />
+			<display:column titleKey="prop.truename" property="description" sortable="true" sortProperty="description" />
+		</display:table>
+	</div>
+	
+	<div id="search">
+		<table class="datanav">
+			<tr>
+				<th><fmt:message key="term.searchform" /></th>
+			</tr>			
+			<tr><td>
+				<div class="label"><fmt:message key="prop.adminId"/></div>
+				<input type="text" name="filter_LIKE_roleName" size="28" maxlength="127" class="para" value="${param['filter_LIKE_roleName']}" />
+			</td></tr>
+		</table>
+	</div>
+	
+	<div id="downer"><html:navigator name="downerNav" pageInfo="${page}" style="btnbar" locale="${userLocale}" /></div>
+	
+</form>
+
+<div id="dialog" title="<fmt:message key="term.detailinfo" />" class="dialog">
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+	$(function() {
+		initDataTable('adminDoDetail', '<fmt:message key="act.ok" />');
+	});
+	
+</script>
+
+<%@ include file="../inc/footer.inc.jsp" %>

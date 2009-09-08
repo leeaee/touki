@@ -49,7 +49,7 @@
 	    </li>  
 	      
 		<li class="navitem">
-			<a href="./admin"><span><fmt:message key="entity.admin" /></span></a>
+			<a href="./role"><span><fmt:message key="entity.role" /></span></a>
 			<div class="subnav">
 				<ul class="menu">
 					<li><a href="./admin?method=adminPreCreate"><fmt:message key="term.admin.create" /></a></li>

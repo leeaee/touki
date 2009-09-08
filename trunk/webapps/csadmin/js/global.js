@@ -11,7 +11,7 @@ $(document).ready(function() {
 /**
  *  common methods need by web appllcation. 
  */
- 
+
 submitForm = function(obj, methodName) {
     obj.method.value = methodName;
     obj.submit();
