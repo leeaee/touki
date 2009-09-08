@@ -107,6 +107,16 @@
 		<url-pattern>/admin</url-pattern>
 	</servlet-mapping>
 		
+	<servlet>
+		<servlet-name>RoleServlet</servlet-name>
+		<display-name>roleServlet</display-name>
+		<servlet-class>cn.touki.web.servlet.cs.RoleServlet</servlet-class>
+	</servlet>		
+	<servlet-mapping>
+		<servlet-name>RoleServlet</servlet-name>
+		<url-pattern>/role</url-pattern>
+	</servlet-mapping>
+		
 	<!-- web -->
 	<welcome-file-list>
 		<welcome-file>login</welcome-file>

@@ -5,7 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.annotation.Secured;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -65,7 +64,6 @@ public class AdminService {
 		return admin;
     }
 	
-	@Secured({"a_manage_admin"})
     public void createAdmin(Admin admin) throws EntityAlreadyExistException {
     	
 		Admin obj = adminDao.getAdminById(admin.getAdminId());
@@ -80,14 +78,12 @@ public class AdminService {
         adminDao.save(admin);
     }
     
-	@Secured({"a_manage_admin"})	
     public void updateAdmin(Admin admin) {
     	
     	admin.setLastModify(System.currentTimeMillis());
     	adminDao.merge(admin);
     }
     
-	@Secured({"a_manage_admin"})	
 	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityDefaultDeleteException {
 		
 		Admin admin = getAdmin(id);
