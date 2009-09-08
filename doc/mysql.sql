@@ -5,9 +5,9 @@
 /*==============================================================*/
 CREATE TABLE cs_admin (
 	id bigint AUTO_INCREMENT NOT NULL,
-	admin_id varchar(63) NOT NULL,
+	name varchar(63) NOT NULL,
 	password varchar(32) NOT NULL,
-	true_name varchar(63),
+	true_name varchar(63) NULL,
 	phone varchar(20)  NULL,
 	mobile varchar(20) NULL,
 	email varchar(127) NULL,	
@@ -25,8 +25,10 @@ CREATE TABLE cs_admin (
 /*==============================================================*/
 CREATE TABLE cs_role (
 	id bigint AUTO_INCREMENT NOT NULL,
-	role_name varchar(63),
+	name varchar(63) NOT NULL,
 	description varchar(255) DEFAULT NULL,
+	create_time bigint(20) DEFAULT '111111111111',
+	last_modify bigint(20) DEFAULT '111111111111',	
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB ROW_FORMAT = DEFAULT CHARSET=utf8;
 
@@ -48,6 +50,7 @@ CREATE TABLE cs_authority (
 CREATE TABLE cs_resource (
 	id bigint AUTO_INCREMENT NOT NULL,
 	resource_type varchar(63) NOT NULL,
+	application varchar(63),	
 	value varchar(63) NOT NULL,
 	position float NOT NULL,
 	description varchar(255) DEFAULT NULL,

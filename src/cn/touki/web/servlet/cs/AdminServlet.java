@@ -19,6 +19,7 @@ import cn.touki.web.core.servlet.Constants;
 import cn.touki.web.core.validation.WebBeanValidator;
 import cn.touki.web.entity.admin.Admin;
 import cn.touki.web.exception.EntityAlreadyExistException;
+import cn.touki.web.exception.EntityCantModifyException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.WebException;
 import cn.touki.web.service.AdminService;
@@ -39,13 +40,13 @@ public class AdminServlet extends AbstractServlet {
 	public void onDefault(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException, EntityNotFoundException {
 		
-		onAdminDoBrowse(req, res);
+		onBrowse(req, res);
 	}
 	
 	/**
 	 * 管理员浏览
 	 */
-	public void onAdminDoBrowse(HttpServletRequest req, HttpServletResponse res)
+	public void onBrowse(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException, EntityNotFoundException {
 		
 		List<PropertyFilter> filters = HibernateWebUtils.buildPropertyFilters(req);
@@ -59,7 +60,7 @@ public class AdminServlet extends AbstractServlet {
 	/**
 	 * 管理员详细信息
 	 */        
-    public void onAdminDoDetail(HttpServletRequest req, HttpServletResponse res) 
+    public void onDetail(HttpServletRequest req, HttpServletResponse res) 
 	    	throws IOException, ServletException, WebException {
 	    	
     	Long id = getRequestId(req);
@@ -72,13 +73,13 @@ public class AdminServlet extends AbstractServlet {
 	/**
 	 * 管理员创建
 	 */
-    public void onAdminPreCreate(HttpServletRequest req, HttpServletResponse res) 
+    public void onCreate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException {
 
         req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_create.jsp").forward(req, res);
     }	
     
-    public void onAdminDoCreate(HttpServletRequest req, HttpServletResponse res) 
+    public void onDoCreate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException, EntityAlreadyExistException {
 
     	Admin admin = (Admin) WebBeanValidator.getValidBean(req, Admin.class);
@@ -86,7 +87,7 @@ public class AdminServlet extends AbstractServlet {
         
         adminService.createAdmin(admin);
 
-        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", admin.getAdminId()));
+        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", admin.getName()));
         
         List<Button> buttons = new ArrayList<Button>();
         Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './admin?method=adminPreCreate'");
@@ -100,7 +101,7 @@ public class AdminServlet extends AbstractServlet {
 	/**
 	 * 管理员修改
 	 */
-    public void onAdminPreUpdate(HttpServletRequest req, HttpServletResponse res) 
+    public void onUpdate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException, WebException {
     	
     	Long id = getRequestId(req);
@@ -110,7 +111,7 @@ public class AdminServlet extends AbstractServlet {
         req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_update.jsp").forward(req, res);
     }
     
-    public void onAdminPreUpdateSelf(HttpServletRequest req, HttpServletResponse res)
+    public void onUpdateSelf(HttpServletRequest req, HttpServletResponse res)
 		    throws IOException, ServletException, WebException {
 		
 		Admin admin = (Admin) req.getSession().getAttribute(Constants.LOGIN_USER);
@@ -119,13 +120,13 @@ public class AdminServlet extends AbstractServlet {
 		req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_update.jsp").forward(req, res);
 	}    
     
-    public void onAdminDoUpdate(HttpServletRequest req, HttpServletResponse res) 
-    		throws IOException, ServletException, EntityAlreadyExistException, EntityNotFoundException {
+    public void onDoUpdate(HttpServletRequest req, HttpServletResponse res) 
+    		throws IOException, ServletException, EntityAlreadyExistException, EntityNotFoundException, EntityCantModifyException {
 
         Admin admin = (Admin) WebBeanValidator.getValidBean(req, Admin.class);
         
         if (StringUtils.isEmpty(admin.getPassword())) {
-            Admin orgAdmin = adminService.getAdmin(admin.getAdminId());
+            Admin orgAdmin = adminService.getAdmin(admin.getName());
             admin.setPassword(orgAdmin.getPassword());
         }
         else {
@@ -136,11 +137,11 @@ public class AdminServlet extends AbstractServlet {
 
         // To check whether the updated admin is the currnet one.
         Admin currentAdmin = (Admin) req.getSession().getAttribute(Constants.LOGIN_USER);
-        if (currentAdmin.getAdminId().equals(admin.getAdminId())) {
+        if (currentAdmin.getName().equals(admin.getName())) {
             req.getSession().setAttribute(Constants.LOGIN_USER, admin);
         }
 
-        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.update", admin.getAdminId()));
+        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.update", admin.getName()));
         Button button = new Button(Button.LABEL_OK, "");
         button.setAction("location.href = './admin'");
 
@@ -150,7 +151,7 @@ public class AdminServlet extends AbstractServlet {
 	/**
 	 * 管理员删除
 	 */        
-    public void onAdminDoDelete(HttpServletRequest req, HttpServletResponse res) 
+    public void onDelete(HttpServletRequest req, HttpServletResponse res) 
 	    	throws IOException, ServletException, WebException {
 	    	
         List<Long> ids = getCheckedIds(req);

@@ -6,7 +6,7 @@
 	</tr>
     <tr>
         <td class="keyf"><fmt:message key="prop.adminId"/></td>
-        <td class="v">${admin.adminId}</td>
+        <td class="v">${admin.name}</td>
     </tr>
     <tr>
         <td class="keyf"><fmt:message key="prop.truename"/></td>

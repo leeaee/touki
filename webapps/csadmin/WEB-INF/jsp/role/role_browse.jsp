@@ -15,20 +15,20 @@
 			<tr>
 				<td width="100%"></td>
 				<td><nobr>
-					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'adminDoBrowse')" />			
-					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'rolePreUpdate')" disabled="disabled" />
-					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'roleDoDelete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
+					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'browse')" />			
+					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'update')" disabled="disabled" />
+					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'delete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
 				</nobr></td>
 			</tr>
 		</table></div>
 	</div>
 	
 	<div id="mainer">
-		<display:table name="${page.result}" uid="role" class="data" sort="page" requestURI="./admin">
+		<display:table name="${page.result}" uid="role" class="data" sort="page" requestURI="./role">
 			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">
 				<input type="checkbox" id="chk_${role_rowNum}" name="chk_${role_rowNum}" value="${role.id}" class="ckbox" />
 			</display:column>
-			<display:column titleKey="prop.adminId" property="roleName" sortable="true" sortProperty="roleName" />
+			<display:column titleKey="prop.adminId" property="name" sortable="true" sortProperty="name" />
 			<display:column titleKey="prop.truename" property="description" sortable="true" sortProperty="description" />
 		</display:table>
 	</div>
@@ -57,7 +57,7 @@
 <script type="text/javascript">
 
 	$(function() {
-		initDataTable('adminDoDetail', '<fmt:message key="act.ok" />');
+		initDataTable('detail', '<fmt:message key="act.ok" />');
 	});
 	
 </script>

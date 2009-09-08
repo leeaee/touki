@@ -35,7 +35,7 @@
 			<a href="./admin"><span><fmt:message key="entity.admin" /></span></a>
 			<div class="subnav">
 				<ul class="menu">
-					<li><a href="./admin?method=adminPreCreate"><fmt:message key="term.admin.create" /></a></li>
+					<li><a href="./admin?method=create"><fmt:message key="term.admin.create" /></a></li>
 					<li><a href="/weekly_address/"><fmt:message key="term.admin.create" /></a></li>
 					<li><a href="/slideshows/">Slideshows</a></li>
 					<li><a href="/briefing_room/PressBriefings/">Press Briefings</a></li>

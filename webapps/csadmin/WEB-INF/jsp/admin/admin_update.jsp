@@ -7,7 +7,7 @@
 
 	<input type="hidden" name="validator" value="adminValidator" />
 
-	<input type="hidden" name="method" value="adminDoUpdate" />
+	<input type="hidden" name="method" value="update" />
 	<input type="hidden" name="id" value="${admin.id}" />
 	<input type="hidden" name="lastLogin" value="${admin.lastLogin}" />
 	<input type="hidden" name="createTime" value="${admin.createTime}" />
@@ -34,7 +34,7 @@
 		</tr>
 	    <tr>
 	        <td class="keyf"><fmt:message key="prop.adminId" /></td>
-	        <td class="v"><input type="text" name="adminId" size="30" maxlength="63" class="text" value="${admin.adminId}" readonly="readonly" /></td>
+	        <td class="v"><input type="text" name="name" size="30" maxlength="63" class="text" value="${admin.name}" readonly="readonly" /></td>
 	        <td class="df"><fmt:message key="prop.truename" /></td>
 	        <td class="v"><input type="text" name="trueName" size="30" maxlength="63" class="text" value="${admin.trueName}" /></td>
 	    </tr>

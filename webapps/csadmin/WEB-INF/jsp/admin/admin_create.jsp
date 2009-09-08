@@ -7,7 +7,7 @@
 
 	<input type="hidden" name="validator" value="adminValidator" />
 	
-	<input type="hidden" name="method" value="adminDoCreate" />
+	<input type="hidden" name="method" value="create" />
 
 	<div id="upper">
 		<div id="upper-left"><fmt:message key="act.search" /></div>
@@ -30,7 +30,7 @@
 		</tr>
 	    <tr>
 	        <td class="keyf"><fmt:message key="prop.adminId" /></td>
-	        <td class="v"><input type="text" name="adminId" size="30" maxlength="63" class="text" /></td>
+	        <td class="v"><input type="text" name="name" size="30" maxlength="63" class="text" /></td>
 	        <td class="df"><fmt:message key="prop.truename" /></td>
 	        <td class="v"><input type="text" name="trueName" size="30" maxlength="63" class="text" /></td>
 	    </tr>

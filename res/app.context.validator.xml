@@ -37,7 +37,7 @@
             <ref bean="sensitiveWords" />
         </property>
         <property name="paramsMaySensitive">
-            <value>adminId, adminName</value>
+            <value>name, trueName</value>
         </property>
     </bean>
 

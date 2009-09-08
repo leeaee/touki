@@ -17,9 +17,9 @@ public class AdminDao extends HibernateDao<Admin, Long> {
 	 * @param adminId
 	 * @return cn.touki.web.entity.admin.Admin
 	 */
-	public Admin getAdminById(String adminId) {
+	public Admin getAdminByName(String name) {
 		
-		return findUniqueBy("adminId", adminId);
+		return findUniqueBy("name", name);
 	}
 	
 	/**

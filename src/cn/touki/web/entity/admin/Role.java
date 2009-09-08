@@ -36,8 +36,11 @@ public class Role extends Identity implements Serializable {
 	public static final String KEY = "entity.role";
 	
 	/* -- Bean Properties -- */
-	private String roleName;
+	private String name;
 	private String description;
+	private Long lastModify;
+	private Long createTime;
+	
 	private Set<Authority> authorities = new LinkedHashSet<Authority>();
 	
 	//Constructor
@@ -45,13 +48,12 @@ public class Role extends Identity implements Serializable {
 	}
 	
 	//Methods
-	@Column(name="role_name")
-	public String getRoleName() {
-		return roleName;
+	public String getName() {
+		return name;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getDescription() {
@@ -60,6 +62,24 @@ public class Role extends Identity implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	@Column(name="last_modify")
+	public Long getLastModify() {
+		return lastModify;
+	}
+
+	public void setLastModify(Long lastModify) {
+		this.lastModify = lastModify;
+	}
+
+	@Column(name="create_time")
+	public Long getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
 	}
 
 	@ManyToMany

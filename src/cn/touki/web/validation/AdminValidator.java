@@ -61,12 +61,12 @@ public class AdminValidator extends WebBeanValidator {
         }
 
         // Check for name
-        if (admin.getAdminId() == null || !StringValidateUtil.isQualifiedName(admin.getAdminId(), DEFAULT_ENCODING)) {
-            throw new WebValidationException("prop.name", admin.getAdminId());
+        if (admin.getName() == null || !StringValidateUtil.isQualifiedName(admin.getName(), DEFAULT_ENCODING)) {
+            throw new WebValidationException("prop.name", admin.getName());
         }
 
         try {
-            if (admin.getAdminId().getBytes(DEFAULT_ENCODING).length > LENGTH_OF_PRIMARY_NAME) {
+            if (admin.getName().getBytes(DEFAULT_ENCODING).length > LENGTH_OF_PRIMARY_NAME) {
                 throw new StringTooLongException("prop.name", LENGTH_OF_PRIMARY_NAME);
             }
 

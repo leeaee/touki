@@ -13,7 +13,8 @@ import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.entity.admin.Admin;
 import cn.touki.web.exception.EntityAlreadyExistException;
-import cn.touki.web.exception.EntityDefaultDeleteException;
+import cn.touki.web.exception.EntityCantDeleteException;
+import cn.touki.web.exception.EntityCantModifyException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.service.dao.AdminDao;
 
@@ -41,21 +42,21 @@ public class AdminService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Admin getAdmin(String adminId) throws EntityNotFoundException {
+	public Admin getAdmin(String name) throws EntityNotFoundException {
 		
-		Admin admin = adminDao.getAdminById(adminId);
+		Admin admin = adminDao.getAdminByName(name);
 		
 		if (admin == null) {
-			throw new EntityNotFoundException(Admin.KEY, adminId);
+			throw new EntityNotFoundException(Admin.KEY, name);
 		}
 		
-		logger.debug("Get admin by admin_id: {}.",  adminId);
+		logger.debug("Get admin by name: {}.",  name);
 		return admin; 
 	}
 	
 	public Admin login(String adminId) {
         
-		Admin admin = adminDao.getAdminById(adminId);
+		Admin admin = adminDao.getAdminByName(adminId);
 		
 		admin.setLastLogin(System.currentTimeMillis());
 		adminDao.save(admin);
@@ -66,10 +67,10 @@ public class AdminService {
 	
     public void createAdmin(Admin admin) throws EntityAlreadyExistException {
     	
-		Admin obj = adminDao.getAdminById(admin.getAdminId());
+		Admin obj = adminDao.getAdminByName(admin.getName());
 		
         if (obj != null) {
-            throw new EntityAlreadyExistException(Admin.KEY, admin.getAdminId());
+            throw new EntityAlreadyExistException(Admin.KEY, admin.getName());
         }
 
         admin.setCreateTime(System.currentTimeMillis());
@@ -78,18 +79,22 @@ public class AdminService {
         adminDao.save(admin);
     }
     
-    public void updateAdmin(Admin admin) {
+    public void updateAdmin(Admin admin) throws EntityCantModifyException {
+    	
+		if (admin.getId() == 1 || admin.getName().equalsIgnoreCase("admin")) {
+			throw new EntityCantModifyException(Admin.KEY, "admin");		
+		}
     	
     	admin.setLastModify(System.currentTimeMillis());
     	adminDao.merge(admin);
     }
     
-	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityDefaultDeleteException {
+	public void deleteAdmin(Long id) throws EntityNotFoundException, EntityCantDeleteException {
 		
 		Admin admin = getAdmin(id);
 		
-		if (admin.getId() == 1 || admin.getAdminId().equalsIgnoreCase("admin")) {
-			throw new EntityDefaultDeleteException(Admin.KEY, "admin");		
+		if (admin.getId() == 1 || admin.getName().equalsIgnoreCase("admin")) {
+			throw new EntityCantDeleteException(Admin.KEY, "admin");		
 		}
 		
 		adminDao.delete(id);
