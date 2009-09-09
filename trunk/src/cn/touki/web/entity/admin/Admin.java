@@ -173,6 +173,12 @@ public class Admin extends Identity implements Stateful, Serializable {
 	public List<Long> getRoleIds() {
 		return ReflectionUtils.fetchElementPropertyToList(roles, "id");
 	}
+	
+	@Transient
+	public List<Object[]> getRole4Combobox() {
+		String[] properties = {"id", "name"};
+		return ReflectionUtils.fetchElementPropertiesToMapSet(roles, properties);
+	}
 
 	@Override
 	public String toString() {

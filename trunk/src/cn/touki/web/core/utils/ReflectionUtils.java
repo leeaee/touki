@@ -199,6 +199,34 @@ public class ReflectionUtils {
 
 		return list;
 	}
+	
+	/**
+	 * 提取集合中的对象多个属性(通过getter函数),组合成List<Object[]>.
+	 * 
+	 * @param collection 来源集合.
+	 * @param propertyName 要提取的属性名.
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Object[]> fetchElementPropertiesToMapSet(final Collection collection, final String[] propertyNames) {
+		List<Object[]> list = new ArrayList<Object[]>();
+		
+		try {
+			for (Object obj : collection) {
+				
+				Object[] objects = new Object[propertyNames.length]; 
+				for (int i = 0; i < propertyNames.length; i ++) {
+					objects[i] = PropertyUtils.getProperty(obj, propertyNames[i]);
+				}
+				
+				list.add(objects);
+				
+			}
+		} catch (Exception e) {
+			convertToUncheckedException(e);
+		}
+		
+		return list;
+	}
 
 	/**
 	 * 提取集合中的对象的属性(通过getter函数),组合成由分割符分隔的字符串.

@@ -93,6 +93,89 @@
     </tag>
 
     <tag>
+        <name>combobox</name>
+        <tag-class>cn.touki.web.taglib.html.HtmlComboboxTag</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <name>style</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <name>decorate</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <name>locale</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.Locale</type>
+        </attribute>
+
+        <attribute>
+            <name>localeRef</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <name>size</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+
+        <attribute>
+            <name>options</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+        </attribute>
+
+        <attribute>
+            <name>selected</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+        </attribute>
+
+        <attribute>
+            <name>hasNaOption</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+
+        <attribute>
+            <name>hasBlankOption</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+
+        <attribute>
+            <name>naOptionText</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+    <tag>
         <name>radio</name>
         <tag-class>cn.touki.web.taglib.HtmlRadioTag</tag-class>
         <body-content>empty</body-content>
