@@ -78,6 +78,7 @@ public class AdminServlet extends AbstractServlet {
     		throws IOException, ServletException {
 
     	List<Role> roles = adminService.getAllRoles();
+    	
     	req.setAttribute("roles", roles);
         req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_create.jsp").forward(req, res);
     }	
@@ -88,7 +89,9 @@ public class AdminServlet extends AbstractServlet {
     	Admin admin = (Admin) WebBeanValidator.getValidBean(req, Admin.class);
         admin.setPassword(MD5.getHashString(admin.getPassword()));
         
-        adminService.createAdmin(admin);
+        List<Long> roleIds = getRequestSelectedIds(req, "roleId");
+        
+        adminService.createAdmin(admin, roleIds);
 
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", admin.getName()));
         
@@ -110,6 +113,9 @@ public class AdminServlet extends AbstractServlet {
     	Long id = getRequestId(req);
     	Admin admin = adminService.getAdmin(id);	
     	
+    	List<Role> roles = adminService.getAllRoles();
+    	
+    	req.setAttribute("roles", roles);    	
     	req.setAttribute("admin", admin);
         req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_update.jsp").forward(req, res);
     }
@@ -118,7 +124,9 @@ public class AdminServlet extends AbstractServlet {
 		    throws IOException, ServletException, WebException {
 		
 		Admin admin = (Admin) req.getSession().getAttribute(Constants.LOGIN_USER);
-		
+    	List<Role> roles = adminService.getAllRoles();
+    	
+    	req.setAttribute("roles", roles);
 		req.setAttribute("admin", admin);
 		req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_update.jsp").forward(req, res);
 	}    
@@ -128,6 +136,8 @@ public class AdminServlet extends AbstractServlet {
 
         Admin admin = (Admin) WebBeanValidator.getValidBean(req, Admin.class);
         
+        List<Long> roleIds = getRequestSelectedIds(req, "roleId");
+        
         if (StringUtils.isEmpty(admin.getPassword())) {
             Admin orgAdmin = adminService.getAdmin(admin.getName());
             admin.setPassword(orgAdmin.getPassword());
@@ -136,7 +146,7 @@ public class AdminServlet extends AbstractServlet {
             admin.setPassword(MD5.getHashString(admin.getPassword()));
         }
         
-        adminService.updateAdmin(admin);
+        adminService.updateAdmin(admin, roleIds);
 
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.update", admin.getName()));
         Button button = new Button(Button.LABEL_OK, "");

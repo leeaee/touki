@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cn.touki.util.DateUtils;
 import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
+import cn.touki.web.core.orm.hibernate.HibernateWebUtils;
 import cn.touki.web.entity.admin.Admin;
 import cn.touki.web.entity.admin.Role;
 import cn.touki.web.exception.EntityAlreadyExistException;
@@ -70,7 +71,7 @@ public class AdminService {
 		return admin;
     }
 	
-    public void createAdmin(Admin admin) throws EntityAlreadyExistException {
+    public void createAdmin(Admin admin, List<Long> roleIds) throws EntityAlreadyExistException {
     	
 		Admin obj = adminDao.getAdminByName(admin.getName());
 		
@@ -81,16 +82,20 @@ public class AdminService {
         admin.setCreateTime(System.currentTimeMillis());
         admin.setLastLogin(DateUtils.TIME_OF_NA);
         admin.setLastModify(DateUtils.TIME_OF_NA);
+        
+        HibernateWebUtils.mergeByCheckedIds(admin.getRoles(), roleIds, Role.class);
         adminDao.save(admin);
     }
     
-    public void updateAdmin(Admin admin) throws EntityCantModifyException {
+    public void updateAdmin(Admin admin, List<Long> roleIds) throws EntityCantModifyException {
     	
 		if (admin.getId() == 1 || admin.getName().equalsIgnoreCase("admin")) {
 			throw new EntityCantModifyException(Admin.KEY, "admin");		
 		}
     	
     	admin.setLastModify(System.currentTimeMillis());
+    	
+        HibernateWebUtils.mergeByCheckedIds(admin.getRoles(), roleIds, Role.class);
     	adminDao.merge(admin);
     }
     

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="cn.touki.web.entity.admin.Role" %>
 <%@ include file="../inc/header.inc.jsp" %>
 <%@ include file="../inc/sider.inc.jsp" %>
 
@@ -56,6 +57,23 @@
 	        <td class="df"><fmt:message key="prop.state" /></td>
 	        <td class="v"><html:select name="state" options="<%=Stateful.TEXT%>" style="slct" selected="${admin.state}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
 	    </tr>
+	    <tr>
+	        <td class="df"><fmt:message key="entity.role" /></td>
+	        <td class="v">
+	        	<select name="roleId" class="slct">
+	        	<% 
+					List<Role> roles = (List<Role>) request.getAttribute("roles");
+	        	
+	        		for (int i = 0; i < roles.size(); i ++) {
+	        			Role role = roles.get(i);
+	        			out.print("<option value=\"" + role.getId() + "\">" + role.getName() + "</option>");
+	        		}
+	        	%>
+	        	</select>
+			</td>
+	        <td class="df"></td>
+	        <td class="v"></td>
+	    </tr>	    
 		<tr>
 			<td class="s" colspan="4"></td>
 		</tr>    

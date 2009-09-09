@@ -547,6 +547,16 @@ public abstract class AbstractServlet extends HttpServlet {
     protected static List<String> getRequestListCheckedIds(HttpServletRequest req) {
         return RequestUtils.getRequestListCheckedIds(req);
     }
+    
+    /**
+     * 返回 request 中所有指定参数名称的Id属性值.
+     *
+     * @param req HttpServletRequest
+     * @return 字符串链表
+     */
+    protected static List<Long> getRequestSelectedIds(HttpServletRequest req, String parameter) {
+    	return RequestUtils.getRequestSelectedIds(req, parameter);
+    }
 
     /**
      * 用默认的字符集编码（UTF-8）编码指定的字符串，以便能够正确的作为 GET 参数使用。
