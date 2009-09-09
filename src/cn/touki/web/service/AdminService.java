@@ -12,12 +12,14 @@ import cn.touki.util.DateUtils;
 import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.entity.admin.Admin;
+import cn.touki.web.entity.admin.Role;
 import cn.touki.web.exception.EntityAlreadyExistException;
 import cn.touki.web.exception.EntityCantDeleteException;
 import cn.touki.web.exception.EntityCantModifyException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.IdEntityException;
 import cn.touki.web.service.dao.AdminDao;
+import cn.touki.web.service.dao.RoleDao;
 
 @Service("AdminService")
 @Transactional
@@ -27,6 +29,8 @@ public class AdminService {
 	
 	@Autowired
 	private AdminDao adminDao;
+	@Autowired
+	private RoleDao roleDao;
 	
 	@Transactional(readOnly = true)
 	public Page<Admin> searchAdmin(final Page<Admin> page, final List<PropertyFilter> filters) {
@@ -99,6 +103,11 @@ public class AdminService {
 		}
 		
 		adminDao.delete(id);
-	}    
+	} 
+	
+	public List<Role> getAllRoles() {
+		
+		return roleDao.getAll();
+	}
 	 
 }

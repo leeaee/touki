@@ -9,8 +9,7 @@
 	cn.touki.web.core.security.SpringSecurityUtils,
 	cn.touki.i18n.I18NDictionary,
 	cn.touki.util.StringUtils,cn.touki.web.taglib.displaytag.DateDecorator,
-	cn.touki.web.entity.common.Stateful,
-	cn.touki.web.entity.admin.Admin"
+	cn.touki.web.entity.common.Stateful"
 %>
 <%@ taglib prefix="c" uri="/WEB-INF/tld/c.tld" %>
 <%@ taglib prefix="f" uri="/WEB-INF/tld/f.tld" %>
