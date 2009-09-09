@@ -195,8 +195,35 @@ public class RequestUtils {
     	while (names.hasMoreElements()) {
     		String name = (String) names.nextElement();
     		if (name.startsWith("chk_")) {
-    			if (req.getMethod().equalsIgnoreCase("GET")||req.getParameter(name).indexOf("%")>-1) {
+    			if (req.getMethod().equalsIgnoreCase("GET")||req.getParameter(name).indexOf("%") > -1) {
     				ids.add(Long.valueOf(urlDecode(req.getParameter(name))));
+    				continue;
+    			}
+    			if(req.getMethod().equalsIgnoreCase("POST")){
+    				ids.add(Long.valueOf(req.getParameter(name)));
+    			}
+    		}
+    	}
+    	
+    	return ids;
+    }
+    
+    /**
+     * 返回 request 中所有指定名称的 Id 属性值.
+     * 
+     * @param req HttpServletRequest
+     * @return 字符串链表
+     */
+    public static List<Long> getRequestSelectedIds(HttpServletRequest req, String parameter) {
+    	
+    	List<Long> ids = new ArrayList<Long>();
+    	
+    	Enumeration<?> names = req.getParameterNames();
+    	while (names.hasMoreElements()) {
+    		String name = (String) names.nextElement();
+    		if (name.endsWith(parameter)) {
+    			if (req.getMethod().equalsIgnoreCase("GET")||req.getParameter(name).indexOf("%") > -1) {
+    				ids.add(Long.valueOf(req.getParameter(name)));
     				continue;
     			}
     			if(req.getMethod().equalsIgnoreCase("POST")){

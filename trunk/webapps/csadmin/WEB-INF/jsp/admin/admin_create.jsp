@@ -56,7 +56,7 @@
 	    <tr>
 	        <td class="df"><fmt:message key="entity.role" /></td>
 	        <td class="v">
-	        	<select name="role" class="slct">
+	        	<select name="roleId" class="slct">
 	        	<% 
 					List<Role> roles = (List<Role>) request.getAttribute("roles");
 	        	
