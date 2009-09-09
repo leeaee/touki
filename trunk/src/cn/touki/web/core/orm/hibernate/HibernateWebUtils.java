@@ -20,7 +20,7 @@ import cn.touki.web.core.utils.ReflectionUtils;
 /**
  * Hibernate针对Web应用的Utils函数集合.
  * 
- * @author Liyi
+ * @author liyi
  */
 public class HibernateWebUtils {
 
@@ -28,35 +28,38 @@ public class HibernateWebUtils {
 	}
 
 	/**
-	 * 清除源对象集合中已失效的对象,合并目标ID集合中重复的对象.
+	 * 根据对象ID集合,整理合并集合.
 	 * 
 	 * 默认对象主键的名称名为"id".
 	 * 
-	 * @see #cleanByCheckedResult(Collection, Collection, String)
+	 * @see #mergeByCheckedIds(Collection, Collection, Class, String)
 	 */
-	public static <T, ID> void cleanByCheckedResult(final Collection<T> srcObjects, final Collection<ID> checkedIds) {
-		cleanByCheckedResult(srcObjects, checkedIds, "id");
+	public static <T, ID> void mergeByCheckedIds(final Collection<T> srcObjects, final Collection<ID> checkedIds,
+			final Class<T> clazz) {
+		mergeByCheckedIds(srcObjects, checkedIds, clazz, "id");
 	}
 
 	/**
-	 * 清除源对象集合中已失效的对象,合并目标ID集合中重复的对象.
+	 * 根据对象ID集合,整理合并集合.
 	 * 
 	 * 页面发送变更后的子对象id列表时,删除原来的子对象集合再根据页面id列表创建一个全新的集合这种看似最简单的做法是不行的.
-	 * 因此需采用整合的算法.
+	 * 因此需采用如此的整合算法：在源集合中删除id不在ID集合中的对象,根据ID集合中的id创建对象并添加到源集合中.
 	 * 
-	 * @param srcObjects 源对象集合,不在checkedId集合的记录将被删除.
-	 * @param checkedIds  目标ID集合,已在srcObjects集合的记录将被删除.
+	 * @param srcObjects 源对象集合
+	 * @param checkedIds  目标ID集合
+	 * @param clazz  集合中对象的类型
 	 * @param idName 对象主键的名称
 	 */
-	public static <T, ID> void cleanByCheckedResult(Collection<T> srcObjects, Collection<ID> checkedIds,
-			final String idName) {
+	public static <T, ID> void mergeByCheckedIds(final Collection<T> srcObjects, final Collection<ID> checkedIds,
+			final Class<T> clazz, final String idName) {
 
 		//参数校验
 		Assert.notNull(srcObjects, "scrObjects不能为空");
 		Assert.hasText(idName, "idName不能为空");
+		Assert.notNull(clazz, "clazz不能为空");
 
 		//目标ID集合为空,删除源集合中所有对象后直接返回.
-		if (checkedIds == null || checkedIds.isEmpty()) {
+		if (checkedIds == null) {
 			srcObjects.clear();
 			return;
 		}
@@ -65,6 +68,7 @@ public class HibernateWebUtils {
 		//同时,在目标ID集合中删除已在源集合中的id,使得目标ID集合中剩下的id均为源集合中没有的ID.
 		Iterator<T> srcIterator = srcObjects.iterator();
 		try {
+
 			while (srcIterator.hasNext()) {
 				T element = srcIterator.next();
 				Object id;
@@ -77,6 +81,12 @@ public class HibernateWebUtils {
 				}
 			}
 
+			//ID集合目前剩余的id均不在源集合中,创建对象,为id属性赋值并添加到源集合中.
+			for (ID id : checkedIds) {
+				T obj = clazz.newInstance();
+				PropertyUtils.setProperty(obj, idName, id);
+				srcObjects.add(obj);
+			}
 		} catch (Exception e) {
 			throw ReflectionUtils.convertToUncheckedException(e);
 		}
@@ -102,7 +112,6 @@ public class HibernateWebUtils {
 	 */
 	@SuppressWarnings("unchecked")
 	public static List<PropertyFilter> buildPropertyFilters(final HttpServletRequest request, final String filterPrefix) {
-		
 		List<PropertyFilter> filterList = new ArrayList<PropertyFilter>();
 
 		//从request中获取含属性前缀名的参数,构造去除前缀名后的参数Map.
@@ -110,22 +119,17 @@ public class HibernateWebUtils {
 
 		//分析参数Map,构造PropertyFilter列表
 		for (Map.Entry<String, String> entry : filterParamMap.entrySet()) {
-			
 			String filterName = entry.getKey();
 			String value = entry.getValue();
 			//如果value值为空,则忽略此filter.
 			boolean omit = StringUtils.isBlank(value);
-			
 			if (!omit) {
-
 				PropertyFilter filter = new PropertyFilter(filterName, value);
 				filterList.add(filter);
 			}
 		}
 		return filterList;
 	}
-	
-	
 	
 	/**
 	 * 通过 page.orderBy, page.order, page.pageIndex 获取page属性参数
@@ -154,6 +158,6 @@ public class HibernateWebUtils {
 		}
 		
 		return page;
-	}	
+	}		
 	
 }

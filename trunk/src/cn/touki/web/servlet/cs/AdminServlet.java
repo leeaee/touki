@@ -18,6 +18,7 @@ import cn.touki.web.core.servlet.AbstractServlet;
 import cn.touki.web.core.servlet.Constants;
 import cn.touki.web.core.validation.WebBeanValidator;
 import cn.touki.web.entity.admin.Admin;
+import cn.touki.web.entity.admin.Role;
 import cn.touki.web.exception.EntityAlreadyExistException;
 import cn.touki.web.exception.EntityCantModifyException;
 import cn.touki.web.exception.EntityNotFoundException;
@@ -76,6 +77,8 @@ public class AdminServlet extends AbstractServlet {
     public void onCreate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException {
 
+    	List<Role> roles = adminService.getAllRoles();
+    	req.setAttribute("roles", roles);
         req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_create.jsp").forward(req, res);
     }	
     
