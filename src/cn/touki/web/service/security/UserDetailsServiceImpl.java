@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cn.touki.web.entity.admin.Admin;
 import cn.touki.web.entity.admin.Authority;
 import cn.touki.web.entity.admin.Role;
-import cn.touki.web.service.AdminService;
+import cn.touki.web.service.dao.AdminDao;
 
 /**
  * 实现SpringSecurity的UserDetailsService接口,实现获取用户Detail信息的回调函数.
@@ -27,17 +27,17 @@ import cn.touki.web.service.AdminService;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	private AdminService adminService;
+	private AdminDao adminDao;
 
 	/**
 	 * 获取用户Details信息的回调函数.
 	 */
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException, DataAccessException {
 
-		Admin admin = adminService.login(userName);
+		Admin admin = adminDao.getAdminByName(userName);
 		
 		if (admin == null)
-			throw new UsernameNotFoundException("用户" + userName + " 不存在");
+			throw new UsernameNotFoundException("user not found!");
 
 		GrantedAuthority[] grantedAuths = obtainGrantedAuthorities(admin);
 		

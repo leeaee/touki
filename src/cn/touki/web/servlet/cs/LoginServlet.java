@@ -5,8 +5,12 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.security.ui.AbstractProcessingFilter;
 
 import cn.touki.web.core.servlet.AbstractServlet;
+import cn.touki.web.core.servlet.Constants;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.EntityPausedException;
 import cn.touki.web.exception.LoginException;
@@ -29,9 +33,18 @@ public class LoginServlet extends AbstractServlet {
 
     @Override
     public void onDefault(HttpServletRequest req, HttpServletResponse res)
-            throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
+    	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
         
-    	req.getRequestDispatcher(PAGE_ROOT_PATH + "/login.jsp").forward(req, res);
+    	req.getRequestDispatcher(Constants.PAGE_LOGIN).forward(req, res);
+    }
+    
+    public void onError(HttpServletRequest req, HttpServletResponse res)
+    	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
+    	
+    	HttpSession session = req.getSession();
+    	
+        req.setAttribute(Constants.ERROR_MESSAGE, session.getAttribute(AbstractProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY));
+        req.getRequestDispatcher(Constants.PAGE_EXCEPTION).forward(req, res);
     }
 
 
