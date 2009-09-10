@@ -5,16 +5,12 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.security.ui.AbstractProcessingFilter;
 
 import cn.touki.web.core.servlet.AbstractServlet;
 import cn.touki.web.core.servlet.Constants;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.EntityPausedException;
 import cn.touki.web.exception.LoginException;
-import cn.touki.web.service.AdminService;
 
 /**
  * The login servlet for administrators.
@@ -22,38 +18,45 @@ import cn.touki.web.service.AdminService;
  * @author Liyi
  * 
  */
-public class LoginServlet extends AbstractServlet {
+public class ErrorServlet extends AbstractServlet {
 
 	private static final long serialVersionUID = 1L;
-	protected AdminService adminService;
 
     @Override public void init() throws ServletException {
         super.init();
-        this.adminService = (AdminService) beanFactory.getBean(AdminService.class.getSimpleName());        
     }
 
     @Override
     public void onDefault(HttpServletRequest req, HttpServletResponse res)
     	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
         
-    	req.getRequestDispatcher(Constants.PAGE_LOGIN).forward(req, res);
+    	onAuthentication(req, res);
     }
     
-    public void onError(HttpServletRequest req, HttpServletResponse res)
+    public void onAuthentication(HttpServletRequest req, HttpServletResponse res)
+		throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
+		
+	    req.getRequestDispatcher(Constants.PAGE_ERROR_500).forward(req, res);
+	}
+    
+    public void on500(HttpServletRequest req, HttpServletResponse res)
     	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
     	
-    	HttpSession session = req.getSession();
-    	
-        req.setAttribute(Constants.ERROR_MESSAGE, session.getAttribute(AbstractProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY));
-        req.getRequestDispatcher(Constants.PAGE_EXCEPTION).forward(req, res);
+        req.getRequestDispatcher(Constants.PAGE_ERROR_500).forward(req, res);
     }
     
-    public void onChecking(HttpServletRequest req, HttpServletResponse res)
+    public void on404(HttpServletRequest req, HttpServletResponse res)
     	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
     	
-    	adminService.login(req.getParameter("j_username"));
-    	req.getRequestDispatcher(Constants.PAGE_EXCEPTION).forward(req, res);
+    	req.getRequestDispatcher(Constants.PAGE_ERROR_404).forward(req, res);
     }
+    
+    public void on403(HttpServletRequest req, HttpServletResponse res)
+    	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
+    	
+    	req.getRequestDispatcher(Constants.PAGE_ERROR_403).forward(req, res);
+    }
+    
 
 
 }

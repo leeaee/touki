@@ -1,7 +1,8 @@
 package cn.touki.web.taglib.html;
 
-import javax.servlet.jsp.tagext.TagSupport;
 import java.util.Locale;
+
+import javax.servlet.jsp.tagext.TagSupport;
 
 public class HtmlTag extends TagSupport {
 
