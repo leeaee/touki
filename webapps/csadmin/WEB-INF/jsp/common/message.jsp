@@ -9,7 +9,7 @@
 
 <%@ taglib prefix="web" uri="/WEB-INF/tld/web.tld" %>
 
-<%@ include file="inc/header.simple.inc.jsp" %>
+<%@ include file="../inc/header.simple.inc.jsp" %>
 
 <div id="container">
 
@@ -26,4 +26,4 @@
 
 </div>
 
-<%@ include file="inc/footer.inc.jsp" %>
+<%@ include file="../inc/footer.inc.jsp" %>
