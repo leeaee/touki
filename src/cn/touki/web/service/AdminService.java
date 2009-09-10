@@ -60,14 +60,18 @@ public class AdminService {
 		return admin; 
 	}
 	
-	public Admin login(String adminId) {
+	public Admin login(String name) throws EntityNotFoundException {
         
-		Admin admin = adminDao.getAdminByName(adminId);
+		Admin admin = adminDao.getAdminByName(name);
+		
+		if (admin == null) 
+			throw new EntityNotFoundException(Admin.KEY, name);
+
 		
 		admin.setLastLogin(System.currentTimeMillis());
 		adminDao.save(admin);
 		
-		logger.debug("Login admin: {}.",  adminId);
+		logger.debug("Login admin: {}.",  name);
 		return admin;
     }
 	

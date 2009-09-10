@@ -38,8 +38,7 @@ public class DefinitionSourceFactoryBean implements FactoryBean {
 	public Object getObject() throws Exception {
 		LinkedHashMap<RequestKey, ConfigAttributeDefinition> requestMap = buildRequestMap();
 		UrlMatcher matcher = getUrlMatcher();
-		DefaultFilterInvocationDefinitionSource definitionSource = new DefaultFilterInvocationDefinitionSource(matcher,
-				requestMap);
+		DefaultFilterInvocationDefinitionSource definitionSource = new DefaultFilterInvocationDefinitionSource(matcher,	requestMap);
 		return definitionSource;
 	}
 

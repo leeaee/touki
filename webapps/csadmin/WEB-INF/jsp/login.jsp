@@ -1,3 +1,6 @@
+<%@ page import="org.springframework.security.ui.AbstractProcessingFilter"%>
+<%@ page import="org.springframework.security.ui.webapp.AuthenticationProcessingFilter"%>
+<%@ page import="org.springframework.security.AuthenticationException"%>
 <%@ include file="inc/header.simple.inc.jsp" %>
 
 <div id="container" style="padding: 0; margin: 0;">
@@ -21,7 +24,7 @@
 				<td class="left"><input type="password" id="password" name="j_password" class="text" style="font-family:tahoma, arial;" maxlength="63" size="30" value="111111" /></td>
 			</tr>
 			<tr>
-				<td><label class="caption"><input type="checkbox" name="_spring_security_remember_me" /></td>
+				<td><input type="checkbox" name="_spring_security_remember_me" /></td>
 				<td class="left">Remember ME</td>
 			</tr>
 			<tr>
