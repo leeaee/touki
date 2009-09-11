@@ -96,7 +96,7 @@ public class AdminServlet extends AbstractServlet {
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", admin.getName()));
         
         List<Button> buttons = new ArrayList<Button>();
-        Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './admin?method=adminPreCreate'");
+        Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './admin?method=create'");
         buttons.add(bttnNext);        
         Button bttnBack = new Button(Button.LABEL_BACK, "location.href = './admin'");
         buttons.add(bttnBack);        

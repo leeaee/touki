@@ -15,7 +15,8 @@
 			<tr>
 				<td width="100%"></td>
 				<td><nobr>
-					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'browse')" />			
+					<input type="button" id="query" value="<fmt:message key="act.search" />" class="bttn" onclick="submitForm(this.form, 'browse')" />
+					<input type="button" id="query" value="<fmt:message key="act.create" />" class="bttn" onclick="submitForm(this.form, 'create')" />				
 					<input type="button" id="edit" value="<fmt:message key="act.edit" />" class="sbttn" onclick="submitForm(this.form, 'update')" disabled="disabled" />
 					<input type="button" id="delete" value="<fmt:message key="act.delete" />" class="mbttn" onclick="confirmSubmit(this.form, 'delete', '<fmt:message key="script.admin.del" />')" disabled="disabled" />
 				</nobr></td>
