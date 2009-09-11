@@ -524,6 +524,7 @@
     <entry key="menu.coop">合作加盟</entry>
     <entry key="menu.feedback">用户反馈</entry>
 
+    <entry key="menu.system">系统管理</entry>
     <entry key="menu.server">eWork 服务器</entry>
     <entry key="menu.group">虚拟服务器</entry>
     <entry key="menu.org">组织结构</entry>

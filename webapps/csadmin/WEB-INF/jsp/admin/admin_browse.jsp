@@ -85,7 +85,7 @@
 <script type="text/javascript">
 
 	$(function() {
-		initDataTable('detail', '<fmt:message key="act.ok" />');
+		initDataTable('<fmt:message key="act.ok" />');
 	});
 	
 </script>

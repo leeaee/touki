@@ -28,8 +28,10 @@
 			<display:column headerStyle="width:32px" title="${htmlHeaderCheck}" class="left" headerClass="left">
 				<input type="checkbox" id="chk_${role_rowNum}" name="chk_${role_rowNum}" value="${role.id}" class="ckbox" />
 			</display:column>
-			<display:column titleKey="prop.adminId" property="name" sortable="true" sortProperty="name" />
-			<display:column titleKey="prop.truename" property="description" sortable="true" sortProperty="description" />
+			<display:column headerStyle="width: 20%" titleKey="prop.name" property="name" sortable="true" sortProperty="name" />
+			<display:column titleKey="prop.description" property="description" sortable="true" sortProperty="description" />
+			<display:column headerStyle="width: 20%" titleKey="prop.createtime" property="createTime" sortable="true" sortProperty="createTime" decorator="dateDecorator" class="right" headerClass="right" />
+			<display:column headerStyle="width: 20%" titleKey="prop.modifytime" property="lastModify" sortable="true" sortProperty="lastModify" decorator="dateDecorator" class="right" headerClass="right" />
 		</display:table>
 	</div>
 	
@@ -39,8 +41,8 @@
 				<th><fmt:message key="term.searchform" /></th>
 			</tr>			
 			<tr><td>
-				<div class="label"><fmt:message key="prop.adminId"/></div>
-				<input type="text" name="filter_LIKE_roleName" size="28" maxlength="127" class="para" value="${param['filter_LIKE_roleName']}" />
+				<div class="label"><fmt:message key="prop.name"/></div>
+				<input type="text" name="filter_LIKE_name" size="28" maxlength="127" class="para" value="${param['filter_LIKE_name']}" />
 			</td></tr>
 		</table>
 	</div>
@@ -57,7 +59,7 @@
 <script type="text/javascript">
 
 	$(function() {
-		initDataTable('detail', '<fmt:message key="act.ok" />');
+		initDataTable('<fmt:message key="act.ok" />');
 	});
 	
 </script>

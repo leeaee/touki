@@ -30,14 +30,8 @@ public class ErrorServlet extends AbstractServlet {
     public void onDefault(HttpServletRequest req, HttpServletResponse res)
     	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
         
-    	onAuthentication(req, res);
-    }
-    
-    public void onAuthentication(HttpServletRequest req, HttpServletResponse res)
-		throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
-		
 	    req.getRequestDispatcher(Constants.PAGE_ERROR_500).forward(req, res);
-	}
+    }
     
     public void on500(HttpServletRequest req, HttpServletResponse res)
     	throws IOException, ServletException, LoginException, EntityPausedException, EntityNotFoundException {
