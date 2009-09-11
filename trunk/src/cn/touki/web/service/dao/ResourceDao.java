@@ -6,7 +6,7 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import cn.touki.web.core.orm.hibernate.HibernateDao;
-import cn.touki.web.entity.admin.Resource;
+import cn.touki.web.entity.csadmin.Resource;
 
 /**
  * 受保护资源对象的泛型DAO.

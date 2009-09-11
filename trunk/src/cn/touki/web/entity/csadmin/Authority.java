@@ -1,4 +1,4 @@
-package cn.touki.web.entity.admin;
+package cn.touki.web.entity.csadmin;
 
 import java.io.Serializable;
 
@@ -28,6 +28,8 @@ public class Authority extends Identity implements Serializable {
 	private String name;
 	private String displayName;
 	
+	private String description;
+	
 	//Constructor
 	public Authority() {
 	}
@@ -49,6 +51,14 @@ public class Authority extends Identity implements Serializable {
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}	
 	
 	@Override
 	public String toString() {

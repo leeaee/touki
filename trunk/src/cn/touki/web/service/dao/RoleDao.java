@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import cn.touki.web.core.orm.hibernate.HibernateDao;
-import cn.touki.web.entity.admin.Admin;
-import cn.touki.web.entity.admin.Role;
+import cn.touki.web.entity.csadmin.Admin;
+import cn.touki.web.entity.csadmin.Role;
 
 /**
  * 角色对象的泛型DAO.

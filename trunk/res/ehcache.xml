@@ -8,13 +8,13 @@
     <cache name="org.hibernate.cache.UpdateTimestampsCache" maxElementsInMemory="10000"	eternal="true" overflowToDisk="true" diskSpoolBufferSizeMB="20" />
 
 	<!-- Special objects setting. -->
-	<cache name="cn.touki.web.entity.admin.Admin" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
-	<cache name="cn.touki.web.entity.admin.Role" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
-	<cache name="cn.touki.web.entity.admin.Resource" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
-	<cache name="cn.touki.web.entity.admin.Authority" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
-	<cache name="cn.touki.web.entity.admin.Admin.roles" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
-	<cache name="cn.touki.web.entity.admin.Role.authorities" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
-	<cache name="cn.touki.web.entity.admin.Resource.authorities" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Admin" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Role" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Resource" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Authority" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Admin.roles" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Role.authorities" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
+	<cache name="cn.touki.web.entity.csadmin.Resource.authorities" maxElementsInMemory="500" overflowToDisk="true" eternal="true" />
 		
 	<defaultCache maxElementsInMemory="10000" overflowToDisk="true" eternal="false"
 		memoryStoreEvictionPolicy="LRU" maxElementsOnDisk="10000000" diskExpiryThreadIntervalSeconds="600"

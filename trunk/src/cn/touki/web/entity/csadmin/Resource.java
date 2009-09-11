@@ -1,4 +1,4 @@
-package cn.touki.web.entity.admin;
+package cn.touki.web.entity.csadmin;
 
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -41,7 +41,7 @@ public class Resource extends Identity implements Serializable {
 	private String resourceType;
 	private String value;
 	private double position;
-	private String description;
+	
 	private Set<Authority> authorities = new LinkedHashSet<Authority>();
 	
 	//Constructor
@@ -72,14 +72,6 @@ public class Resource extends Identity implements Serializable {
 
 	public void setPosition(double position) {
 		this.position = position;
-	}
-	
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	/**

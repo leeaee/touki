@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import cn.touki.web.core.orm.hibernate.HibernateDao;
-import cn.touki.web.entity.admin.Admin;
+import cn.touki.web.entity.csadmin.Admin;
 
 @Repository
 public class AdminDao extends HibernateDao<Admin, Long> {

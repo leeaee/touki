@@ -13,9 +13,9 @@ import org.springframework.security.userdetails.UserDetailsService;
 import org.springframework.security.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.touki.web.entity.admin.Admin;
-import cn.touki.web.entity.admin.Authority;
-import cn.touki.web.entity.admin.Role;
+import cn.touki.web.entity.csadmin.Admin;
+import cn.touki.web.entity.csadmin.Authority;
+import cn.touki.web.entity.csadmin.Role;
 import cn.touki.web.service.dao.AdminDao;
 
 /**

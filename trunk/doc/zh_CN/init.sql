@@ -55,6 +55,7 @@ insert into cs_role_x_authority values(1, 9);
 
 insert into cs_role_x_authority values(2, 1);
 insert into cs_role_x_authority values(2, 2);
+insert into cs_role_x_authority values(2, 4);
 insert into cs_role_x_authority values(2, 6);
 
 
