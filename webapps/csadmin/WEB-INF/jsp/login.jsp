@@ -6,10 +6,10 @@
 <div id="container" style="padding: 0; margin: 0;">
 
 <div class="ui-overlay"><div class="ui-widget-overlay"></div>
-	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:250px; margin:-178px -208px;"></div>
+	<div id="center-div" class="ui-widget-shadow ui-corner-all" style="width:400px; height:220px; margin:-178px -208px;"></div>
 </div>
 
-<div id="center-div" class="ui-widget ui-widget-content ui-corner-all" style="width:398px; height:248px; margin:-170px -200px;">
+<div id="center-div" class="ui-widget ui-widget-content ui-corner-all" style="width:398px; height:218px; margin:-170px -200px;">
 	<div class="ui-widget-header ui-corner-all">
 		<span id="login-title" class="ui-dialog-title"><fmt:message key="term.userlogin" /></span>
 	</div>
@@ -22,10 +22,6 @@
 			<tr>
 				<td><label class="caption"><fmt:message key="term.password" /></label></td>
 				<td class="left"><input type="password" id="password" name="j_password" class="text" style="font-family:tahoma, arial;" maxlength="63" size="30" value="111111" /></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="_spring_security_remember_me" /></td>
-				<td class="left">Remember ME</td>
 			</tr>
 			<tr>
 				<td colspan="2" class="bottom">
