@@ -1,20 +1,25 @@
 package cn.touki.web.servlet.cs;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.touki.i18n.I18NMessage;
 import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.core.orm.hibernate.HibernateWebUtils;
 import cn.touki.web.core.servlet.AbstractServlet;
+import cn.touki.web.core.validation.WebBeanValidator;
 import cn.touki.web.entity.csadmin.Role;
+import cn.touki.web.exception.EntityAlreadyExistException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.WebException;
 import cn.touki.web.service.RoleService;
+import cn.touki.web.view.Button;
 
 public class RoleServlet extends AbstractServlet {
 
@@ -59,6 +64,32 @@ public class RoleServlet extends AbstractServlet {
 	
     	req.setAttribute("role", role);
     	req.getRequestDispatcher(PAGE_ROOT_PATH + "/role/role_detail.inc.jsp").forward(req, res);
-	}	
+	}
+    
+	
+	/**
+	 * 管理员创建
+	 */
+    public void onCreate(HttpServletRequest req, HttpServletResponse res) 
+    		throws IOException, ServletException {
+
+        req.getRequestDispatcher(PAGE_ROOT_PATH + "/role/role_create.jsp").forward(req, res);
+    }	
+    
+    public void onDoCreate(HttpServletRequest req, HttpServletResponse res) 
+    		throws IOException, ServletException, EntityAlreadyExistException {
+
+    	Role role = (Role) WebBeanValidator.getValidBean(req, Role.class);
+        
+        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", role.getName()));
+        
+        List<Button> buttons = new ArrayList<Button>();
+        Button bttnNext = new Button(Button.LABEL_NEXT, "location.href = './role?method=create'");
+        buttons.add(bttnNext);        
+        Button bttnBack = new Button(Button.LABEL_BACK, "location.href = './role'");
+        buttons.add(bttnBack);        
+
+        handleMessage(req, res, message, buttons);
+    }    
 	
 }
