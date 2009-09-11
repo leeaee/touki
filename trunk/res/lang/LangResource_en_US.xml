@@ -460,6 +460,7 @@
     <entry key="menu.product">Product</entry>
     <entry key="menu.coop">Cooperation</entry>
 
+    <entry key="menu.system">System Manage</entry>
     <entry key="menu.server">eWork Server</entry>
     <entry key="menu.group">Virtual Server</entry>
     <entry key="menu.org">Organization</entry>

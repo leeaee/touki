@@ -259,13 +259,13 @@ initAccordion = function() {
 	}
 };
 
-initDataTable = function(method, text) {
+initDataTable = function(bttnText) {
 	
 	// initiation detail dialog
 	if ($('#dialog').length > 0) {
 		
 		var buttons = {};
-		buttons[text] = function() { $(this).dialog('close'); };
+		buttons[bttnText] = function() { $(this).dialog('close'); };
 		
 		$('#dialog').dialog({
 			autoOpen: false, resizable: false,
@@ -310,7 +310,7 @@ initDataTable = function(method, text) {
 				
 				$('#dialog').text('');
 				$('#dialog').dialog('open');
-				$("#dialog").load(url, 'method=' + method + '&chk_' + para + '=' + para);
+				$("#dialog").load(url, 'method=detail&chk_' + para + '=' + para);
 			});		
 			
 			row.hover (

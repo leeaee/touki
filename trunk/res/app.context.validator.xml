@@ -31,13 +31,25 @@
 
     <bean id="adminValidator" class="cn.touki.web.validation.AdminValidator">
         <property name="beanClassName">
-            <value>cn.touki.web.entity.admin.Admin</value>
+            <value>cn.touki.web.entity.csadmin.Admin</value>
         </property>
         <property name="sensitiveWords">
             <ref bean="sensitiveWords" />
         </property>
         <property name="paramsMaySensitive">
-            <value>name, trueName</value>
+            <value>name, trueName, description</value>
+        </property>
+    </bean>
+    
+    <bean id="roleValidator" class="cn.touki.web.validation.RoleValidator">
+        <property name="beanClassName">
+            <value>cn.touki.web.entity.csadmin.Role</value>
+        </property>
+        <property name="sensitiveWords">
+            <ref bean="sensitiveWords" />
+        </property>
+        <property name="paramsMaySensitive">
+            <value>name, description</value>
         </property>
     </bean>
 

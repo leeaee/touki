@@ -31,13 +31,13 @@ public class RoleServlet extends AbstractServlet {
 	public void onDefault(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException, EntityNotFoundException {
 		
-		onRoleDoBrowse(req, res);
+		onBrowse(req, res);
 	}
 	
 	/**
 	 * 角色浏览
 	 */
-	public void onRoleDoBrowse(HttpServletRequest req, HttpServletResponse res)
+	public void onBrowse(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException, EntityNotFoundException {
 		
 		List<PropertyFilter> filters = HibernateWebUtils.buildPropertyFilters(req);
@@ -51,14 +51,14 @@ public class RoleServlet extends AbstractServlet {
 	/**
 	 * 角色详细信息
 	 */        
-    public void onRoleDoDetail(HttpServletRequest req, HttpServletResponse res) 
+    public void onDetail(HttpServletRequest req, HttpServletResponse res) 
 	    	throws IOException, ServletException, WebException {
 	    	
     	Long id = getRequestId(req);
     	Role role = roleService.getRole(id);
 	
     	req.setAttribute("role", role);
-    	req.getRequestDispatcher(PAGE_ROOT_PATH + "/admin/admin_detail.inc.jsp").forward(req, res);
+    	req.getRequestDispatcher(PAGE_ROOT_PATH + "/role/role_detail.inc.jsp").forward(req, res);
 	}	
 	
 }

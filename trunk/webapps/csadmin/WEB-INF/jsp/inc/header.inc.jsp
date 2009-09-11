@@ -35,8 +35,8 @@
 			<a href="./admin"><span><fmt:message key="entity.admin" /></span></a>
 			<div class="subnav">
 				<ul class="menu">
-					<li><a href="./admin?method=create"><fmt:message key="term.admin.create" /></a></li>
-					<li><a href="/weekly_address/"><fmt:message key="term.admin.create" /></a></li>
+					<li><a href="./admin"><fmt:message key="entity.admin" /></a></li>
+					<li><a href="./role"><fmt:message key="entity.role" /></a></li>
 					<li><a href="/slideshows/">Slideshows</a></li>
 					<li><a href="/briefing_room/PressBriefings/">Press Briefings</a></li>
 					<li><a href="/briefing_room/OfficialStatements/">Official Statements</a></li>
@@ -47,41 +47,7 @@
 				</ul>
 			</div> 
 	    </li>  
-	      
-		<li class="navitem">
-			<a href="./role"><span><fmt:message key="entity.role" /></span></a>
-			<div class="subnav">
-				<ul class="menu">
-					<li><a href="./admin?method=adminPreCreate"><fmt:message key="term.admin.create" /></a></li>
-					<li><a href="/weekly_address/"><fmt:message key="term.admin.create" /></a></li>
-					<li><a href="/slideshows/">Slideshows</a></li>
-					<li><a href="/briefing_room/PressBriefings/">Press Briefings</a></li>
-					<li><a href="/briefing_room/OfficialStatements/">Official Statements</a></li>
-				</ul>
-				<ul class="menu"><li><a href="/briefing_room/PressReleases/">Presidentia</a></li>
-					<li><a href="/briefing_room/PresidentialActions/">Presidential Actions</a></li>
-					<li><a href="/briefing_room/nominations_and_appointments/">Nominations &amp; Appointments</a></li>
-				</ul>
-			</div> 
-	    </li>    
 	    
-		<li class="navitem">
-			<a href="./admin"><span><fmt:message key="entity.admin" /></span></a>
-			<div class="subnav">
-				<ul class="menu">
-					<li><a href="./admin?method=adminPreCreate"><fmt:message key="term.admin.create" /></a></li>
-					<li><a href="/weekly_address/"><fmt:message key="term.admin.create" /></a></li>
-					<li><a href="/slideshows/">Slideshows</a></li>
-					<li><a href="/briefing_room/PressBriefings/">Press Briefings</a></li>
-					<li><a href="/briefing_room/OfficialStatements/">Official Statements</a></li>
-				</ul>
-				<ul class="menu"><li><a href="/briefing_room/PressReleases/">Presidentia</a></li>
-					<li><a href="/briefing_room/PresidentialActions/">Presidential Actions</a></li>
-					<li><a href="/briefing_room/nominations_and_appointments/">Nominations &amp; Appointments</a></li>
-				</ul>
-			</div> 
-	    </li>    
-	
 	    <li class="navitem"> 
 			<a href="/contact/"><span>Contact Us</span></a> 
 	    </li>
