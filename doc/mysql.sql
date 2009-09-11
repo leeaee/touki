@@ -40,7 +40,8 @@ CREATE TABLE cs_authority (
 	id bigint AUTO_INCREMENT NOT NULL,
 	name varchar(63) NOT NULL,
 	display_name varchar(63) NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	description varchar(255) DEFAULT NULL	
 ) ENGINE = InnoDB ROW_FORMAT = DEFAULT CHARSET=utf8;
 
 
@@ -53,7 +54,6 @@ CREATE TABLE cs_resource (
 	application varchar(63),	
 	value varchar(63) NOT NULL,
 	position float NOT NULL,
-	description varchar(255) DEFAULT NULL,
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB ROW_FORMAT = DEFAULT CHARSET=utf8;
 

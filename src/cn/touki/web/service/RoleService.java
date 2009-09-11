@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
-import cn.touki.web.entity.admin.Role;
+import cn.touki.web.entity.csadmin.Role;
 import cn.touki.web.exception.EntityAlreadyExistException;
 import cn.touki.web.exception.EntityCantDeleteException;
 import cn.touki.web.exception.EntityNotFoundException;

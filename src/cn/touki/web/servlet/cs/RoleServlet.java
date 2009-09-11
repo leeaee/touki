@@ -11,7 +11,7 @@ import cn.touki.web.core.orm.Page;
 import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.core.orm.hibernate.HibernateWebUtils;
 import cn.touki.web.core.servlet.AbstractServlet;
-import cn.touki.web.entity.admin.Role;
+import cn.touki.web.entity.csadmin.Role;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.WebException;
 import cn.touki.web.service.RoleService;

@@ -1,4 +1,4 @@
-package cn.touki.web.entity.admin;
+package cn.touki.web.entity.csadmin;
 
 import java.io.Serializable;
 import java.util.LinkedHashSet;

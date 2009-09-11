@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.touki.web.core.security.ResourceDetailsService;
-import cn.touki.web.entity.admin.Resource;
+import cn.touki.web.entity.csadmin.Resource;
 import cn.touki.web.service.dao.ResourceDao;
 
 /**

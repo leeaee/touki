@@ -9,7 +9,7 @@ import cn.touki.validation.StringValidateUtil;
 import cn.touki.validation.ValidationException;
 import cn.touki.web.core.validation.WebBeanValidator;
 import cn.touki.web.core.validation.WebValidationException;
-import cn.touki.web.entity.admin.Admin;
+import cn.touki.web.entity.csadmin.Admin;
 import cn.touki.web.exception.StringTooLongException;
 import cn.touki.web.exception.WebException;
 
