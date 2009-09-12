@@ -748,10 +748,11 @@ EM {
 DIV.combobox {
 	border: 0px; 
 	padding: 0px; 
-	width: 146px; 
+	width: 209px; 
 	white-space: nowrap; 
-	height: 31px 
+	height: 26px 
 }
+
 DIV.combobox input {
 	background-color: #fefefe;
     border-left: 1px solid #999999;
@@ -770,6 +771,7 @@ DIV.combobox input {
 	height: 20px;
 	cursor: default
 }
+
 DIV.combobox div.icon {
 	border-top: 1px solid #999999;
     border-right: 1px solid #E6E6E6;	
@@ -782,8 +784,9 @@ DIV.combobox div.icon {
 	height: 24px; 
 	border-left: none	
 }
+
 DIV.combobox div.list-wrapper {
-	border: #888888 1px solid; 
+	border: #777777 1px solid; 
 	padding: 0px; 
 	left: 0px; 
 	margin: 0px; 
@@ -792,6 +795,7 @@ DIV.combobox div.list-wrapper {
 	top: 27px; 
 	background-color: #ffffff
 }
+
 DIV.combobox div.list-wrapper-up {
 	border-right: #3a3c6c 1px solid; 
 	border-top: #3a3c6c 1px solid; 
@@ -800,6 +804,7 @@ DIV.combobox div.list-wrapper-up {
 	border-bottom: #3a3c6c 0px solid; 
 	top: auto
 }
+
 DIV.combobox ul {
 	margin: 0px; 
 	padding: 0px; 
@@ -807,6 +812,7 @@ DIV.combobox ul {
 	height: 200px; 
 	text-align: left; 
 }
+
 DIV.combobox li {
 	height: 18px;
 	line-height: 18px;
@@ -818,9 +824,11 @@ DIV.combobox li {
 	cursor: default; 
 	background-color: #ffffff
 }
+
 DIV.combobox li.active {
 	background-color: #3399ff;
 }
+
 DIV.combobox input.empty {
 	color: gray;
 }

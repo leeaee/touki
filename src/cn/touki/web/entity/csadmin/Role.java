@@ -101,7 +101,7 @@ public class Role extends Identity implements Serializable {
 	}
 
 	/**
-	 * 角色拥有的授权id字符串, 多个授权id用','分隔.
+	 * 角色拥有的授权id.
 	 */
 	@Transient
 	@SuppressWarnings("unchecked")

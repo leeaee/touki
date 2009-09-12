@@ -229,6 +229,11 @@ initElements = function() {
 		
 	});	
 	
+	/*-- init select --*/
+	$(':input.combobox').each(function() {
+		$(this).combobox({ skin: 'combobox', triggerSelected: true });
+	});	
+	
 	/*-- init button --*/
 	$(':input.bttn, :input.sbttn, :input.mbttn,:input.navbttn, a.button').each(function() {
 		
@@ -244,12 +249,6 @@ initElements = function() {
     	);
     	
 	});
-	
-	/*-- init select --*/
-	$(':input.combobox').each(function() {
-		$(this).combobox({ autoFill: true, skin: 'combobox' });
-	});
-	
 	
 };
 
@@ -287,6 +286,10 @@ initDataTable = function(bttnText) {
 		var url = $('#listForm').attr('action');
 		var rows = $('TABLE.data tbody > tr:has(td)');
 		var checkboxes = $('TABLE.data :checkbox');
+		
+		checkboxes.each(function(){
+			$(this).attr('checked', false);
+		});
 		
 		$('#check-all').click(function() {
 			

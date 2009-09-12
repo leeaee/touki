@@ -124,8 +124,8 @@ public class HtmlComboboxTag extends HtmlTag {
         
         //add options
         if (this.options != null && this.options.size() > 0) {
-            for (int i = 0; i < options.size(); i++) {
-                Object option = options.get(i);
+            for (int i = 0; i < this.options.size(); i++) {
+                Object option = this.options.get(i);
                 String value = "";
                 String text = "";
 				try {
@@ -144,10 +144,12 @@ public class HtmlComboboxTag extends HtmlTag {
                 html.append("    ");
                 html.append("<option value=\"").append(value).append("\"");
                 //check if this is a 'selected' option
-                for (int j = 0; j < this.selected.size(); j ++) {
-                	String selectValue = String.valueOf(this.selected.get(j));
-	                if (selectValue.equals(value)) {
-	                    html.append(" selected");
+                if (this.selected != null && this.selected.size() > 0) {
+	                for (int j = 0; j < this.selected.size(); j ++) {
+	                	String selectValue = String.valueOf(this.selected.get(j));
+		                if (selectValue.equals(value)) {
+		                    html.append(" selected");
+		                }
 	                }
                 }
                 html.append(">");
