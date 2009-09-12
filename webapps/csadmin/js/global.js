@@ -231,7 +231,7 @@ initElements = function() {
 	
 	/*-- init select --*/
 	$(':input.combobox').each(function() {
-		$(this).combobox({ skin: 'combobox', triggerSelected: true });
+		$(this).combobox({ skin: 'combobox' });
 	});	
 	
 	/*-- init button --*/
