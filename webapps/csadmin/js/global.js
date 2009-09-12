@@ -23,6 +23,27 @@ confirmSubmit = function(obj, methodName, mes){
         obj.submit();
     }
 };
+
+
+changeLang = function(newLang) {
+
+    var search = location.search;
+
+    if (search.length == 0) {
+        url = "?lang=" + newLang;
+    }
+    else {
+        if (search.indexOf("lang=") > -1) {
+            origin = search.substring(0, search.lastIndexOf("lang="));
+            url = origin + "lang=" + newLang;
+        }
+        else {
+            url = search + "&" + "lang=" + newLang;
+        }
+    }
+
+    location.href = url;
+};
  
 
 /**
@@ -167,7 +188,7 @@ initLayout = function() {
 		if ($('#upper-left').length > 0) {
 			upperWest = {
 				paneSelector: '#upper-left',
-				size: 220
+				size: 250
 			};
 		} else {
 			upperWest = false;

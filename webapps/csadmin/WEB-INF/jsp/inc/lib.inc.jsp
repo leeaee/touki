@@ -2,6 +2,7 @@
 	java.util.List,
 	java.util.Enumeration,
 	java.util.Locale,
+	cn.touki.i18n.I18NDictionary,	
 	org.springframework.security.ui.webapp.AuthenticationProcessingFilter,
 	org.springframework.security.AuthenticationException,
 	org.displaytag.tags.el.ELSetPropertyTag,
