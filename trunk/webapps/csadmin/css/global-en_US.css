@@ -10,6 +10,7 @@ Copyright:
 ----------------------------------------*/
 @import url("reset.css");
 @import url("jquery-ui.css");
+@import url("jquery-combo.css");
 
 
 /* Global
@@ -733,3 +734,95 @@ EM {
 .darkgray {
     color: #999999;
 }
+
+/*  jQuery Combo box 2.1.2 
+--------------------------------------------*/
+DIV.combobox {
+	border: 0px; 
+	padding: 0px; 
+	width: 209px; 
+	white-space: nowrap; 
+	height: 25px 
+}
+
+DIV.combobox input {
+	background-color: #fefefe;
+    border-left: 1px solid #999999;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;	
+	font-family: tahoma, verdana;
+	font-size: 11px;	
+	padding: 4px 5px 0 5px; 
+	left: 0px; 
+	margin: 0px;
+	line-height: 19px; 
+	vertical-align: middle; 
+	width: 188px; 
+	top: 0px; 
+	height: 19px;
+	cursor: default
+}
+
+DIV.combobox div.icon {
+	border-top: 1px solid #999999;
+    border-right: 1px solid #E6E6E6;	
+	border-bottom: 1px solid #E6E6E6;    
+	background: url(../img/web/combo-arrow.png) #fefefe no-repeat 0px 0px; 
+	left: 188px; 
+	width: 22px; 
+	cursor: default; 
+	top: 0px; 
+	height: 23px; 
+	border-left: none	
+}
+
+DIV.combobox div.list-wrapper {
+	border: #777777 1px solid; 
+	padding: 0px; 
+	left: 0px; 
+	margin: 0px; 
+	width: 209px; 
+	bottom: auto; 
+	top: 26px; 
+	background-color: #ffffff
+}
+
+DIV.combobox div.list-wrapper-up {
+	border-right: #3a3c6c 1px solid; 
+	border-top: #3a3c6c 1px solid; 
+	border-left: #3a3c6c 1px solid; 
+	bottom: 26px; 
+	border-bottom: #3a3c6c 0px solid; 
+	top: auto
+}
+
+DIV.combobox ul {
+	margin: 0px; 
+	padding: 0px; 
+	list-style-type: none; 
+	height: 200px; 
+	text-align: left; 
+}
+
+DIV.combobox li {
+	height: 18px;
+	line-height: 18px;
+	vertical-align: middle;
+	padding: 2px 0 0 5px; 
+	margin: 0px; 
+	font-family: tahoma, verdana;
+	font-size: 11px;
+	color: #333333; 
+	cursor: default; 
+	background-color: #ffffff
+}
+
+DIV.combobox li.active {
+	background-color: #3399ff;
+}
+
+DIV.combobox input.empty {
+	color: gray;
+}
+

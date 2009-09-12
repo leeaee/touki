@@ -217,6 +217,7 @@ html, body {
 
 /*--- footer ---*/
 #footer {
+	font-family: Microsoft YaHei, tahoma, arial, sans-serif;		
 	width: 100%;
 	background: url(../img/web/footer.gif) repeat-x top left;
 	height: 40px;	
@@ -743,6 +744,7 @@ EM {
 .ui-widget { font-family: Microsoft YaHei, tahoma, arial, sans-serif; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Microsoft YaHei, tahoma, arial, sans-serif; }
 
+
 /*  jQuery Combo box 2.1.2 
 --------------------------------------------*/
 DIV.combobox {
@@ -800,7 +802,7 @@ DIV.combobox div.list-wrapper-up {
 	border-right: #3a3c6c 1px solid; 
 	border-top: #3a3c6c 1px solid; 
 	border-left: #3a3c6c 1px solid; 
-	bottom: 24px; 
+	bottom: 27px; 
 	border-bottom: #3a3c6c 0px solid; 
 	top: auto
 }
