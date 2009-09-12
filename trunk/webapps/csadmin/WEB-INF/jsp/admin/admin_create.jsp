@@ -51,12 +51,12 @@
 	        <td class="df"><fmt:message key="prop.email" /></td>
 	        <td class="v"><input type="text" name="email" size="30" maxlength="20" class="text" /></td>
 	        <td class="df"><fmt:message key="prop.state" /></td>
-	        <td class="v"><html:select name="state" options="<%=Stateful.TEXT%>" style="slct" selected="${admin.state}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
+	        <td class="v"><html:select name="state" options="<%=Stateful.TEXT%>" style="combobox" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
 	    </tr>
 	    <tr>
 	        <td class="df"><fmt:message key="entity.role" /></td>
 	        <td class="v">
-	        	<select name="roleId" class="slct">
+	        	<select name="roleId" class="combobox">
 	        	<% 
 					List<Role> roles = (List<Role>) request.getAttribute("roles");
 	        	

@@ -55,11 +55,11 @@
 	        <td class="df"><fmt:message key="prop.email" /></td>
 	        <td class="v"><input type="text" name="email" size="30" maxlength="20" class="text" value="${admin.email}" /></td>
 	        <td class="df"><fmt:message key="prop.state" /></td>
-	        <td class="v"><html:select name="state" options="<%=Stateful.TEXT%>" style="slct" selected="${admin.state}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
+	        <td class="v"><html:select name="state" options="<%=Stateful.TEXT%>" style="combobox" selected="${admin.state}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
 	    </tr>
 	    <tr>
 	        <td class="df"><fmt:message key="entity.role" /></td>
-	        <td class="v"><html:combobox name="roleId" options="${roles}" style="slct" selected="${admin.roleIds}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
+	        <td class="v"><html:combobox name="roleId" options="${roles}" style="combobox" selected="${admin.roleIds}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
 	        <td class="df"></td>
 	        <td class="v"></td>
 	    </tr>	    
