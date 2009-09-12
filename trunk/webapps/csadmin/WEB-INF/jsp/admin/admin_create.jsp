@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="cn.touki.web.entity.csadmin.Role" %>
 <%@ include file="../inc/header.inc.jsp" %>
 <%@ include file="../inc/sider.inc.jsp" %>
 
@@ -55,18 +54,7 @@
 	    </tr>
 	    <tr>
 	        <td class="df"><fmt:message key="entity.role" /></td>
-	        <td class="v">
-	        	<select name="roleId" class="combobox">
-	        	<% 
-					List<Role> roles = (List<Role>) request.getAttribute("roles");
-	        	
-	        		for (int i = 0; i < roles.size(); i ++) {
-	        			Role role = roles.get(i);
-	        			out.print("<option value=\"" + role.getId() + "\">" + role.getName() + "</option>");
-	        		}
-	        	%>
-	        	</select>
-			</td>
+	        <td class="v"><html:combobox name="roleId" options="${roles}" style="combobox" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
 	        <td class="df"></td>
 	        <td class="v"></td>
 	    </tr>
