@@ -1,12 +1,4 @@
 
-<!--[if IE]>
-<style>
-	#sider {
-		padding: 0 0 3px 10px;
-	}
-</style>
-<![endif]-->
-
 <div id="sider">
 
 	<div id="accordion">

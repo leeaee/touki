@@ -14,11 +14,28 @@
 	<script type="text/javascript" src="./js/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-layout.min.js"></script>
 	<script type="text/javascript" src="./js/global.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery-ui-combo.min.js"></script>	
     <script type="text/javascript">
 	    function getbasedir() {
 	        return "<%=request.getContextPath()%>";
 	    }
     </script>
+	<!--[if IE]>
+	<style>
+		#sider {
+			padding: 0 0 3px 10px;
+		}
+		INPUT.text {
+    		line-height: 20px;		
+		    padding: 4px 5px 0 5px;
+		}
+		DIV.combobox li {
+			height: 17px;
+			line-height: 17px;
+			padding: 3px 0 0 5px; 
+		}				
+	</style>
+	<![endif]-->    
 </head>
 
 <body>

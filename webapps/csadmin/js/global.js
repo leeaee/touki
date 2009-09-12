@@ -243,7 +243,13 @@ initElements = function() {
       		function () { $(this).removeClass('ui-state-hover'); }
     	);
     	
-	});		
+	});
+	
+	/*-- init select --*/
+	$(':input.combobox').each(function() {
+		$(this).combobox({ autoFill: true, skin: 'combobox' });
+	});
+	
 	
 };
 

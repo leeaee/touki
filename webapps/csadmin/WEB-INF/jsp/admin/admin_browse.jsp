@@ -68,7 +68,7 @@
 			</td></tr>
 			<tr><td>
 				<div class="label"><fmt:message key="prop.state"/></div>
-				<html:select name="filter_EQ_state" options="<%=Stateful.TEXT%>" style="para" selected="${param['filter_EQ_state']}" hasNaOption="false" locale="${userLocale}" />
+				<html:select name="filter_EQ_state" options="<%=Stateful.TEXT%>" style="combo" selected="${param['filter_EQ_state']}" hasNaOption="false" locale="${userLocale}" />
 			</td></tr>
 		</table>
 	</div>
