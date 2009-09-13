@@ -218,21 +218,15 @@ public class RequestUtils {
     	
     	List<Long> ids = new ArrayList<Long>();
     	
-    	Enumeration<?> names = req.getParameterNames();
-    	while (names.hasMoreElements()) {
-    		String name = (String) names.nextElement();
-    		if (name.endsWith(parameter)) {
-    			if (req.getMethod().equalsIgnoreCase("GET")||req.getParameter(name).indexOf("%") > -1) {
-    				ids.add(Long.valueOf(req.getParameter(name)));
-    				continue;
-    			}
-    			if(req.getMethod().equalsIgnoreCase("POST")){
-    				ids.add(Long.valueOf(req.getParameter(name)));
-    			}
-    		}
-    	}
+    	String[] names = req.getParameterValues(parameter);
     	
-    	return ids;
+        for (String string : names) {
+            if (string != null) {
+                ids.add(Long.valueOf(string));
+            }
+        }
+        
+        return ids;    	
     }
 
     /**

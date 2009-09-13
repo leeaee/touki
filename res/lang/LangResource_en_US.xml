@@ -87,7 +87,8 @@
     
 
     <entry key="entity.admin">Administrator</entry>
-    <entry key="entity.role">Role</entry>    
+    <entry key="entity.role">Role</entry>   
+	<entry key="entity.authority">Authority</entry>     
     <entry key="entity.user">User</entry>
     <entry key="entity.user.old">User of eLink 2005 / eWork 6.x</entry>
     <entry key="entity.user_account">User Account</entry>

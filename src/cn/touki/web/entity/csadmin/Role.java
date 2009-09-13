@@ -97,7 +97,7 @@ public class Role extends Identity implements Serializable {
 
 	@Transient
 	public String getAuthNames() {
-		return ReflectionUtils.fetchElementPropertyToString(authorities, "displayName", ", ");
+		return ReflectionUtils.fetchElementPropertyToString(authorities, "displayName", "<br /> ");
 	}
 
 	/**

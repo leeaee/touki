@@ -104,6 +104,7 @@
     <!-- 实体名称 -->
     <entry key="entity.admin">管理员用户</entry>
     <entry key="entity.role">角色</entry>
+    <entry key="entity.authority">授权</entry>
     <entry key="entity.user">用户</entry>
     <entry key="entity.user.old">eLink 2005 / eWork 6.x 用户</entry>
     <entry key="entity.user_account">用户个人帐户</entry>

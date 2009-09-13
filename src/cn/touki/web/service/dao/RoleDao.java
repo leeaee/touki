@@ -16,11 +16,11 @@ import cn.touki.web.entity.csadmin.Role;
 @Repository
 public class RoleDao extends HibernateDao<Role, Long> {
 
-	public static final String QUERY_USER_BY_ROLEID = "select u from User u left join u.roles r where r.id=?";
+	public static final String QUERY_USER_BY_ROLEID = "select a from Admin a left join a.roles r where r.id=?";
 
 	public Role getRoleByName(String roleName) {
 		
-		return findUniqueBy("roelName", roleName);
+		return findUniqueBy("name", roleName);
 	}	
 	
 	/**
