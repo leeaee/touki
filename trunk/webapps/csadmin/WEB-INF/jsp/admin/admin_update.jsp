@@ -58,7 +58,7 @@
 	    </tr>
 	    <tr>
 	        <td class="df"><fmt:message key="entity.role" /></td>
-	        <td class="v"><html:combobox name="roleId" options="${roles}" style="combobox" selected="${admin.roleIds}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
+	        <td class="v"><html:combobox name="role" options="${roles}" propValue="id" propText="name" style="combobox" selected="${admin.roleIds}" hasNaOption="false" hasBlankOption="false" locale="${userLocale}" /></td>
 	        <td class="df"></td>
 	        <td class="v"></td>
 	    </tr>	    

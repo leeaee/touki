@@ -1,7 +1,6 @@
 package cn.touki.web.taglib.html;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Locale;
 
@@ -26,6 +25,8 @@ public class HtmlComboboxTag extends HtmlTag {
     private List<Object> options;
 	private List selected;
     private int size = 1;
+    private String propValue;
+    private String propText;
     private boolean hasBlankOption = true;
     private boolean hasNaOption = true;
     private String naOptionText = "option.state.na";
@@ -84,7 +85,23 @@ public class HtmlComboboxTag extends HtmlTag {
         this.naOptionText = naOptionText;
     }
 
-    @Override
+    public String getPropValue() {
+		return propValue;
+	}
+
+	public void setPropValue(String propValue) {
+		this.propValue = propValue;
+	}
+
+	public String getPropText() {
+		return propText;
+	}
+
+	public void setPropText(String propText) {
+		this.propText = propText;
+	}
+
+	@Override
     public int doStartTag() throws JspException {
     	
         JspWriter out = pageContext.getOut();
@@ -124,23 +141,17 @@ public class HtmlComboboxTag extends HtmlTag {
         
         //add options
         if (this.options != null && this.options.size() > 0) {
-            for (int i = 0; i < this.options.size(); i++) {
-                Object option = this.options.get(i);
+            for (int i = 0; i < options.size(); i++) {
+                Object option = options.get(i);
                 String value = "";
                 String text = "";
 				try {
-					value = String.valueOf(PropertyUtils.getProperty(option, "id"));
-					text = String.valueOf(PropertyUtils.getProperty(option, "name"));
-				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (NoSuchMethodException e) {
-					// TODO Auto-generated catch block
+					value = String.valueOf(PropertyUtils.getProperty(option, propValue));
+					text = String.valueOf(PropertyUtils.getProperty(option, propText));
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
                 html.append("    ");
                 html.append("<option value=\"").append(value).append("\"");
                 //check if this is a 'selected' option

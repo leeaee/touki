@@ -9,6 +9,10 @@
         <td class="v">${role.name}</td>
     </tr>
     <tr>
+        <td class="keyf"><fmt:message key="entity.authority"/></td>
+        <td class="v">${role.authNames}</td>
+    </tr>    
+    <tr>
         <td class="keyf"><fmt:message key="prop.description"/></td>
         <td class="v">${role.description}</td>
     </tr>

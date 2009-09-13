@@ -91,7 +91,7 @@ public class AdminService {
         adminDao.save(admin);
     }
     
-    public void updateAdmin(Admin admin, List<Long> roleIds) throws EntityCantModifyException {
+    public void updateAdmin(Admin admin, List<Long> roles) throws EntityCantModifyException {
     	
 		if (admin.getId() == 1 || admin.getName().equalsIgnoreCase("admin")) {
 			throw new EntityCantModifyException(Admin.KEY, "admin");		
@@ -99,7 +99,7 @@ public class AdminService {
     	
     	admin.setLastModify(System.currentTimeMillis());
     	
-        HibernateWebUtils.mergeByCheckedIds(admin.getRoles(), roleIds, Role.class);
+        HibernateWebUtils.mergeByCheckedIds(admin.getRoles(), roles, Role.class);
     	adminDao.merge(admin);
     }
     

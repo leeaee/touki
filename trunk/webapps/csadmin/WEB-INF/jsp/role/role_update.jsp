@@ -7,7 +7,10 @@
 
 	<input type="hidden" name="validator" value="roleValidator" />
 	
-	<input type="hidden" name="method" value="doCreate" />
+	<input type="hidden" name="method" value="doUpdate" />
+	<input type="hidden" name="id" value="${role.id}" />
+	<input type="hidden" name="createTime" value="${role.createTime}" />
+	<input type="hidden" name="lastModify" value="${role.lastModify}" />
 
 	<div id="upper">
 		<div id="upper-left"><fmt:message key="act.search" /></div>
@@ -30,15 +33,15 @@
 		</tr>
 	    <tr>
 	        <td class="keyf"><fmt:message key="prop.name" /></td>
-	        <td class="v"><input type="text" name="name" size="30" maxlength="63" class="text" /></td>
+	        <td class="v"><input type="text" name="name" size="30" value="${role.name}" maxlength="63" class="text" readonly="readonly" /></td>
 	    </tr>
 	    <tr>
 	        <td class="keyf"><fmt:message key="entity.authority" /></td>
-	        <td class="v"><html:checkarea name="authority" options="${authorities}" propValue="id" propText="displayName" areaStyle="ckarea" style="multck" locale="${userLocale}" /></td>
+	        <td class="v"><html:checkarea name="authority" options="${authorities}" propValue="id" propText="displayName" checked="${role.authIds}" areaStyle="ckarea" style="multck" locale="${userLocale}" /></td>
 	    </tr>
 	    <tr>
 	        <td class="df"><fmt:message key="prop.description" /></td>
-	        <td class="v" colspan="3"><textarea name="description"></textarea></td>
+	        <td class="v" colspan="3"><textarea name="description">${role.description}</textarea></td>
 	    </tr>
 		<tr>
 			<td class="f" colspan="4"></td>

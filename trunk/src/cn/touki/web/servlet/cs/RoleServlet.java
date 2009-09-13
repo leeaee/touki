@@ -14,8 +14,10 @@ import cn.touki.web.core.orm.PropertyFilter;
 import cn.touki.web.core.orm.hibernate.HibernateWebUtils;
 import cn.touki.web.core.servlet.AbstractServlet;
 import cn.touki.web.core.validation.WebBeanValidator;
+import cn.touki.web.entity.csadmin.Authority;
 import cn.touki.web.entity.csadmin.Role;
 import cn.touki.web.exception.EntityAlreadyExistException;
+import cn.touki.web.exception.EntityCantModifyException;
 import cn.touki.web.exception.EntityNotFoundException;
 import cn.touki.web.exception.WebException;
 import cn.touki.web.service.RoleService;
@@ -68,11 +70,14 @@ public class RoleServlet extends AbstractServlet {
     
 	
 	/**
-	 * 管理员创建
+	 * 角色创建
 	 */
     public void onCreate(HttpServletRequest req, HttpServletResponse res) 
     		throws IOException, ServletException {
-
+    	
+    	List<Authority> authorities = roleService.getAllAuthorities();
+    	
+    	req.setAttribute("authorities", authorities);
         req.getRequestDispatcher(PAGE_ROOT_PATH + "/role/role_create.jsp").forward(req, res);
     }	
     
@@ -80,6 +85,9 @@ public class RoleServlet extends AbstractServlet {
     		throws IOException, ServletException, EntityAlreadyExistException {
 
     	Role role = (Role) WebBeanValidator.getValidBean(req, Role.class);
+        List<Long> authorities = getRequestSelectedIds(req, "authority");
+        
+        roleService.createRole(role, authorities);
         
         I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.admin.create", role.getName()));
         
@@ -90,6 +98,58 @@ public class RoleServlet extends AbstractServlet {
         buttons.add(bttnBack);        
 
         handleMessage(req, res, message, buttons);
-    }    
+    }
+    
+	/**
+	 * 角色修改
+	 */
+    public void onUpdate(HttpServletRequest req, HttpServletResponse res) 
+    		throws IOException, ServletException, WebException {
+    	
+    	Long id = getRequestId(req);
+    	Role role = roleService.getRole(id);
+    	
+    	List<Authority> authorities = roleService.getAllAuthorities();
+    	
+    	req.setAttribute("authorities", authorities); 	
+    	req.setAttribute("role", role);
+        req.getRequestDispatcher(PAGE_ROOT_PATH + "/role/role_update.jsp").forward(req, res);
+    }
+    
+    public void onDoUpdate(HttpServletRequest req, HttpServletResponse res) 
+    		throws IOException, ServletException, EntityAlreadyExistException, EntityNotFoundException, EntityCantModifyException {
+
+    	Role role = (Role) WebBeanValidator.getValidBean(req, Role.class);
+        
+        List<Long> authorities = getRequestSelectedIds(req, "authority");
+        
+        roleService.updateRole(role, authorities);
+
+        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.role.update", role.getName()));
+        Button button = new Button(Button.LABEL_OK, "");
+        button.setAction("location.href = './role'");
+
+        handleMessage(req, res, message, button);
+    }
+    
+	/**
+	 * 角色删除
+	 */        
+    public void onDelete(HttpServletRequest req, HttpServletResponse res) 
+	    	throws IOException, ServletException, WebException {
+	    	
+        List<Long> ids = getCheckedIds(req);
+        int deleted = 0;
+
+        for (Long id : ids) {
+            roleService.deleteRole(id);
+            deleted ++;
+        }
+
+        I18NMessage message = new I18NMessage("msg.ok", new I18NMessage("msg.role.delete", deleted));
+        Button button = new Button(Button.LABEL_OK, "location.href = './role'");
+
+        handleMessage(req, res, message, button);
+	}	    
 	
 }
