@@ -418,8 +418,7 @@ LABEL.caption {
 	white-space: nowrap;
 }
 
-LABEL {
-	font-weight: bold;
+LABEL.ck {
 	height: 20px;
 	line-height: 16px;
 	vertical-align: middle;

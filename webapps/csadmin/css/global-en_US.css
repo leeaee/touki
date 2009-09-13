@@ -308,10 +308,31 @@ TEXTAREA {
     height: 80px;
 }
 
+DIV.ckarea {
+	width: 368px;
+	height: 100px; 
+	overflow: auto; 
+	background-color: #fefefe;
+    border-left: 1px solid #999999;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;	
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	font-size: 11px;
+	color: #333333; 	
+}
+
 /*** CHECKBOX ***/
 INPUT.ckbox {
 	padding-rigt: 3;
 	margin-rigth: 3;
+}
+
+INPUT.multck {
+	margin: 0px 10px 2px 2px;
+	height: 18px;
+	line-height: 16px;
+	vertical-align: middle;
 }
 
 /* Button
@@ -389,6 +410,14 @@ LABEL.caption {
 	font-weight: bold;
 	height: 25px;
 	line-height: 25px;
+	vertical-align: middle;
+	padding: 0 .5em;
+	white-space: nowrap;
+}
+
+LABEL.ck {
+	height: 20px;
+	line-height: 16px;
 	vertical-align: middle;
 	padding: 0 .5em;
 	white-space: nowrap;
