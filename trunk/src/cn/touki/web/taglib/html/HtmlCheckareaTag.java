@@ -126,7 +126,7 @@ public class HtmlCheckareaTag extends HtmlTag {
 				}
 				
                 html.append("    ");
-                html.append("<label><input type=\"checkbox\" name=\"").append(name).append("\"");
+                html.append("<label class=\"ck\"><input type=\"checkbox\" name=\"").append(name).append("\"");
                 html.append(" value=\"").append(value).append("\"");
                 
                 //add attribute 'class'
