@@ -751,4 +751,16 @@
     <entry key="script.mobiles.exist">Mobiles exist!</entry>
     <entry key="script.mobiles.number.error">Not right format!</entry>
     <entry key="script.forum.del">Secede from this forum, will delete your forum's fiends!</entry>
+    
+    <!--授权内容 -->
+	<entry key="auth.browse.index">Index browse</entry>
+	<entry key="auth.browse.admin">Administrator browse</entry>
+	<entry key="auth.create.admin">Administrator create</entry>
+	<entry key="auth.modify.admin">Administrator modify</entry>
+	<entry key="auth.delete.admin">Administrator delete</entry>
+	<entry key="auth.browse.role">Role browse</entry>
+	<entry key="auth.create.role">Role create</entry>
+	<entry key="auth.modify.role">Role modify</entry>
+	<entry key="auth.delete.role">Role delete</entry>    
+    
 </properties>

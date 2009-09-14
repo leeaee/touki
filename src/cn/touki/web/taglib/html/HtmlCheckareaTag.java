@@ -2,11 +2,14 @@ package cn.touki.web.taglib.html;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
 import org.apache.commons.beanutils.PropertyUtils;
+
+import cn.touki.i18n.I18NDictionary;
 
 /**
  * An abstract Tag class for HtmlRadioTag and HtmlCheckboxTag.
@@ -25,7 +28,8 @@ public class HtmlCheckareaTag extends HtmlTag {
 	private List checked;	
 	private String propValue;
 	private String propText;
-    private String connector = "&nbsp;&nbsp;";
+  	private boolean i18n = true;
+
 
     //Constructor
     public HtmlCheckareaTag() {
@@ -38,14 +42,6 @@ public class HtmlCheckareaTag extends HtmlTag {
 
     public void setOptions(List options) {
         this.options = options;
-    }
-
-    public String getConnector() {
-        return connector;
-    }
-
-    public void setConnector(String connector) {
-        this.connector = connector;
     }
 
     public String getPropValue() {
@@ -88,10 +84,19 @@ public class HtmlCheckareaTag extends HtmlTag {
 		this.areaStyle = areaStyle;
 	}
 
+	public boolean isI18n() {
+		return i18n;
+	}
+
+	public void setI18n(boolean i18n) {
+		this.i18n = i18n;
+	}
+
 	@Override
     public int doStartTag() throws JspException {
     	
         JspWriter out = pageContext.getOut();
+        Locale curLocale = getCurrentLocale();
 
         StringBuffer html = new StringBuffer("<div");
         
@@ -143,9 +148,15 @@ public class HtmlCheckareaTag extends HtmlTag {
 		                }
 	                }
                 }
+                
                 html.append(">");
                 
-                html.append(text);
+                if (i18n) {
+                	html.append(I18NDictionary.getMessage(text, curLocale));
+                } else {
+                	html.append(text);
+                }
+                
                 html.append("</label><br />\n");
             }
         }
