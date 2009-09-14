@@ -1,6 +1,5 @@
 -- cs_admin
 insert into cs_admin (id, name, password, true_name) values (1, 'admin', '96e79218965eb72c92a549dd5a330112', 'admin');
-insert into cs_admin (id, name, password, true_name) values (2, 'guest', '96e79218965eb72c92a549dd5a330112', 'guest');
 
 
 -- cs_role
