@@ -23,19 +23,19 @@ insert into cs_authority (id, name, display_name) values (9, 'a_delete_role', 'è
 
 
 -- cs_resource
-insert into cs_resource (id, resource_type, application, value, position) values(1, 'url', 'csadmin', '/index*', 1.0);
+insert into cs_resource (id, resource_type, application, value, position) values(1, 'url', 'csadmin', '/index*', 1.9);
 
 insert into cs_resource (id, resource_type, application, value, position) values(2, 'url', 'csadmin', '/admin?method=browse*', 2.0);
-insert into cs_resource (id, resource_type, application, value, position) values(3, 'url', 'csadmin', '/admin?method=create*', 3.0);
-insert into cs_resource (id, resource_type, application, value, position) values(4, 'url', 'csadmin', '/admin?method=update*', 4.0);
-insert into cs_resource (id, resource_type, application, value, position) values(5, 'url', 'csadmin', '/admin?method=delete*', 5.0);
-insert into cs_resource (id, resource_type, application, value, position) values(6, 'url', 'csadmin', '/admin*', 6.0);
+insert into cs_resource (id, resource_type, application, value, position) values(3, 'url', 'csadmin', '/admin?method=create*', 2.1);
+insert into cs_resource (id, resource_type, application, value, position) values(4, 'url', 'csadmin', '/admin?method=update*', 2.2);
+insert into cs_resource (id, resource_type, application, value, position) values(5, 'url', 'csadmin', '/admin?method=delete*', 2.3);
+insert into cs_resource (id, resource_type, application, value, position) values(6, 'url', 'csadmin', '/admin*', 2.9);
 
-insert into cs_resource (id, resource_type, application, value, position) values(7, 'url', 'csadmin', '/role?method=browse*', 7.0);
-insert into cs_resource (id, resource_type, application, value, position) values(8, 'url', 'csadmin', '/role?method=create*', 8.0);
-insert into cs_resource (id, resource_type, application, value, position) values(9, 'url', 'csadmin', '/role?method=update*', 9.0);
-insert into cs_resource (id, resource_type, application, value, position) values(10, 'url', 'csadmin', '/role?method=delete*', 10.0);
-insert into cs_resource (id, resource_type, application, value, position) values(11, 'url', 'csadmin', '/role*', 11.0);
+insert into cs_resource (id, resource_type, application, value, position) values(7, 'url', 'csadmin', '/role?method=browse*', 3.0);
+insert into cs_resource (id, resource_type, application, value, position) values(8, 'url', 'csadmin', '/role?method=create*', 3.1);
+insert into cs_resource (id, resource_type, application, value, position) values(9, 'url', 'csadmin', '/role?method=update*', 3.2);
+insert into cs_resource (id, resource_type, application, value, position) values(10, 'url', 'csadmin', '/role?method=delete*', 3.3);
+insert into cs_resource (id, resource_type, application, value, position) values(11, 'url', 'csadmin', '/role*', 3.9);
 
 
 -- cs_admin_x_role
