@@ -4,8 +4,7 @@ insert into cs_admin (id, name, password, true_name) values (2, 'guest', '96e792
 
 
 -- cs_role
-insert into cs_role (id, name) values (1, '超级管理员');
-insert into cs_role (id, name) values (2, '游客');
+insert into cs_role (id, name) values (1, 'Administrator');
 
 
 -- cs_authority 
@@ -40,7 +39,6 @@ insert into cs_resource (id, resource_type, application, value, position) values
 
 -- cs_admin_x_role
 insert into cs_admin_x_role values(1, 1);
-insert into cs_admin_x_role values(2, 2);
 
 
 -- cs_role_x_authority
@@ -53,11 +51,6 @@ insert into cs_role_x_authority values(1, 6);
 insert into cs_role_x_authority values(1, 7);
 insert into cs_role_x_authority values(1, 8);
 insert into cs_role_x_authority values(1, 9);
-
-insert into cs_role_x_authority values(2, 1);
-insert into cs_role_x_authority values(2, 2);
-insert into cs_role_x_authority values(2, 4);
-insert into cs_role_x_authority values(2, 6);
 
 
 -- cs_resource_x_authority
