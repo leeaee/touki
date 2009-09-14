@@ -4,7 +4,7 @@
 <%@ include file="../inc/sider.inc.jsp" %>
 
 <div id="container">
-<form id="listForm" name="roleListForm" action="./role" method="post">
+<form id="listForm" name="roleListForm" action="./role" method="get">
 
 	<input type="hidden" name="method" value="" />
 	<input type="hidden" name="page.sortStyle" id="sortStyle" value="${param['page.sortStyle']}"/>
