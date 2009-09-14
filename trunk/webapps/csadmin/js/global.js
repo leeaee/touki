@@ -338,7 +338,7 @@ initDataTable = function(bttnText) {
 			
 			row.dblclick(function() {
 				
-				$('#dialog').text('');
+				$('#dialog').text(null);
 				$('#dialog').dialog('open');
 				
 				$("#dialog").ajaxStart(function () {
