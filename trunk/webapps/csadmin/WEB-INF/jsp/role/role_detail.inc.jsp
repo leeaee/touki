@@ -10,7 +10,7 @@
     </tr>
     <tr>
         <td class="keyf"><fmt:message key="entity.authority"/></td>
-        <td class="v">${role.authNames}</td>
+        <td class="v">${f:i18n(role.authNames, userLocale, "<br />")}</td>
     </tr>    
     <tr>
         <td class="keyf"><fmt:message key="prop.description"/></td>

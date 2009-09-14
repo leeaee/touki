@@ -405,6 +405,13 @@
             <rtexprvalue>true</rtexprvalue>
             <type>java.util.List</type>
         </attribute>
+        
+        <attribute>
+            <name>i18n</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>        
     </tag>
 
     <tag>

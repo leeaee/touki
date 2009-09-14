@@ -50,6 +50,13 @@
         <name>style</name>   
     	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
    		<function-signature>java.lang.String searchBttnStyle(java.lang.Boolean)</function-signature>   
+    </function>
+        
+    <function>   
+        <description>Return the search button style.</description>   
+        <name>i18n</name>   
+    	<function-class>cn.touki.web.taglib.ELFunctions</function-class>   
+   		<function-signature>java.lang.String i18n(java.lang.String, java.util.Locale, java.lang.String)</function-signature>   
     </function>    
      
 </taglib>

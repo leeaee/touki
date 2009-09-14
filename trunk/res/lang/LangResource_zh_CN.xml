@@ -937,5 +937,16 @@
 
     <!--自定义内容 -->
 	<entry key="para.paymethod.elinkcard.tip">使用 ELINK 卡充值,实际的充值金额将由你使用的 ELINK 卡的面值决定。</entry>
+	
+    <!--授权内容 -->
+	<entry key="auth.browse.index">主页浏览</entry>
+	<entry key="auth.browse.admin">管理员浏览</entry>
+	<entry key="auth.create.admin">管理员创建</entry>
+	<entry key="auth.modify.admin">管理员修改</entry>
+	<entry key="auth.delete.admin">管理员删除</entry>
+	<entry key="auth.browse.role">角色浏览</entry>
+	<entry key="auth.create.role">角色创建</entry>
+	<entry key="auth.modify.role">角色修改</entry>
+	<entry key="auth.delete.role">角色删除</entry>
 
 </properties>

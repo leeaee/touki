@@ -69,6 +69,22 @@ public class ELFunctions {
 		} else {
 			return "ui-state-default";
 		}
+	}
+	
+	public static String i18n(String key, Locale locale, String split) {
+		
+		StringBuffer sb = new StringBuffer();
+		
+		if (split != null && split.length() > 0) {
+
+			String[] temp = key.split(split);
+			
+			for (int i = 0; i < temp.length; i ++) {
+				sb.append(I18NDictionary.getMessage(temp[i], locale) + split);
+			}
+		
+		}
+		return sb.toString();
 	}	
 	
 }

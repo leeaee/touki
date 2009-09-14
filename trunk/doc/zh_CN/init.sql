@@ -9,17 +9,17 @@ insert into cs_role (id, name) values (2, '游客');
 
 
 -- cs_authority 
-insert into cs_authority (id, name, display_name) values (1, 'a_browse_index', '主页浏览');
+insert into cs_authority (id, name, display_name) values (1, 'a_browse_index', 'auth.browse.index');
 
-insert into cs_authority (id, name, display_name) values (2, 'a_browse_admin', '管理员浏览');
-insert into cs_authority (id, name, display_name) values (3, 'a_create_admin', '管理员创建');
-insert into cs_authority (id, name, display_name) values (4, 'a_modify_admin', '管理员修改');
-insert into cs_authority (id, name, display_name) values (5, 'a_delete_admin', '管理员删除');
+insert into cs_authority (id, name, display_name) values (2, 'a_browse_admin', 'auth.browse.admin');
+insert into cs_authority (id, name, display_name) values (3, 'a_create_admin', 'auth.create.admin');
+insert into cs_authority (id, name, display_name) values (4, 'a_modify_admin', 'auth.modify.admin');
+insert into cs_authority (id, name, display_name) values (5, 'a_delete_admin', 'auth.delete.admin');
 
-insert into cs_authority (id, name, display_name) values (6, 'a_browse_role', '角色浏览');
-insert into cs_authority (id, name, display_name) values (7, 'a_create_role', '角色创建');
-insert into cs_authority (id, name, display_name) values (8, 'a_modify_role', '角色修改');
-insert into cs_authority (id, name, display_name) values (9, 'a_delete_role', '角色删除');
+insert into cs_authority (id, name, display_name) values (6, 'a_browse_role', 'auth.browse.role');
+insert into cs_authority (id, name, display_name) values (7, 'a_create_role', 'auth.create.role');
+insert into cs_authority (id, name, display_name) values (8, 'a_modify_role', 'auth.modify.role');
+insert into cs_authority (id, name, display_name) values (9, 'a_delete_role', 'auth.delete.role');
 
 
 -- cs_resource
