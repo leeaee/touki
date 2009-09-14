@@ -764,6 +764,24 @@ EM {
     color: #999999;
 }
 
+.ajax-tip {
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+	font-family: tahoma, arial, sans-serif;
+	font-weight: bold;
+	color: #CCCCCC;	
+}
+
+.ajax-error {
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+	font-family: tahoma, arial, sans-serif;
+	font-weight: bold;
+	color: #8C0000;	
+}
+
 /*  jQuery Combo box 2.1.2 
 --------------------------------------------*/
 DIV.combobox {

@@ -340,7 +340,16 @@ initDataTable = function(bttnText) {
 				
 				$('#dialog').text('');
 				$('#dialog').dialog('open');
+				
+				$("#dialog").ajaxStart(function () {
+                	$(this).html('<div class="ajax-tip">Loading...</div>');
+	            });
+	            
 				$("#dialog").load(url, 'method=detail&chk_' + para + '=' + para);
+				
+				$("#dialog").ajaxError(function(event, request, settings){
+				   $(this).html('<div class="ajax-error">Loading failed, please try later.</div>');
+				});
 			});		
 			
 			row.hover (
